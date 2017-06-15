@@ -1,0 +1,2824 @@
+2017-06-08 19:01:30 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Таблица "TABLE" не найдена
+Table "TABLE" not found; SQL statement:
+DELETE TABLE IF EXISTS CLIENTS [42102-195]
+2017-06-08 19:01:43 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Таблица "CLIENTS" не найдена
+Table "CLIENTS" not found; SQL statement:
+DELETE clients IF EXISTS [42102-195]
+2017-06-10 18:55:14 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Синтаксическая ошибка в выражении SQL "?[*]"; ожидалось "[, ::, ="
+Syntax error in SQL statement "?[*]"; expected "[, ::, ="; SQL statement:
+? [42001-195]
+2017-06-10 19:01:31 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Синтаксическая ошибка в выражении SQL "TO_DATE[*](""21.01.2017"", ""HH.MM.YYYY"")"; ожидалось "TRUNCATE, {"
+Syntax error in SQL statement "TO_DATE[*](""21.01.2017"", ""HH.MM.YYYY"")"; expected "TRUNCATE, {"; SQL statement:
+TO_DATE("21.01.2017", "HH.MM.YYYY") [42001-195]
+2017-06-10 19:07:25 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Синтаксическая ошибка в выражении SQL "CURRENT_DATE[*]()"; ожидалось "COMMIT, CREATE, CALL, CHECKPOINT, COMMENT, {"
+Syntax error in SQL statement "CURRENT_DATE[*]()"; expected "COMMIT, CREATE, CALL, CHECKPOINT, COMMENT, {"; SQL statement:
+CURRENT_DATE() [42001-195]
+2017-06-10 19:08:27 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Столбец "Bob" не найден
+Column "Bob" not found; SQL statement:
+INSERT INTO CLIENTS (client_first_name, client_last_name, client_date_of_birth, client_username, client_password) VALUES
+("Bob", "Ross", "2017-06-10", "BoBRo$$", "BestPasswordEVER") [42122-195]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:345)
+	at org.h2.message.DbException.get(DbException.java:179)
+	at org.h2.message.DbException.get(DbException.java:155)
+	at org.h2.expression.ExpressionColumn.optimize(ExpressionColumn.java:147)
+	at org.h2.command.dml.Insert.prepare(Insert.java:270)
+	at org.h2.command.Parser.prepareCommand(Parser.java:262)
+	at org.h2.engine.Session.prepareLocal(Session.java:573)
+	at org.h2.engine.Session.prepareCommand(Session.java:514)
+	at org.h2.jdbc.JdbcConnection.prepareCommand(JdbcConnection.java:1204)
+	at org.h2.jdbc.JdbcStatement.executeInternal(JdbcStatement.java:177)
+	at org.h2.jdbc.JdbcStatement.execute(JdbcStatement.java:165)
+	at org.h2.server.web.WebApp.getResult(WebApp.java:1380)
+	at org.h2.server.web.WebApp.query(WebApp.java:1053)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:1015)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:1002)
+	at org.h2.server.web.WebThread.process(WebThread.java:164)
+	at org.h2.server.web.WebThread.run(WebThread.java:89)
+	at java.lang.Thread.run(Unknown Source)
+2017-06-10 19:09:35 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Столбец "Ross" не найден
+Column "Ross" not found; SQL statement:
+INSERT INTO CLIENTS (client_first_name, client_last_name, client_date_of_birth, client_username, client_password) VALUES
+('Bob', "Ross", "2017-06-10", "BoBRo$$", "BestPasswordEVER") [42122-195]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:345)
+	at org.h2.message.DbException.get(DbException.java:179)
+	at org.h2.message.DbException.get(DbException.java:155)
+	at org.h2.expression.ExpressionColumn.optimize(ExpressionColumn.java:147)
+	at org.h2.command.dml.Insert.prepare(Insert.java:270)
+	at org.h2.command.Parser.prepareCommand(Parser.java:262)
+	at org.h2.engine.Session.prepareLocal(Session.java:573)
+	at org.h2.engine.Session.prepareCommand(Session.java:514)
+	at org.h2.jdbc.JdbcConnection.prepareCommand(JdbcConnection.java:1204)
+	at org.h2.jdbc.JdbcStatement.executeInternal(JdbcStatement.java:177)
+	at org.h2.jdbc.JdbcStatement.execute(JdbcStatement.java:165)
+	at org.h2.server.web.WebApp.getResult(WebApp.java:1380)
+	at org.h2.server.web.WebApp.query(WebApp.java:1053)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:1015)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:1002)
+	at org.h2.server.web.WebThread.process(WebThread.java:164)
+	at org.h2.server.web.WebThread.run(WebThread.java:89)
+	at java.lang.Thread.run(Unknown Source)
+2017-06-10 19:12:57 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Значение слишком длинное для поля "CLIENT_PASSWORD VARCHAR(60)": "'MyPasswordIsBetterAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA... (153)"
+Value too long for column "CLIENT_PASSWORD VARCHAR(60)": "'MyPasswordIsBetterAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA... (153)"; SQL statement:
+INSERT INTO CLIENTS (client_first_name, client_last_name, client_date_of_birth, client_username, client_password) VALUES
+('John', 'Smith', '2017-06-10', 'JohnSMITH', 'MyPasswordIsBetterAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA') [22001-195]
+2017-06-10 19:14:58 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Функция "LEN" не найдена
+Function "LEN" not found; SQL statement:
+ALTER TABLE CLIENTS ADD CONSTRAINT client_first_name_at_least_1_char CHECK(LEN(client_first_name) > 1)) [90022-195]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:345)
+	at org.h2.message.DbException.get(DbException.java:179)
+	at org.h2.message.DbException.get(DbException.java:155)
+	at org.h2.command.Parser.readJavaFunction(Parser.java:2481)
+	at org.h2.command.Parser.readFunction(Parser.java:2533)
+	at org.h2.command.Parser.readTerm(Parser.java:2870)
+	at org.h2.command.Parser.readFactor(Parser.java:2384)
+	at org.h2.command.Parser.readSum(Parser.java:2371)
+	at org.h2.command.Parser.readConcat(Parser.java:2341)
+	at org.h2.command.Parser.readCondition(Parser.java:2172)
+	at org.h2.command.Parser.readAnd(Parser.java:2144)
+	at org.h2.command.Parser.readExpression(Parser.java:2136)
+	at org.h2.command.Parser.readTerm(Parser.java:2962)
+	at org.h2.command.Parser.readFactor(Parser.java:2384)
+	at org.h2.command.Parser.readSum(Parser.java:2371)
+	at org.h2.command.Parser.readConcat(Parser.java:2341)
+	at org.h2.command.Parser.readCondition(Parser.java:2172)
+	at org.h2.command.Parser.readAnd(Parser.java:2144)
+	at org.h2.command.Parser.readExpression(Parser.java:2136)
+	at org.h2.command.Parser.parseAlterTableAddConstraintIf(Parser.java:5957)
+	at org.h2.command.Parser.parseAlterTable(Parser.java:5564)
+	at org.h2.command.Parser.parseAlter(Parser.java:4961)
+	at org.h2.command.Parser.parsePrepared(Parser.java:347)
+	at org.h2.command.Parser.parse(Parser.java:320)
+	at org.h2.command.Parser.parse(Parser.java:292)
+	at org.h2.command.Parser.prepareCommand(Parser.java:257)
+	at org.h2.engine.Session.prepareLocal(Session.java:573)
+	at org.h2.engine.Session.prepareCommand(Session.java:514)
+	at org.h2.jdbc.JdbcConnection.prepareCommand(JdbcConnection.java:1204)
+	at org.h2.jdbc.JdbcStatement.executeInternal(JdbcStatement.java:177)
+	at org.h2.jdbc.JdbcStatement.execute(JdbcStatement.java:165)
+	at org.h2.server.web.WebApp.getResult(WebApp.java:1380)
+	at org.h2.server.web.WebApp.query(WebApp.java:1053)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:1015)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:1002)
+	at org.h2.server.web.WebThread.process(WebThread.java:164)
+	at org.h2.server.web.WebThread.run(WebThread.java:89)
+	at java.lang.Thread.run(Unknown Source)
+2017-06-10 19:15:26 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Синтаксическая ошибка в выражении SQL "ALTER TABLE CLIENTS ADD CONSTRAINT CLIENT_FIRST_NAME_AT_LEAST_1_CHAR CHECK(LENGTH(CLIENT_FIRST_NAME) > 1))[*] "
+Syntax error in SQL statement "ALTER TABLE CLIENTS ADD CONSTRAINT CLIENT_FIRST_NAME_AT_LEAST_1_CHAR CHECK(LENGTH(CLIENT_FIRST_NAME) > 1))[*] "; SQL statement:
+ALTER TABLE CLIENTS ADD CONSTRAINT client_first_name_at_least_1_char CHECK(LENGTH(client_first_name) > 1)) [42000-195]
+2017-06-10 19:16:49 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Синтаксическая ошибка в выражении SQL "ALTER TABLE PUBLIC.CLIENTS ADD CONSTRAINT CLIENT_FIRST_NAME_AT_LEAST_1_CHAR CHECK(LENGTH(CLIENT_FIRST_NAME) > 1))[*] "
+Syntax error in SQL statement "ALTER TABLE PUBLIC.CLIENTS ADD CONSTRAINT CLIENT_FIRST_NAME_AT_LEAST_1_CHAR CHECK(LENGTH(CLIENT_FIRST_NAME) > 1))[*] "; SQL statement:
+ALTER TABLE PUBLIC.CLIENTS ADD CONSTRAINT client_first_name_at_least_1_char CHECK(LENGTH(client_first_name) > 1)) [42000-195]
+2017-06-10 19:17:49 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Синтаксическая ошибка в выражении SQL "INFORMATION_SCHEMA[*].CONSTANTS"; ожидалось "INSERT, {"
+Syntax error in SQL statement "INFORMATION_SCHEMA[*].CONSTANTS"; expected "INSERT, {"; SQL statement:
+INFORMATION_SCHEMA.CONSTANTS [42001-195]
+2017-06-10 19:22:55 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Синтаксическая ошибка в выражении SQL "ALTER TABLE CLIENTS SET CLIENT_NAME[*] = '' WHERE CLIENT_NAME = 'John' "; ожидалось "REFERENTIAL_INTEGRITY"
+Syntax error in SQL statement "ALTER TABLE CLIENTS SET CLIENT_NAME[*] = '' WHERE CLIENT_NAME = 'John' "; expected "REFERENTIAL_INTEGRITY"; SQL statement:
+ALTER TABLE CLIENTS SET client_name = '' WHERE client_name = 'John' [42001-195]
+2017-06-10 19:24:23 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Синтаксическая ошибка в выражении SQL "ALTER TABLE CLIENTS SET CLIENT_NAME[*] = 'a' WHERE CLIENT_NAME = 'John' "; ожидалось "REFERENTIAL_INTEGRITY"
+Syntax error in SQL statement "ALTER TABLE CLIENTS SET CLIENT_NAME[*] = 'a' WHERE CLIENT_NAME = 'John' "; expected "REFERENTIAL_INTEGRITY"; SQL statement:
+ALTER TABLE CLIENTS SET client_name = 'a' WHERE client_name = 'John' [42001-195]
+2017-06-10 19:24:38 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Таблица "TABLE" не найдена
+Table "TABLE" not found; SQL statement:
+UPDATE TABLE CLIENTS SET client_name = '' WHERE client_name = 'John' [42102-195]
+2017-06-10 19:24:44 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Столбец "CLIENT_NAME" не найден
+Column "CLIENT_NAME" not found; SQL statement:
+UPDATE CLIENTS SET client_name = '' WHERE client_name = 'John' [42122-195]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:345)
+	at org.h2.message.DbException.get(DbException.java:179)
+	at org.h2.message.DbException.get(DbException.java:155)
+	at org.h2.table.Table.getColumn(Table.java:676)
+	at org.h2.command.Parser.readTableColumn(Parser.java:726)
+	at org.h2.command.Parser.parseUpdate(Parser.java:760)
+	at org.h2.command.Parser.parsePrepared(Parser.java:470)
+	at org.h2.command.Parser.parse(Parser.java:320)
+	at org.h2.command.Parser.parse(Parser.java:292)
+	at org.h2.command.Parser.prepareCommand(Parser.java:257)
+	at org.h2.engine.Session.prepareLocal(Session.java:573)
+	at org.h2.engine.Session.prepareCommand(Session.java:514)
+	at org.h2.jdbc.JdbcConnection.prepareCommand(JdbcConnection.java:1204)
+	at org.h2.jdbc.JdbcStatement.executeInternal(JdbcStatement.java:177)
+	at org.h2.jdbc.JdbcStatement.execute(JdbcStatement.java:165)
+	at org.h2.server.web.WebApp.getResult(WebApp.java:1380)
+	at org.h2.server.web.WebApp.query(WebApp.java:1053)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:1015)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:1002)
+	at org.h2.server.web.WebThread.process(WebThread.java:164)
+	at org.h2.server.web.WebThread.run(WebThread.java:89)
+	at java.lang.Thread.run(Unknown Source)
+2017-06-10 19:25:33 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Синтаксическая ошибка в выражении SQL "ALTER CONSTRAINT[*] CLIENT_FIRST_NAME_NOT_ZERO_LENGTH SET (LENGTH(CLIENT_FIRST_NAME) > 0) "; ожидалось "TABLE, USER, INDEX, SCHEMA, SEQUENCE, VIEW"
+Syntax error in SQL statement "ALTER CONSTRAINT[*] CLIENT_FIRST_NAME_NOT_ZERO_LENGTH SET (LENGTH(CLIENT_FIRST_NAME) > 0) "; expected "TABLE, USER, INDEX, SCHEMA, SEQUENCE, VIEW"; SQL statement:
+ALTER CONSTRAINT client_first_name_not_zero_length SET (LENGTH(client_first_name) > 0) [42001-195]
+2017-06-10 19:26:22 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Синтаксическая ошибка в выражении SQL "ALTER CLIENTS[*] DROP CONSTRAINT CLIENT_FIRST_NAME_NOT_ZERO_LENGTH "; ожидалось "TABLE, USER, INDEX, SCHEMA, SEQUENCE, VIEW"
+Syntax error in SQL statement "ALTER CLIENTS[*] DROP CONSTRAINT CLIENT_FIRST_NAME_NOT_ZERO_LENGTH "; expected "TABLE, USER, INDEX, SCHEMA, SEQUENCE, VIEW"; SQL statement:
+ALTER CLIENTS DROP CONSTRAINT client_first_name_not_zero_length [42001-195]
+2017-06-10 19:29:48 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Столбец " *" не найден
+Column " *" not found; SQL statement:
+ALTER TABLE CLIENTS ADD CONSTRAINT client_first_name_not_spaces CHECK(client_first_name NOT REGEXP " *") [42122-195]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:345)
+	at org.h2.message.DbException.get(DbException.java:179)
+	at org.h2.message.DbException.get(DbException.java:155)
+	at org.h2.expression.ExpressionColumn.optimize(ExpressionColumn.java:147)
+	at org.h2.expression.CompareLike.optimize(CompareLike.java:94)
+	at org.h2.expression.ConditionNot.optimize(ConditionNot.java:50)
+	at org.h2.command.ddl.AlterTableAddConstraint.tryUpdate(AlterTableAddConstraint.java:191)
+	at org.h2.command.ddl.AlterTableAddConstraint.update(AlterTableAddConstraint.java:77)
+	at org.h2.command.CommandContainer.update(CommandContainer.java:101)
+	at org.h2.command.Command.executeUpdate(Command.java:260)
+	at org.h2.jdbc.JdbcStatement.executeInternal(JdbcStatement.java:193)
+	at org.h2.jdbc.JdbcStatement.execute(JdbcStatement.java:165)
+	at org.h2.server.web.WebApp.getResult(WebApp.java:1380)
+	at org.h2.server.web.WebApp.query(WebApp.java:1053)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:1015)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:1002)
+	at org.h2.server.web.WebThread.process(WebThread.java:164)
+	at org.h2.server.web.WebThread.run(WebThread.java:89)
+	at java.lang.Thread.run(Unknown Source)
+2017-06-10 19:30:56 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Ограничение "CLIENT_FIRST_NAME_NOT_SPACES" не найдено
+Constraint "CLIENT_FIRST_NAME_NOT_SPACES" not found; SQL statement:
+ALTER TABLE CLIENTS DROP CONSTRAINT client_first_name_not_spaces [90057-195]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:345)
+	at org.h2.message.DbException.get(DbException.java:179)
+	at org.h2.message.DbException.get(DbException.java:155)
+	at org.h2.command.ddl.AlterTableDropConstraint.update(AlterTableDropConstraint.java:41)
+	at org.h2.command.CommandContainer.update(CommandContainer.java:101)
+	at org.h2.command.Command.executeUpdate(Command.java:260)
+	at org.h2.jdbc.JdbcStatement.executeInternal(JdbcStatement.java:193)
+	at org.h2.jdbc.JdbcStatement.execute(JdbcStatement.java:165)
+	at org.h2.server.web.WebApp.getResult(WebApp.java:1380)
+	at org.h2.server.web.WebApp.query(WebApp.java:1053)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:1015)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:1002)
+	at org.h2.server.web.WebThread.process(WebThread.java:164)
+	at org.h2.server.web.WebThread.run(WebThread.java:89)
+	at java.lang.Thread.run(Unknown Source)
+2017-06-10 19:34:38 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Синтаксическая ошибка в выражении SQL "ALTER TABLE CLIENTS ADD CONSTRAINT CLIENT_FIRST_NAME_NOT_SPACES CHECK(CLIENT_FIRST_NAME IS NOT REGEXP ' *'[*]) "; ожидалось "., (, [, ::, *, /, %, +, -, ||, ~, !~, NOT, LIKE, ILIKE, REGEXP, IS, IN, BETWEEN, AND, OR, ,, )"
+Syntax error in SQL statement "ALTER TABLE CLIENTS ADD CONSTRAINT CLIENT_FIRST_NAME_NOT_SPACES CHECK(CLIENT_FIRST_NAME IS NOT REGEXP ' *'[*]) "; expected "., (, [, ::, *, /, %, +, -, ||, ~, !~, NOT, LIKE, ILIKE, REGEXP, IS, IN, BETWEEN, AND, OR, ,, )"; SQL statement:
+ALTER TABLE CLIENTS ADD CONSTRAINT client_first_name_not_spaces CHECK(client_first_name IS NOT REGEXP ' *') [42001-195]
+2017-06-10 19:37:02 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Таблица "CLIENTSL" не найдена
+Table "CLIENTSL" not found; SQL statement:
+SELECT * FROM CLIENTSl [42102-195]
+2017-06-10 19:39:38 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Синтаксическая ошибка в выражении SQL "SELECT FROM CLIENTS WHERE[*] TYPE_DESC LIKE '%CONST%' "; ожидалось "., (, USE, AS, RIGHT, LEFT, FULL, INNER, JOIN, CROSS, NATURAL, ,, SELECT"
+Syntax error in SQL statement "SELECT FROM CLIENTS WHERE[*] TYPE_DESC LIKE '%CONST%' "; expected "., (, USE, AS, RIGHT, LEFT, FULL, INNER, JOIN, CROSS, NATURAL, ,, SELECT"; SQL statement:
+SELECT FROM CLIENTS WHERE type_desc LIKE '%CONST%' [42001-195]
+2017-06-10 19:40:36 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Синтаксическая ошибка в выражении SQL "ALTER TABLE CLIENTS SET CLIENT_USERNAME[*] NOT NULL "; ожидалось "REFERENTIAL_INTEGRITY"
+Syntax error in SQL statement "ALTER TABLE CLIENTS SET CLIENT_USERNAME[*] NOT NULL "; expected "REFERENTIAL_INTEGRITY"; SQL statement:
+ALTER TABLE CLIENTS SET client_username NOT NULL [42001-195]
+2017-06-10 19:49:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Синтаксическая ошибка в выражении SQL "DELETE *[*] FROM CLIENTS"; ожидалось "identifier"
+Syntax error in SQL statement "DELETE *[*] FROM CLIENTS"; expected "identifier"; SQL statement:
+DELETE * FROM CLIENTS [42001-195]
+2017-06-10 19:49:15 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Таблица "CLIENT_ID" не найдена
+Table "CLIENT_ID" not found; SQL statement:
+DELETE client_id FROM CLIENTS [42102-195]
+2017-06-10 19:55:28 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Синтаксическая ошибка в выражении SQL "DEFINE ALIAS correct_text_field AS [*]$$
+boolean correct_text_field(String input)
+{"
+Syntax error in SQL statement "DEFINE ALIAS correct_text_field AS [*]$$
+boolean correct_text_field(String input)
+{" [42000-195]
+2017-06-10 19:59:21 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Синтаксическая ошибка в выражении SQL "DEFINE[*] ALIAS CORRECT_TEXT_FIELD AS   
+import java.util.regex.Pattern;
+import java.util.regex.Matcher;
+@CODE
+boolean correct_text_field(String input)
+{
+Pattern p = Pattern.compile(""\s+"");
+Matcher m = p.matcher(input);
+return input.length() > 0 && m.matches();
+}
+   "; ожидалось "DELETE, DROP, DECLARE, DEALLOCATE, {"
+Syntax error in SQL statement "DEFINE[*] ALIAS CORRECT_TEXT_FIELD AS   
+import java.util.regex.Pattern;
+import java.util.regex.Matcher;
+@CODE
+boolean correct_text_field(String input)
+{
+Pattern p = Pattern.compile(""\s+"");
+Matcher m = p.matcher(input);
+return input.length() > 0 && m.matches();
+}
+   "; expected "DELETE, DROP, DECLARE, DEALLOCATE, {"; SQL statement:
+DEFINE ALIAS correct_text_field AS $$
+import java.util.regex.Pattern;
+import java.util.regex.Matcher;
+@CODE
+boolean correct_text_field(String input)
+{
+Pattern p = Pattern.compile("\s+");
+Matcher m = p.matcher(input);
+return input.length() > 0 && m.matches();
+}
+$$ [42001-195]
+2017-06-10 19:59:51 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Синтаксическая ошибка в выражении SQL "org\h2\dynamic\CORRECT_TEXT_FIELD.java:9: error: illegal escape character
+Pattern p = Pattern.compile(""\s+"");
+                              ^
+1 error
+"
+Syntax error in SQL statement "org\h2\dynamic\CORRECT_TEXT_FIELD.java:9: error: illegal escape character
+Pattern p = Pattern.compile(""\s+"");
+                              ^
+1 error
+"; SQL statement:
+CREATE ALIAS correct_text_field AS $$
+import java.util.regex.Pattern;
+import java.util.regex.Matcher;
+@CODE
+boolean correct_text_field(String input)
+{
+Pattern p = Pattern.compile("\s+");
+Matcher m = p.matcher(input);
+return input.length() > 0 && m.matches();
+}
+$$ [42000-195]
+2017-06-10 20:02:33 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Столбец "CONSTRAINTS" не найден
+Column "CONSTRAINTS" not found; SQL statement:
+ALTER TABLE CLIENTS DROP CONSTRAINTS client_first_name_not_zero_length [42122-195]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:345)
+	at org.h2.message.DbException.get(DbException.java:179)
+	at org.h2.message.DbException.get(DbException.java:155)
+	at org.h2.table.Table.getColumn(Table.java:676)
+	at org.h2.command.Parser.parseAlterTable(Parser.java:5670)
+	at org.h2.command.Parser.parseAlter(Parser.java:4961)
+	at org.h2.command.Parser.parsePrepared(Parser.java:347)
+	at org.h2.command.Parser.parse(Parser.java:320)
+	at org.h2.command.Parser.parse(Parser.java:292)
+	at org.h2.command.Parser.prepareCommand(Parser.java:257)
+	at org.h2.engine.Session.prepareLocal(Session.java:573)
+	at org.h2.engine.Session.prepareCommand(Session.java:514)
+	at org.h2.jdbc.JdbcConnection.prepareCommand(JdbcConnection.java:1204)
+	at org.h2.jdbc.JdbcStatement.executeInternal(JdbcStatement.java:177)
+	at org.h2.jdbc.JdbcStatement.execute(JdbcStatement.java:165)
+	at org.h2.server.web.WebApp.getResult(WebApp.java:1380)
+	at org.h2.server.web.WebApp.query(WebApp.java:1053)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:1015)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:1002)
+	at org.h2.server.web.WebThread.process(WebThread.java:164)
+	at org.h2.server.web.WebThread.run(WebThread.java:89)
+	at java.lang.Thread.run(Unknown Source)
+2017-06-10 20:02:33 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Столбец "CONSTRAINTS" не найден
+Column "CONSTRAINTS" not found; SQL statement:
+ALTER TABLE CLIENTS DROP CONSTRAINTS client_last_name_not_zero_length [42122-195]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:345)
+	at org.h2.message.DbException.get(DbException.java:179)
+	at org.h2.message.DbException.get(DbException.java:155)
+	at org.h2.table.Table.getColumn(Table.java:676)
+	at org.h2.command.Parser.parseAlterTable(Parser.java:5670)
+	at org.h2.command.Parser.parseAlter(Parser.java:4961)
+	at org.h2.command.Parser.parsePrepared(Parser.java:347)
+	at org.h2.command.Parser.parse(Parser.java:320)
+	at org.h2.command.Parser.parse(Parser.java:292)
+	at org.h2.command.Parser.prepareCommand(Parser.java:257)
+	at org.h2.engine.Session.prepareLocal(Session.java:573)
+	at org.h2.engine.Session.prepareCommand(Session.java:514)
+	at org.h2.jdbc.JdbcConnection.prepareCommand(JdbcConnection.java:1204)
+	at org.h2.jdbc.JdbcStatement.executeInternal(JdbcStatement.java:177)
+	at org.h2.jdbc.JdbcStatement.execute(JdbcStatement.java:165)
+	at org.h2.server.web.WebApp.getResult(WebApp.java:1380)
+	at org.h2.server.web.WebApp.query(WebApp.java:1053)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:1015)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:1002)
+	at org.h2.server.web.WebThread.process(WebThread.java:164)
+	at org.h2.server.web.WebThread.run(WebThread.java:89)
+	at java.lang.Thread.run(Unknown Source)
+2017-06-10 20:03:21 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Синтаксическая ошибка в выражении SQL "ALTER TABLE CLIENTS ADD CONSTRAINT CHECK_FIRST_NAME CHECK(CORRECT_TEXT_FIELD(CLIENT_FIRST_NAME) [*]"; ожидалось "[, ::, *, /, %, +, -, ||, ~, !~, NOT, LIKE, ILIKE, REGEXP, IS, IN, BETWEEN, AND, OR, ,, )"
+Syntax error in SQL statement "ALTER TABLE CLIENTS ADD CONSTRAINT CHECK_FIRST_NAME CHECK(CORRECT_TEXT_FIELD(CLIENT_FIRST_NAME) [*]"; expected "[, ::, *, /, %, +, -, ||, ~, !~, NOT, LIKE, ILIKE, REGEXP, IS, IN, BETWEEN, AND, OR, ,, )"; SQL statement:
+ALTER TABLE CLIENTS ADD CONSTRAINT check_first_name CHECK(correct_text_field(client_first_name) [42001-195]
+2017-06-10 20:04:40 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Синтаксическая ошибка в выражении SQL "ALTER TABLE CLIENTS ADD CONSTRAINT CHECK_LAST_NAME CHECK(CORRECT_TEXT_FIELD(CLIENT_LAST_NAME) OR CLIENT_LAST_NAMEIS NULL[*]) "; ожидалось "., (, [, ::, *, /, %, +, -, ||, ~, !~, NOT, LIKE, ILIKE, REGEXP, IS, IN, BETWEEN, AND, OR, ,, )"
+Syntax error in SQL statement "ALTER TABLE CLIENTS ADD CONSTRAINT CHECK_LAST_NAME CHECK(CORRECT_TEXT_FIELD(CLIENT_LAST_NAME) OR CLIENT_LAST_NAMEIS NULL[*]) "; expected "., (, [, ::, *, /, %, +, -, ||, ~, !~, NOT, LIKE, ILIKE, REGEXP, IS, IN, BETWEEN, AND, OR, ,, )"; SQL statement:
+ALTER TABLE CLIENTS ADD CONSTRAINT check_last_name CHECK(correct_text_field(client_last_name) OR client_last_nameIS NULL) [42001-195]
+2017-06-10 20:22:13 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Столбец "CLIENT_OVERVIEW" не найден
+Column "CLIENT_OVERVIEW" not found; SQL statement:
+SELECT client_overview [42122-195]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:345)
+	at org.h2.message.DbException.get(DbException.java:179)
+	at org.h2.message.DbException.get(DbException.java:155)
+	at org.h2.expression.ExpressionColumn.optimize(ExpressionColumn.java:147)
+	at org.h2.command.dml.Select.prepare(Select.java:839)
+	at org.h2.command.Parser.prepareCommand(Parser.java:262)
+	at org.h2.engine.Session.prepareLocal(Session.java:573)
+	at org.h2.engine.Session.prepareCommand(Session.java:514)
+	at org.h2.jdbc.JdbcConnection.prepareCommand(JdbcConnection.java:1204)
+	at org.h2.jdbc.JdbcStatement.executeInternal(JdbcStatement.java:177)
+	at org.h2.jdbc.JdbcStatement.execute(JdbcStatement.java:165)
+	at org.h2.server.web.WebApp.getResult(WebApp.java:1380)
+	at org.h2.server.web.WebApp.query(WebApp.java:1053)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:1015)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:1002)
+	at org.h2.server.web.WebThread.process(WebThread.java:164)
+	at org.h2.server.web.WebThread.run(WebThread.java:89)
+	at java.lang.Thread.run(Unknown Source)
+2017-06-10 20:22:20 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Столбец "VIEW" не найден
+Column "VIEW" not found; SQL statement:
+SELECT VIEW client_overview [42122-195]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:345)
+	at org.h2.message.DbException.get(DbException.java:179)
+	at org.h2.message.DbException.get(DbException.java:155)
+	at org.h2.expression.ExpressionColumn.optimize(ExpressionColumn.java:147)
+	at org.h2.expression.Alias.optimize(Alias.java:51)
+	at org.h2.command.dml.Select.prepare(Select.java:839)
+	at org.h2.command.Parser.prepareCommand(Parser.java:262)
+	at org.h2.engine.Session.prepareLocal(Session.java:573)
+	at org.h2.engine.Session.prepareCommand(Session.java:514)
+	at org.h2.jdbc.JdbcConnection.prepareCommand(JdbcConnection.java:1204)
+	at org.h2.jdbc.JdbcStatement.executeInternal(JdbcStatement.java:177)
+	at org.h2.jdbc.JdbcStatement.execute(JdbcStatement.java:165)
+	at org.h2.server.web.WebApp.getResult(WebApp.java:1380)
+	at org.h2.server.web.WebApp.query(WebApp.java:1053)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:1015)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:1002)
+	at org.h2.server.web.WebThread.process(WebThread.java:164)
+	at org.h2.server.web.WebThread.run(WebThread.java:89)
+	at java.lang.Thread.run(Unknown Source)
+2017-06-11 18:09:36 jdbc[4]: exception
+org.h2.jdbc.JdbcSQLException: Синтаксическая ошибка в выражении SQL "ALTER TABLE CLIENTS ALTER COLUMN CLIENT_USERNAME SET UNIQUE[*] "; ожидалось "DATA, NULL, NOT, DEFAULT, INVISIBLE, VISIBLE"
+Syntax error in SQL statement "ALTER TABLE CLIENTS ALTER COLUMN CLIENT_USERNAME SET UNIQUE[*] "; expected "DATA, NULL, NOT, DEFAULT, INVISIBLE, VISIBLE"; SQL statement:
+ALTER TABLE CLIENTS ALTER COLUMN client_username SET UNIQUE [42001-195]
+2017-06-11 18:11:50 jdbc[4]: exception
+org.h2.jdbc.JdbcSQLException: Таблица "TABLE" не найдена
+Table "TABLE" not found; SQL statement:
+UPDATE TABLE CLIENTS SET client_username = 'c1' WHERE client_id = 24 [42102-195]
+2017-06-11 18:11:50 jdbc[4]: exception
+org.h2.jdbc.JdbcSQLException: Таблица "TABLE" не найдена
+Table "TABLE" not found; SQL statement:
+UPDATE TABLE CLIENTS SET client_username = 'c2' WHERE client_id = 25 [42102-195]
+2017-06-11 18:49:54 jdbc[5]: exception
+org.h2.jdbc.JdbcSQLException: Таблица "CLIENT" не найдена
+Table "CLIENT" not found; SQL statement:
+ALTER TABLE CLIENT DROP CONSTRAINT client_check_username [42102-195]
+2017-06-11 18:49:54 jdbc[5]: exception
+org.h2.jdbc.JdbcSQLException: Таблица "CLIENT" не найдена
+Table "CLIENT" not found; SQL statement:
+ALTER TABLE CLIENT DROP CONSTRAINT client_check_password [42102-195]
+2017-06-11 18:49:54 jdbc[5]: exception
+org.h2.jdbc.JdbcSQLException: Таблица "CLIENT" не найдена
+Table "CLIENT" not found; SQL statement:
+ALTER TABLE CLIENT DROP CONSTRAINT client_check_first_name [42102-195]
+2017-06-11 18:49:54 jdbc[5]: exception
+org.h2.jdbc.JdbcSQLException: Таблица "CLIENT" не найдена
+Table "CLIENT" not found; SQL statement:
+ALTER TABLE CLIENT DROP CONSTRAINT client_check_last_name [42102-195]
+2017-06-11 19:39:26 database: flush
+org.h2.message.DbException: Внутренняя ошибка: "java.lang.IllegalStateException: The file is locked: nio:S:/Users/Userprofi/test.mv.db [1.4.195/7]"
+General error: "java.lang.IllegalStateException: The file is locked: nio:S:/Users/Userprofi/test.mv.db [1.4.195/7]" [50000-195]
+	at org.h2.message.DbException.get(DbException.java:168)
+	at org.h2.message.DbException.convert(DbException.java:295)
+	at org.h2.mvstore.db.MVTableEngine$1.uncaughtException(MVTableEngine.java:95)
+	at org.h2.mvstore.MVStore.panic(MVStore.java:378)
+	at org.h2.mvstore.MVStore.<init>(MVStore.java:361)
+	at org.h2.mvstore.MVStore$Builder.open(MVStore.java:2930)
+	at org.h2.mvstore.db.MVTableEngine$Store.open(MVTableEngine.java:155)
+	at org.h2.mvstore.db.MVTableEngine.init(MVTableEngine.java:100)
+	at org.h2.engine.Database.getPageStore(Database.java:2476)
+	at org.h2.engine.Database.open(Database.java:697)
+	at org.h2.engine.Database.openDatabase(Database.java:276)
+	at org.h2.engine.Database.<init>(Database.java:270)
+	at org.h2.engine.Engine.openSession(Engine.java:64)
+	at org.h2.engine.Engine.openSession(Engine.java:176)
+	at org.h2.engine.Engine.createSessionAndValidate(Engine.java:154)
+	at org.h2.engine.Engine.createSession(Engine.java:137)
+	at org.h2.engine.Engine.createSession(Engine.java:27)
+	at org.h2.engine.SessionRemote.connectEmbeddedOrServer(SessionRemote.java:354)
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:116)
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:100)
+	at org.h2.Driver.connect(Driver.java:69)
+	at java.sql.DriverManager.getConnection(DriverManager.java:664)
+	at java.sql.DriverManager.getConnection(DriverManager.java:247)
+	at com.companyname.db.DatabaseCommands.getConnection(DatabaseCommands.java:27)
+	at com.companyname.db.DatabaseCommands.getClients(DatabaseCommands.java:42)
+	at com.companyname.server.Main.doGet(Main.java:25)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:735)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:848)
+	at org.eclipse.jetty.servlet.ServletHolder.handle(ServletHolder.java:684)
+	at org.eclipse.jetty.servlet.ServletHandler.doHandle(ServletHandler.java:503)
+	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:137)
+	at org.eclipse.jetty.security.SecurityHandler.handle(SecurityHandler.java:557)
+	at org.eclipse.jetty.server.session.SessionHandler.doHandle(SessionHandler.java:231)
+	at org.eclipse.jetty.server.handler.ContextHandler.doHandle(ContextHandler.java:1086)
+	at org.eclipse.jetty.servlet.ServletHandler.doScope(ServletHandler.java:429)
+	at org.eclipse.jetty.server.session.SessionHandler.doScope(SessionHandler.java:193)
+	at org.eclipse.jetty.server.handler.ContextHandler.doScope(ContextHandler.java:1020)
+	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:135)
+	at org.eclipse.jetty.server.handler.ContextHandlerCollection.handle(ContextHandlerCollection.java:255)
+	at org.eclipse.jetty.server.handler.HandlerCollection.handle(HandlerCollection.java:154)
+	at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:116)
+	at org.eclipse.jetty.server.Server.handle(Server.java:370)
+	at org.eclipse.jetty.server.AbstractHttpConnection.handleRequest(AbstractHttpConnection.java:494)
+	at org.eclipse.jetty.server.AbstractHttpConnection.headerComplete(AbstractHttpConnection.java:971)
+	at org.eclipse.jetty.server.AbstractHttpConnection$RequestHandler.headerComplete(AbstractHttpConnection.java:1033)
+	at org.eclipse.jetty.http.HttpParser.parseNext(HttpParser.java:644)
+	at org.eclipse.jetty.http.HttpParser.parseAvailable(HttpParser.java:235)
+	at org.eclipse.jetty.server.AsyncHttpConnection.handle(AsyncHttpConnection.java:82)
+	at org.eclipse.jetty.io.nio.SelectChannelEndPoint.handle(SelectChannelEndPoint.java:696)
+	at org.eclipse.jetty.io.nio.SelectChannelEndPoint$1.run(SelectChannelEndPoint.java:53)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:608)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool$3.run(QueuedThreadPool.java:543)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: org.h2.jdbc.JdbcSQLException: Внутренняя ошибка: "java.lang.IllegalStateException: The file is locked: nio:S:/Users/Userprofi/test.mv.db [1.4.195/7]"
+General error: "java.lang.IllegalStateException: The file is locked: nio:S:/Users/Userprofi/test.mv.db [1.4.195/7]" [50000-195]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:345)
+	... 53 more
+Caused by: java.lang.IllegalStateException: The file is locked: nio:S:/Users/Userprofi/test.mv.db [1.4.195/7]
+	at org.h2.mvstore.DataUtils.newIllegalStateException(DataUtils.java:765)
+	at org.h2.mvstore.FileStore.open(FileStore.java:173)
+	at org.h2.mvstore.MVStore.<init>(MVStore.java:347)
+	... 48 more
+2017-06-11 19:39:56 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Таблица "CLIENTS_OVERVIEW" не найдена
+Table "CLIENTS_OVERVIEW" not found; SQL statement:
+SELECT * FROM clients_overview [42102-195]
+2017-06-11 19:42:05 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Недостаточно прав на объект "PUBLIC.CLIENT_OVERVIEW"
+Not enough rights for object "PUBLIC.CLIENT_OVERVIEW"; SQL statement:
+SELECT * FROM client_overview [90096-195]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:345)
+	at org.h2.message.DbException.get(DbException.java:179)
+	at org.h2.message.DbException.get(DbException.java:155)
+	at org.h2.engine.User.checkRight(User.java:101)
+	at org.h2.table.TableFilter.<init>(TableFilter.java:139)
+	at org.h2.command.Parser.readTableFilter(Parser.java:1281)
+	at org.h2.command.Parser.parseSelectSimpleFromPart(Parser.java:1940)
+	at org.h2.command.Parser.parseSelectSimple(Parser.java:2089)
+	at org.h2.command.Parser.parseSelectSub(Parser.java:1934)
+	at org.h2.command.Parser.parseSelectUnion(Parser.java:1749)
+	at org.h2.command.Parser.parseSelect(Parser.java:1737)
+	at org.h2.command.Parser.parsePrepared(Parser.java:448)
+	at org.h2.command.Parser.parse(Parser.java:320)
+	at org.h2.command.Parser.parse(Parser.java:292)
+	at org.h2.command.Parser.prepareCommand(Parser.java:257)
+	at org.h2.engine.Session.prepareLocal(Session.java:573)
+	at org.h2.engine.Session.prepareCommand(Session.java:514)
+	at org.h2.jdbc.JdbcConnection.prepareCommand(JdbcConnection.java:1204)
+	at org.h2.jdbc.JdbcPreparedStatement.<init>(JdbcPreparedStatement.java:73)
+	at org.h2.jdbc.JdbcConnection.prepareStatement(JdbcConnection.java:288)
+	at com.companyname.db.DatabaseCommands.getClients(DatabaseCommands.java:43)
+	at com.companyname.server.Main.doGet(Main.java:25)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:735)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:848)
+	at org.eclipse.jetty.servlet.ServletHolder.handle(ServletHolder.java:684)
+	at org.eclipse.jetty.servlet.ServletHandler.doHandle(ServletHandler.java:503)
+	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:137)
+	at org.eclipse.jetty.security.SecurityHandler.handle(SecurityHandler.java:557)
+	at org.eclipse.jetty.server.session.SessionHandler.doHandle(SessionHandler.java:231)
+	at org.eclipse.jetty.server.handler.ContextHandler.doHandle(ContextHandler.java:1086)
+	at org.eclipse.jetty.servlet.ServletHandler.doScope(ServletHandler.java:429)
+	at org.eclipse.jetty.server.session.SessionHandler.doScope(SessionHandler.java:193)
+	at org.eclipse.jetty.server.handler.ContextHandler.doScope(ContextHandler.java:1020)
+	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:135)
+	at org.eclipse.jetty.server.handler.ContextHandlerCollection.handle(ContextHandlerCollection.java:255)
+	at org.eclipse.jetty.server.handler.HandlerCollection.handle(HandlerCollection.java:154)
+	at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:116)
+	at org.eclipse.jetty.server.Server.handle(Server.java:370)
+	at org.eclipse.jetty.server.AbstractHttpConnection.handleRequest(AbstractHttpConnection.java:494)
+	at org.eclipse.jetty.server.AbstractHttpConnection.headerComplete(AbstractHttpConnection.java:971)
+	at org.eclipse.jetty.server.AbstractHttpConnection$RequestHandler.headerComplete(AbstractHttpConnection.java:1033)
+	at org.eclipse.jetty.http.HttpParser.parseNext(HttpParser.java:644)
+	at org.eclipse.jetty.http.HttpParser.parseAvailable(HttpParser.java:235)
+	at org.eclipse.jetty.server.AsyncHttpConnection.handle(AsyncHttpConnection.java:82)
+	at org.eclipse.jetty.io.nio.SelectChannelEndPoint.handle(SelectChannelEndPoint.java:696)
+	at org.eclipse.jetty.io.nio.SelectChannelEndPoint$1.run(SelectChannelEndPoint.java:53)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:608)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool$3.run(QueuedThreadPool.java:543)
+	at java.lang.Thread.run(Thread.java:745)
+2017-06-11 19:42:30 database: flush
+org.h2.message.DbException: Внутренняя ошибка: "java.lang.IllegalStateException: The file is locked: nio:S:/Users/Userprofi/test.mv.db [1.4.195/7]"
+General error: "java.lang.IllegalStateException: The file is locked: nio:S:/Users/Userprofi/test.mv.db [1.4.195/7]" [50000-195]
+	at org.h2.message.DbException.get(DbException.java:168)
+	at org.h2.message.DbException.convert(DbException.java:295)
+	at org.h2.mvstore.db.MVTableEngine$1.uncaughtException(MVTableEngine.java:95)
+	at org.h2.mvstore.MVStore.panic(MVStore.java:378)
+	at org.h2.mvstore.MVStore.<init>(MVStore.java:361)
+	at org.h2.mvstore.MVStore$Builder.open(MVStore.java:2930)
+	at org.h2.mvstore.db.MVTableEngine$Store.open(MVTableEngine.java:155)
+	at org.h2.mvstore.db.MVTableEngine.init(MVTableEngine.java:100)
+	at org.h2.engine.Database.getPageStore(Database.java:2476)
+	at org.h2.engine.Database.open(Database.java:697)
+	at org.h2.engine.Database.openDatabase(Database.java:276)
+	at org.h2.engine.Database.<init>(Database.java:270)
+	at org.h2.engine.Engine.openSession(Engine.java:64)
+	at org.h2.engine.Engine.openSession(Engine.java:176)
+	at org.h2.engine.Engine.createSessionAndValidate(Engine.java:154)
+	at org.h2.engine.Engine.createSession(Engine.java:137)
+	at org.h2.engine.Engine.createSession(Engine.java:27)
+	at org.h2.engine.SessionRemote.connectEmbeddedOrServer(SessionRemote.java:354)
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:116)
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:100)
+	at org.h2.Driver.connect(Driver.java:69)
+	at org.h2.server.web.WebServer.getConnection(WebServer.java:735)
+	at org.h2.server.web.WebApp.login(WebApp.java:947)
+	at org.h2.server.web.WebApp.process(WebApp.java:210)
+	at org.h2.server.web.WebApp.processRequest(WebApp.java:169)
+	at org.h2.server.web.WebThread.process(WebThread.java:133)
+	at org.h2.server.web.WebThread.run(WebThread.java:89)
+	at java.lang.Thread.run(Unknown Source)
+Caused by: org.h2.jdbc.JdbcSQLException: Внутренняя ошибка: "java.lang.IllegalStateException: The file is locked: nio:S:/Users/Userprofi/test.mv.db [1.4.195/7]"
+General error: "java.lang.IllegalStateException: The file is locked: nio:S:/Users/Userprofi/test.mv.db [1.4.195/7]" [50000-195]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:345)
+	... 28 more
+Caused by: java.lang.IllegalStateException: The file is locked: nio:S:/Users/Userprofi/test.mv.db [1.4.195/7]
+	at org.h2.mvstore.DataUtils.newIllegalStateException(DataUtils.java:765)
+	at org.h2.mvstore.FileStore.open(FileStore.java:173)
+	at org.h2.mvstore.MVStore.<init>(MVStore.java:347)
+	... 23 more
+2017-06-11 19:43:51 database: flush
+org.h2.message.DbException: Внутренняя ошибка: "java.lang.IllegalStateException: The file is locked: nio:S:/Users/Userprofi/test.mv.db [1.4.195/7]"
+General error: "java.lang.IllegalStateException: The file is locked: nio:S:/Users/Userprofi/test.mv.db [1.4.195/7]" [50000-195]
+	at org.h2.message.DbException.get(DbException.java:168)
+	at org.h2.message.DbException.convert(DbException.java:295)
+	at org.h2.mvstore.db.MVTableEngine$1.uncaughtException(MVTableEngine.java:95)
+	at org.h2.mvstore.MVStore.panic(MVStore.java:378)
+	at org.h2.mvstore.MVStore.<init>(MVStore.java:361)
+	at org.h2.mvstore.MVStore$Builder.open(MVStore.java:2930)
+	at org.h2.mvstore.db.MVTableEngine$Store.open(MVTableEngine.java:155)
+	at org.h2.mvstore.db.MVTableEngine.init(MVTableEngine.java:100)
+	at org.h2.engine.Database.getPageStore(Database.java:2476)
+	at org.h2.engine.Database.open(Database.java:697)
+	at org.h2.engine.Database.openDatabase(Database.java:276)
+	at org.h2.engine.Database.<init>(Database.java:270)
+	at org.h2.engine.Engine.openSession(Engine.java:64)
+	at org.h2.engine.Engine.openSession(Engine.java:176)
+	at org.h2.engine.Engine.createSessionAndValidate(Engine.java:154)
+	at org.h2.engine.Engine.createSession(Engine.java:137)
+	at org.h2.engine.Engine.createSession(Engine.java:27)
+	at org.h2.engine.SessionRemote.connectEmbeddedOrServer(SessionRemote.java:354)
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:116)
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:100)
+	at org.h2.Driver.connect(Driver.java:69)
+	at org.h2.server.web.WebServer.getConnection(WebServer.java:735)
+	at org.h2.server.web.WebApp.login(WebApp.java:947)
+	at org.h2.server.web.WebApp.process(WebApp.java:210)
+	at org.h2.server.web.WebApp.processRequest(WebApp.java:169)
+	at org.h2.server.web.WebThread.process(WebThread.java:133)
+	at org.h2.server.web.WebThread.run(WebThread.java:89)
+	at java.lang.Thread.run(Unknown Source)
+Caused by: org.h2.jdbc.JdbcSQLException: Внутренняя ошибка: "java.lang.IllegalStateException: The file is locked: nio:S:/Users/Userprofi/test.mv.db [1.4.195/7]"
+General error: "java.lang.IllegalStateException: The file is locked: nio:S:/Users/Userprofi/test.mv.db [1.4.195/7]" [50000-195]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:345)
+	... 28 more
+Caused by: java.lang.IllegalStateException: The file is locked: nio:S:/Users/Userprofi/test.mv.db [1.4.195/7]
+	at org.h2.mvstore.DataUtils.newIllegalStateException(DataUtils.java:765)
+	at org.h2.mvstore.FileStore.open(FileStore.java:173)
+	at org.h2.mvstore.MVStore.<init>(MVStore.java:347)
+	... 23 more
+2017-06-11 19:44:19 jdbc[4]: exception
+org.h2.jdbc.JdbcSQLException: Недостаточно прав на объект "PUBLIC.CLIENT_OVERVIEW"
+Not enough rights for object "PUBLIC.CLIENT_OVERVIEW"; SQL statement:
+SELECT * FROM client_overview [90096-195]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:345)
+	at org.h2.message.DbException.get(DbException.java:179)
+	at org.h2.message.DbException.get(DbException.java:155)
+	at org.h2.engine.User.checkRight(User.java:101)
+	at org.h2.table.TableFilter.<init>(TableFilter.java:139)
+	at org.h2.command.Parser.readTableFilter(Parser.java:1281)
+	at org.h2.command.Parser.parseSelectSimpleFromPart(Parser.java:1940)
+	at org.h2.command.Parser.parseSelectSimple(Parser.java:2089)
+	at org.h2.command.Parser.parseSelectSub(Parser.java:1934)
+	at org.h2.command.Parser.parseSelectUnion(Parser.java:1749)
+	at org.h2.command.Parser.parseSelect(Parser.java:1737)
+	at org.h2.command.Parser.parsePrepared(Parser.java:448)
+	at org.h2.command.Parser.parse(Parser.java:320)
+	at org.h2.command.Parser.parse(Parser.java:292)
+	at org.h2.command.Parser.prepareCommand(Parser.java:257)
+	at org.h2.engine.Session.prepareLocal(Session.java:573)
+	at org.h2.engine.Session.prepareCommand(Session.java:514)
+	at org.h2.jdbc.JdbcConnection.prepareCommand(JdbcConnection.java:1204)
+	at org.h2.jdbc.JdbcStatement.executeInternal(JdbcStatement.java:177)
+	at org.h2.jdbc.JdbcStatement.execute(JdbcStatement.java:165)
+	at org.h2.server.web.WebApp.getResult(WebApp.java:1380)
+	at org.h2.server.web.WebApp.query(WebApp.java:1053)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:1015)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:1002)
+	at org.h2.server.web.WebThread.process(WebThread.java:164)
+	at org.h2.server.web.WebThread.run(WebThread.java:89)
+	at java.lang.Thread.run(Unknown Source)
+2017-06-11 19:46:38 jdbc[6]: null
+org.h2.message.DbException: Незакрытое приложением соединение уничтожено сборщиком мусора
+The connection was not closed by the application and is garbage collected [90018-195]
+	at org.h2.message.DbException.get(DbException.java:179)
+	at org.h2.message.DbException.get(DbException.java:155)
+	at org.h2.message.DbException.get(DbException.java:144)
+	at org.h2.jdbc.JdbcConnection.closeOld(JdbcConnection.java:185)
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:127)
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:100)
+	at org.h2.Driver.connect(Driver.java:69)
+	at org.h2.server.web.WebServer.getConnection(WebServer.java:735)
+	at org.h2.server.web.WebApp.login(WebApp.java:947)
+	at org.h2.server.web.WebApp.process(WebApp.java:210)
+	at org.h2.server.web.WebApp.processRequest(WebApp.java:169)
+	at org.h2.server.web.WebThread.process(WebThread.java:133)
+	at org.h2.server.web.WebThread.run(WebThread.java:89)
+	at java.lang.Thread.run(Unknown Source)
+Caused by: org.h2.jdbc.JdbcSQLException: Незакрытое приложением соединение уничтожено сборщиком мусора
+The connection was not closed by the application and is garbage collected [90018-195]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:345)
+	... 14 more
+2017-06-11 19:47:08 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Объект уже закрыт
+The object is already closed [90007-195]
+2017-06-11 19:47:29 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Объект уже закрыт
+The object is already closed [90007-195]
+2017-06-11 19:52:14 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Объект уже закрыт
+The object is already closed [90007-195]
+2017-06-11 21:19:10 database: flush
+org.h2.message.DbException: Внутренняя ошибка: "java.lang.IllegalStateException: The file is locked: nio:S:/Users/Userprofi/test.mv.db [1.4.195/7]"
+General error: "java.lang.IllegalStateException: The file is locked: nio:S:/Users/Userprofi/test.mv.db [1.4.195/7]" [50000-195]
+	at org.h2.message.DbException.get(DbException.java:168)
+	at org.h2.message.DbException.convert(DbException.java:295)
+	at org.h2.mvstore.db.MVTableEngine$1.uncaughtException(MVTableEngine.java:95)
+	at org.h2.mvstore.MVStore.panic(MVStore.java:378)
+	at org.h2.mvstore.MVStore.<init>(MVStore.java:361)
+	at org.h2.mvstore.MVStore$Builder.open(MVStore.java:2930)
+	at org.h2.mvstore.db.MVTableEngine$Store.open(MVTableEngine.java:155)
+	at org.h2.mvstore.db.MVTableEngine.init(MVTableEngine.java:100)
+	at org.h2.engine.Database.getPageStore(Database.java:2476)
+	at org.h2.engine.Database.open(Database.java:697)
+	at org.h2.engine.Database.openDatabase(Database.java:276)
+	at org.h2.engine.Database.<init>(Database.java:270)
+	at org.h2.engine.Engine.openSession(Engine.java:64)
+	at org.h2.engine.Engine.openSession(Engine.java:176)
+	at org.h2.engine.Engine.createSessionAndValidate(Engine.java:154)
+	at org.h2.engine.Engine.createSession(Engine.java:137)
+	at org.h2.engine.Engine.createSession(Engine.java:27)
+	at org.h2.engine.SessionRemote.connectEmbeddedOrServer(SessionRemote.java:354)
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:116)
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:100)
+	at org.h2.Driver.connect(Driver.java:69)
+	at java.sql.DriverManager.getConnection(DriverManager.java:664)
+	at java.sql.DriverManager.getConnection(DriverManager.java:247)
+	at com.companyname.db.DatabaseCommands.getConnection(DatabaseCommands.java:27)
+	at com.companyname.db.DatabaseCommands.getClients(DatabaseCommands.java:42)
+	at com.companyname.server.Main.doGet(Main.java:29)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:735)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:848)
+	at org.eclipse.jetty.servlet.ServletHolder.handle(ServletHolder.java:684)
+	at org.eclipse.jetty.servlet.ServletHandler.doHandle(ServletHandler.java:503)
+	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:137)
+	at org.eclipse.jetty.security.SecurityHandler.handle(SecurityHandler.java:557)
+	at org.eclipse.jetty.server.session.SessionHandler.doHandle(SessionHandler.java:231)
+	at org.eclipse.jetty.server.handler.ContextHandler.doHandle(ContextHandler.java:1086)
+	at org.eclipse.jetty.servlet.ServletHandler.doScope(ServletHandler.java:429)
+	at org.eclipse.jetty.server.session.SessionHandler.doScope(SessionHandler.java:193)
+	at org.eclipse.jetty.server.handler.ContextHandler.doScope(ContextHandler.java:1020)
+	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:135)
+	at org.eclipse.jetty.server.handler.ContextHandlerCollection.handle(ContextHandlerCollection.java:255)
+	at org.eclipse.jetty.server.handler.HandlerCollection.handle(HandlerCollection.java:154)
+	at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:116)
+	at org.eclipse.jetty.server.Server.handle(Server.java:370)
+	at org.eclipse.jetty.server.AbstractHttpConnection.handleRequest(AbstractHttpConnection.java:494)
+	at org.eclipse.jetty.server.AbstractHttpConnection.headerComplete(AbstractHttpConnection.java:971)
+	at org.eclipse.jetty.server.AbstractHttpConnection$RequestHandler.headerComplete(AbstractHttpConnection.java:1033)
+	at org.eclipse.jetty.http.HttpParser.parseNext(HttpParser.java:644)
+	at org.eclipse.jetty.http.HttpParser.parseAvailable(HttpParser.java:235)
+	at org.eclipse.jetty.server.AsyncHttpConnection.handle(AsyncHttpConnection.java:82)
+	at org.eclipse.jetty.io.nio.SelectChannelEndPoint.handle(SelectChannelEndPoint.java:696)
+	at org.eclipse.jetty.io.nio.SelectChannelEndPoint$1.run(SelectChannelEndPoint.java:53)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:608)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool$3.run(QueuedThreadPool.java:543)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: org.h2.jdbc.JdbcSQLException: Внутренняя ошибка: "java.lang.IllegalStateException: The file is locked: nio:S:/Users/Userprofi/test.mv.db [1.4.195/7]"
+General error: "java.lang.IllegalStateException: The file is locked: nio:S:/Users/Userprofi/test.mv.db [1.4.195/7]" [50000-195]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:345)
+	... 53 more
+Caused by: java.lang.IllegalStateException: The file is locked: nio:S:/Users/Userprofi/test.mv.db [1.4.195/7]
+	at org.h2.mvstore.DataUtils.newIllegalStateException(DataUtils.java:765)
+	at org.h2.mvstore.FileStore.open(FileStore.java:173)
+	at org.h2.mvstore.MVStore.<init>(MVStore.java:347)
+	... 48 more
+2017-06-12 18:00:49 database: wrong user or password; user: "USER"
+org.h2.message.DbException: Неверное имя пользователя или пароль
+Wrong user name or password [28000-195]
+	at org.h2.message.DbException.get(DbException.java:179)
+	at org.h2.message.DbException.get(DbException.java:155)
+	at org.h2.message.DbException.get(DbException.java:144)
+	at org.h2.engine.Engine.openSession(Engine.java:104)
+	at org.h2.engine.Engine.openSession(Engine.java:176)
+	at org.h2.engine.Engine.createSessionAndValidate(Engine.java:154)
+	at org.h2.engine.Engine.createSession(Engine.java:137)
+	at org.h2.engine.Engine.createSession(Engine.java:27)
+	at org.h2.engine.SessionRemote.connectEmbeddedOrServer(SessionRemote.java:354)
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:116)
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:100)
+	at org.h2.Driver.connect(Driver.java:69)
+	at org.h2.server.web.WebServer.getConnection(WebServer.java:735)
+	at org.h2.server.web.WebApp.login(WebApp.java:947)
+	at org.h2.server.web.WebApp.process(WebApp.java:210)
+	at org.h2.server.web.WebApp.processRequest(WebApp.java:169)
+	at org.h2.server.web.WebThread.process(WebThread.java:133)
+	at org.h2.server.web.WebThread.run(WebThread.java:89)
+	at java.lang.Thread.run(Unknown Source)
+Caused by: org.h2.jdbc.JdbcSQLException: Неверное имя пользователя или пароль
+Wrong user name or password [28000-195]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:345)
+	... 19 more
+2017-06-12 18:29:23 database: flush
+org.h2.message.DbException: Внутренняя ошибка: "java.lang.IllegalStateException: The file is locked: nio:S:/Users/Userprofi/test.mv.db [1.4.195/7]"
+General error: "java.lang.IllegalStateException: The file is locked: nio:S:/Users/Userprofi/test.mv.db [1.4.195/7]" [50000-195]
+	at org.h2.message.DbException.get(DbException.java:168)
+	at org.h2.message.DbException.convert(DbException.java:295)
+	at org.h2.mvstore.db.MVTableEngine$1.uncaughtException(MVTableEngine.java:95)
+	at org.h2.mvstore.MVStore.panic(MVStore.java:378)
+	at org.h2.mvstore.MVStore.<init>(MVStore.java:361)
+	at org.h2.mvstore.MVStore$Builder.open(MVStore.java:2930)
+	at org.h2.mvstore.db.MVTableEngine$Store.open(MVTableEngine.java:155)
+	at org.h2.mvstore.db.MVTableEngine.init(MVTableEngine.java:100)
+	at org.h2.engine.Database.getPageStore(Database.java:2476)
+	at org.h2.engine.Database.open(Database.java:697)
+	at org.h2.engine.Database.openDatabase(Database.java:276)
+	at org.h2.engine.Database.<init>(Database.java:270)
+	at org.h2.engine.Engine.openSession(Engine.java:64)
+	at org.h2.engine.Engine.openSession(Engine.java:176)
+	at org.h2.engine.Engine.createSessionAndValidate(Engine.java:154)
+	at org.h2.engine.Engine.createSession(Engine.java:137)
+	at org.h2.engine.Engine.createSession(Engine.java:27)
+	at org.h2.engine.SessionRemote.connectEmbeddedOrServer(SessionRemote.java:354)
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:116)
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:100)
+	at org.h2.Driver.connect(Driver.java:69)
+	at java.sql.DriverManager.getConnection(DriverManager.java:664)
+	at java.sql.DriverManager.getConnection(DriverManager.java:247)
+	at com.companyname.db.DatabaseCommands.getConnection(DatabaseCommands.java:27)
+	at com.companyname.db.DatabaseCommands.getClients(DatabaseCommands.java:42)
+	at com.companyname.server.ClientOverview.doGet(ClientOverview.java:26)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:735)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:848)
+	at org.eclipse.jetty.servlet.ServletHolder.handle(ServletHolder.java:684)
+	at org.eclipse.jetty.servlet.ServletHandler.doHandle(ServletHandler.java:503)
+	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:137)
+	at org.eclipse.jetty.security.SecurityHandler.handle(SecurityHandler.java:557)
+	at org.eclipse.jetty.server.session.SessionHandler.doHandle(SessionHandler.java:231)
+	at org.eclipse.jetty.server.handler.ContextHandler.doHandle(ContextHandler.java:1086)
+	at org.eclipse.jetty.servlet.ServletHandler.doScope(ServletHandler.java:429)
+	at org.eclipse.jetty.server.session.SessionHandler.doScope(SessionHandler.java:193)
+	at org.eclipse.jetty.server.handler.ContextHandler.doScope(ContextHandler.java:1020)
+	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:135)
+	at org.eclipse.jetty.server.handler.ContextHandlerCollection.handle(ContextHandlerCollection.java:255)
+	at org.eclipse.jetty.server.handler.HandlerCollection.handle(HandlerCollection.java:154)
+	at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:116)
+	at org.eclipse.jetty.server.Server.handle(Server.java:370)
+	at org.eclipse.jetty.server.AbstractHttpConnection.handleRequest(AbstractHttpConnection.java:494)
+	at org.eclipse.jetty.server.AbstractHttpConnection.headerComplete(AbstractHttpConnection.java:971)
+	at org.eclipse.jetty.server.AbstractHttpConnection$RequestHandler.headerComplete(AbstractHttpConnection.java:1033)
+	at org.eclipse.jetty.http.HttpParser.parseNext(HttpParser.java:644)
+	at org.eclipse.jetty.http.HttpParser.parseAvailable(HttpParser.java:235)
+	at org.eclipse.jetty.server.AsyncHttpConnection.handle(AsyncHttpConnection.java:82)
+	at org.eclipse.jetty.io.nio.SelectChannelEndPoint.handle(SelectChannelEndPoint.java:696)
+	at org.eclipse.jetty.io.nio.SelectChannelEndPoint$1.run(SelectChannelEndPoint.java:53)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:608)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool$3.run(QueuedThreadPool.java:543)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: org.h2.jdbc.JdbcSQLException: Внутренняя ошибка: "java.lang.IllegalStateException: The file is locked: nio:S:/Users/Userprofi/test.mv.db [1.4.195/7]"
+General error: "java.lang.IllegalStateException: The file is locked: nio:S:/Users/Userprofi/test.mv.db [1.4.195/7]" [50000-195]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:345)
+	... 53 more
+Caused by: java.lang.IllegalStateException: The file is locked: nio:S:/Users/Userprofi/test.mv.db [1.4.195/7]
+	at org.h2.mvstore.DataUtils.newIllegalStateException(DataUtils.java:765)
+	at org.h2.mvstore.FileStore.open(FileStore.java:173)
+	at org.h2.mvstore.MVStore.<init>(MVStore.java:347)
+	... 48 more
+2017-06-12 18:29:23 database: flush
+org.h2.message.DbException: Внутренняя ошибка: "java.lang.IllegalStateException: The file is locked: nio:S:/Users/Userprofi/test.mv.db [1.4.195/7]"
+General error: "java.lang.IllegalStateException: The file is locked: nio:S:/Users/Userprofi/test.mv.db [1.4.195/7]" [50000-195]
+	at org.h2.message.DbException.get(DbException.java:168)
+	at org.h2.message.DbException.convert(DbException.java:295)
+	at org.h2.mvstore.db.MVTableEngine$1.uncaughtException(MVTableEngine.java:95)
+	at org.h2.mvstore.MVStore.panic(MVStore.java:378)
+	at org.h2.mvstore.MVStore.<init>(MVStore.java:361)
+	at org.h2.mvstore.MVStore$Builder.open(MVStore.java:2930)
+	at org.h2.mvstore.db.MVTableEngine$Store.open(MVTableEngine.java:155)
+	at org.h2.mvstore.db.MVTableEngine.init(MVTableEngine.java:100)
+	at org.h2.engine.Database.getPageStore(Database.java:2476)
+	at org.h2.engine.Database.open(Database.java:697)
+	at org.h2.engine.Database.openDatabase(Database.java:276)
+	at org.h2.engine.Database.<init>(Database.java:270)
+	at org.h2.engine.Engine.openSession(Engine.java:64)
+	at org.h2.engine.Engine.openSession(Engine.java:176)
+	at org.h2.engine.Engine.createSessionAndValidate(Engine.java:154)
+	at org.h2.engine.Engine.createSession(Engine.java:137)
+	at org.h2.engine.Engine.createSession(Engine.java:27)
+	at org.h2.engine.SessionRemote.connectEmbeddedOrServer(SessionRemote.java:354)
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:116)
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:100)
+	at org.h2.Driver.connect(Driver.java:69)
+	at java.sql.DriverManager.getConnection(DriverManager.java:664)
+	at java.sql.DriverManager.getConnection(DriverManager.java:247)
+	at com.companyname.db.DatabaseCommands.getConnection(DatabaseCommands.java:27)
+	at com.companyname.db.DatabaseCommands.getClients(DatabaseCommands.java:42)
+	at com.companyname.server.ClientOverview.doGet(ClientOverview.java:26)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:735)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:848)
+	at org.eclipse.jetty.servlet.ServletHolder.handle(ServletHolder.java:684)
+	at org.eclipse.jetty.servlet.ServletHandler.doHandle(ServletHandler.java:503)
+	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:137)
+	at org.eclipse.jetty.security.SecurityHandler.handle(SecurityHandler.java:557)
+	at org.eclipse.jetty.server.session.SessionHandler.doHandle(SessionHandler.java:231)
+	at org.eclipse.jetty.server.handler.ContextHandler.doHandle(ContextHandler.java:1086)
+	at org.eclipse.jetty.servlet.ServletHandler.doScope(ServletHandler.java:429)
+	at org.eclipse.jetty.server.session.SessionHandler.doScope(SessionHandler.java:193)
+	at org.eclipse.jetty.server.handler.ContextHandler.doScope(ContextHandler.java:1020)
+	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:135)
+	at org.eclipse.jetty.server.handler.ContextHandlerCollection.handle(ContextHandlerCollection.java:255)
+	at org.eclipse.jetty.server.handler.HandlerCollection.handle(HandlerCollection.java:154)
+	at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:116)
+	at org.eclipse.jetty.server.Server.handle(Server.java:370)
+	at org.eclipse.jetty.server.AbstractHttpConnection.handleRequest(AbstractHttpConnection.java:494)
+	at org.eclipse.jetty.server.AbstractHttpConnection.headerComplete(AbstractHttpConnection.java:971)
+	at org.eclipse.jetty.server.AbstractHttpConnection$RequestHandler.headerComplete(AbstractHttpConnection.java:1033)
+	at org.eclipse.jetty.http.HttpParser.parseNext(HttpParser.java:644)
+	at org.eclipse.jetty.http.HttpParser.parseAvailable(HttpParser.java:235)
+	at org.eclipse.jetty.server.AsyncHttpConnection.handle(AsyncHttpConnection.java:82)
+	at org.eclipse.jetty.io.nio.SelectChannelEndPoint.handle(SelectChannelEndPoint.java:696)
+	at org.eclipse.jetty.io.nio.SelectChannelEndPoint$1.run(SelectChannelEndPoint.java:53)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:608)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool$3.run(QueuedThreadPool.java:543)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: org.h2.jdbc.JdbcSQLException: Внутренняя ошибка: "java.lang.IllegalStateException: The file is locked: nio:S:/Users/Userprofi/test.mv.db [1.4.195/7]"
+General error: "java.lang.IllegalStateException: The file is locked: nio:S:/Users/Userprofi/test.mv.db [1.4.195/7]" [50000-195]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:345)
+	... 53 more
+Caused by: java.lang.IllegalStateException: The file is locked: nio:S:/Users/Userprofi/test.mv.db [1.4.195/7]
+	at org.h2.mvstore.DataUtils.newIllegalStateException(DataUtils.java:765)
+	at org.h2.mvstore.FileStore.open(FileStore.java:173)
+	at org.h2.mvstore.MVStore.<init>(MVStore.java:347)
+	... 48 more
+2017-06-12 18:29:23 database: flush
+org.h2.message.DbException: Внутренняя ошибка: "java.lang.IllegalStateException: The file is locked: nio:S:/Users/Userprofi/test.mv.db [1.4.195/7]"
+General error: "java.lang.IllegalStateException: The file is locked: nio:S:/Users/Userprofi/test.mv.db [1.4.195/7]" [50000-195]
+	at org.h2.message.DbException.get(DbException.java:168)
+	at org.h2.message.DbException.convert(DbException.java:295)
+	at org.h2.mvstore.db.MVTableEngine$1.uncaughtException(MVTableEngine.java:95)
+	at org.h2.mvstore.MVStore.panic(MVStore.java:378)
+	at org.h2.mvstore.MVStore.<init>(MVStore.java:361)
+	at org.h2.mvstore.MVStore$Builder.open(MVStore.java:2930)
+	at org.h2.mvstore.db.MVTableEngine$Store.open(MVTableEngine.java:155)
+	at org.h2.mvstore.db.MVTableEngine.init(MVTableEngine.java:100)
+	at org.h2.engine.Database.getPageStore(Database.java:2476)
+	at org.h2.engine.Database.open(Database.java:697)
+	at org.h2.engine.Database.openDatabase(Database.java:276)
+	at org.h2.engine.Database.<init>(Database.java:270)
+	at org.h2.engine.Engine.openSession(Engine.java:64)
+	at org.h2.engine.Engine.openSession(Engine.java:176)
+	at org.h2.engine.Engine.createSessionAndValidate(Engine.java:154)
+	at org.h2.engine.Engine.createSession(Engine.java:137)
+	at org.h2.engine.Engine.createSession(Engine.java:27)
+	at org.h2.engine.SessionRemote.connectEmbeddedOrServer(SessionRemote.java:354)
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:116)
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:100)
+	at org.h2.Driver.connect(Driver.java:69)
+	at java.sql.DriverManager.getConnection(DriverManager.java:664)
+	at java.sql.DriverManager.getConnection(DriverManager.java:247)
+	at com.companyname.db.DatabaseCommands.getConnection(DatabaseCommands.java:27)
+	at com.companyname.db.DatabaseCommands.getClients(DatabaseCommands.java:42)
+	at com.companyname.server.ClientOverview.doGet(ClientOverview.java:26)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:735)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:848)
+	at org.eclipse.jetty.servlet.ServletHolder.handle(ServletHolder.java:684)
+	at org.eclipse.jetty.servlet.ServletHandler.doHandle(ServletHandler.java:503)
+	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:137)
+	at org.eclipse.jetty.security.SecurityHandler.handle(SecurityHandler.java:557)
+	at org.eclipse.jetty.server.session.SessionHandler.doHandle(SessionHandler.java:231)
+	at org.eclipse.jetty.server.handler.ContextHandler.doHandle(ContextHandler.java:1086)
+	at org.eclipse.jetty.servlet.ServletHandler.doScope(ServletHandler.java:429)
+	at org.eclipse.jetty.server.session.SessionHandler.doScope(SessionHandler.java:193)
+	at org.eclipse.jetty.server.handler.ContextHandler.doScope(ContextHandler.java:1020)
+	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:135)
+	at org.eclipse.jetty.server.handler.ContextHandlerCollection.handle(ContextHandlerCollection.java:255)
+	at org.eclipse.jetty.server.handler.HandlerCollection.handle(HandlerCollection.java:154)
+	at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:116)
+	at org.eclipse.jetty.server.Server.handle(Server.java:370)
+	at org.eclipse.jetty.server.AbstractHttpConnection.handleRequest(AbstractHttpConnection.java:494)
+	at org.eclipse.jetty.server.AbstractHttpConnection.headerComplete(AbstractHttpConnection.java:971)
+	at org.eclipse.jetty.server.AbstractHttpConnection$RequestHandler.headerComplete(AbstractHttpConnection.java:1033)
+	at org.eclipse.jetty.http.HttpParser.parseNext(HttpParser.java:644)
+	at org.eclipse.jetty.http.HttpParser.parseAvailable(HttpParser.java:235)
+	at org.eclipse.jetty.server.AsyncHttpConnection.handle(AsyncHttpConnection.java:82)
+	at org.eclipse.jetty.io.nio.SelectChannelEndPoint.handle(SelectChannelEndPoint.java:696)
+	at org.eclipse.jetty.io.nio.SelectChannelEndPoint$1.run(SelectChannelEndPoint.java:53)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:608)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool$3.run(QueuedThreadPool.java:543)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: org.h2.jdbc.JdbcSQLException: Внутренняя ошибка: "java.lang.IllegalStateException: The file is locked: nio:S:/Users/Userprofi/test.mv.db [1.4.195/7]"
+General error: "java.lang.IllegalStateException: The file is locked: nio:S:/Users/Userprofi/test.mv.db [1.4.195/7]" [50000-195]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:345)
+	... 53 more
+Caused by: java.lang.IllegalStateException: The file is locked: nio:S:/Users/Userprofi/test.mv.db [1.4.195/7]
+	at org.h2.mvstore.DataUtils.newIllegalStateException(DataUtils.java:765)
+	at org.h2.mvstore.FileStore.open(FileStore.java:173)
+	at org.h2.mvstore.MVStore.<init>(MVStore.java:347)
+	... 48 more
+2017-06-12 19:14:10 database: wrong user or password; user: "USER"
+org.h2.message.DbException: Неверное имя пользователя или пароль
+Wrong user name or password [28000-195]
+	at org.h2.message.DbException.get(DbException.java:179)
+	at org.h2.message.DbException.get(DbException.java:155)
+	at org.h2.message.DbException.get(DbException.java:144)
+	at org.h2.engine.Engine.openSession(Engine.java:104)
+	at org.h2.engine.Engine.openSession(Engine.java:176)
+	at org.h2.engine.Engine.createSessionAndValidate(Engine.java:154)
+	at org.h2.engine.Engine.createSession(Engine.java:137)
+	at org.h2.engine.Engine.createSession(Engine.java:27)
+	at org.h2.engine.SessionRemote.connectEmbeddedOrServer(SessionRemote.java:354)
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:116)
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:100)
+	at org.h2.Driver.connect(Driver.java:69)
+	at org.h2.server.web.WebServer.getConnection(WebServer.java:735)
+	at org.h2.server.web.WebApp.login(WebApp.java:947)
+	at org.h2.server.web.WebApp.process(WebApp.java:210)
+	at org.h2.server.web.WebApp.processRequest(WebApp.java:169)
+	at org.h2.server.web.WebThread.process(WebThread.java:133)
+	at org.h2.server.web.WebThread.run(WebThread.java:89)
+	at java.lang.Thread.run(Unknown Source)
+Caused by: org.h2.jdbc.JdbcSQLException: Неверное имя пользователя или пароль
+Wrong user name or password [28000-195]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:345)
+	... 19 more
+2017-06-12 19:15:43 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Синтаксическая ошибка в выражении SQL "SELECT COUNT(CLIENT_FIRST_NAME) WHERE CLIENT_FIRST_NAME='John' FROM[*] CLIENTS "
+Syntax error in SQL statement "SELECT COUNT(CLIENT_FIRST_NAME) WHERE CLIENT_FIRST_NAME='John' FROM[*] CLIENTS "; SQL statement:
+SELECT COUNT(client_first_name) WHERE client_first_name='John' FROM CLIENTS [42000-195]
+2017-06-12 19:24:36 database: flush
+org.h2.message.DbException: Внутренняя ошибка: "java.lang.IllegalStateException: The file is locked: nio:S:/Users/Userprofi/test.mv.db [1.4.195/7]"
+General error: "java.lang.IllegalStateException: The file is locked: nio:S:/Users/Userprofi/test.mv.db [1.4.195/7]" [50000-195]
+	at org.h2.message.DbException.get(DbException.java:168)
+	at org.h2.message.DbException.convert(DbException.java:295)
+	at org.h2.mvstore.db.MVTableEngine$1.uncaughtException(MVTableEngine.java:95)
+	at org.h2.mvstore.MVStore.panic(MVStore.java:378)
+	at org.h2.mvstore.MVStore.<init>(MVStore.java:361)
+	at org.h2.mvstore.MVStore$Builder.open(MVStore.java:2930)
+	at org.h2.mvstore.db.MVTableEngine$Store.open(MVTableEngine.java:155)
+	at org.h2.mvstore.db.MVTableEngine.init(MVTableEngine.java:100)
+	at org.h2.engine.Database.getPageStore(Database.java:2476)
+	at org.h2.engine.Database.open(Database.java:697)
+	at org.h2.engine.Database.openDatabase(Database.java:276)
+	at org.h2.engine.Database.<init>(Database.java:270)
+	at org.h2.engine.Engine.openSession(Engine.java:64)
+	at org.h2.engine.Engine.openSession(Engine.java:176)
+	at org.h2.engine.Engine.createSessionAndValidate(Engine.java:154)
+	at org.h2.engine.Engine.createSession(Engine.java:137)
+	at org.h2.engine.Engine.createSession(Engine.java:27)
+	at org.h2.engine.SessionRemote.connectEmbeddedOrServer(SessionRemote.java:354)
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:116)
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:100)
+	at org.h2.Driver.connect(Driver.java:69)
+	at java.sql.DriverManager.getConnection(DriverManager.java:664)
+	at java.sql.DriverManager.getConnection(DriverManager.java:247)
+	at com.companyname.db.DatabaseCommands.getConnection(DatabaseCommands.java:27)
+	at com.companyname.db.DatabaseCommands.uniqueUsername(DatabaseCommands.java:72)
+	at com.companyname.server.AddClient.checkInput(AddClient.java:83)
+	at com.companyname.server.AddClient.doPost(AddClient.java:35)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:755)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:848)
+	at org.eclipse.jetty.servlet.ServletHolder.handle(ServletHolder.java:684)
+	at org.eclipse.jetty.servlet.ServletHandler.doHandle(ServletHandler.java:503)
+	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:137)
+	at org.eclipse.jetty.security.SecurityHandler.handle(SecurityHandler.java:557)
+	at org.eclipse.jetty.server.session.SessionHandler.doHandle(SessionHandler.java:231)
+	at org.eclipse.jetty.server.handler.ContextHandler.doHandle(ContextHandler.java:1086)
+	at org.eclipse.jetty.servlet.ServletHandler.doScope(ServletHandler.java:429)
+	at org.eclipse.jetty.server.session.SessionHandler.doScope(SessionHandler.java:193)
+	at org.eclipse.jetty.server.handler.ContextHandler.doScope(ContextHandler.java:1020)
+	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:135)
+	at org.eclipse.jetty.server.handler.ContextHandlerCollection.handle(ContextHandlerCollection.java:255)
+	at org.eclipse.jetty.server.handler.HandlerCollection.handle(HandlerCollection.java:154)
+	at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:116)
+	at org.eclipse.jetty.server.Server.handle(Server.java:370)
+	at org.eclipse.jetty.server.AbstractHttpConnection.handleRequest(AbstractHttpConnection.java:494)
+	at org.eclipse.jetty.server.AbstractHttpConnection.content(AbstractHttpConnection.java:982)
+	at org.eclipse.jetty.server.AbstractHttpConnection$RequestHandler.content(AbstractHttpConnection.java:1043)
+	at org.eclipse.jetty.http.HttpParser.parseNext(HttpParser.java:865)
+	at org.eclipse.jetty.http.HttpParser.parseAvailable(HttpParser.java:240)
+	at org.eclipse.jetty.server.AsyncHttpConnection.handle(AsyncHttpConnection.java:82)
+	at org.eclipse.jetty.io.nio.SelectChannelEndPoint.handle(SelectChannelEndPoint.java:696)
+	at org.eclipse.jetty.io.nio.SelectChannelEndPoint$1.run(SelectChannelEndPoint.java:53)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:608)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool$3.run(QueuedThreadPool.java:543)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: org.h2.jdbc.JdbcSQLException: Внутренняя ошибка: "java.lang.IllegalStateException: The file is locked: nio:S:/Users/Userprofi/test.mv.db [1.4.195/7]"
+General error: "java.lang.IllegalStateException: The file is locked: nio:S:/Users/Userprofi/test.mv.db [1.4.195/7]" [50000-195]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:345)
+	... 54 more
+Caused by: java.lang.IllegalStateException: The file is locked: nio:S:/Users/Userprofi/test.mv.db [1.4.195/7]
+	at org.h2.mvstore.DataUtils.newIllegalStateException(DataUtils.java:765)
+	at org.h2.mvstore.FileStore.open(FileStore.java:173)
+	at org.h2.mvstore.MVStore.<init>(MVStore.java:347)
+	... 49 more
+2017-06-12 19:26:06 database: flush
+org.h2.message.DbException: Внутренняя ошибка: "java.lang.IllegalStateException: The file is locked: nio:S:/Users/Userprofi/test.mv.db [1.4.195/7]"
+General error: "java.lang.IllegalStateException: The file is locked: nio:S:/Users/Userprofi/test.mv.db [1.4.195/7]" [50000-195]
+	at org.h2.message.DbException.get(DbException.java:168)
+	at org.h2.message.DbException.convert(DbException.java:295)
+	at org.h2.mvstore.db.MVTableEngine$1.uncaughtException(MVTableEngine.java:95)
+	at org.h2.mvstore.MVStore.panic(MVStore.java:378)
+	at org.h2.mvstore.MVStore.<init>(MVStore.java:361)
+	at org.h2.mvstore.MVStore$Builder.open(MVStore.java:2930)
+	at org.h2.mvstore.db.MVTableEngine$Store.open(MVTableEngine.java:155)
+	at org.h2.mvstore.db.MVTableEngine.init(MVTableEngine.java:100)
+	at org.h2.engine.Database.getPageStore(Database.java:2476)
+	at org.h2.engine.Database.open(Database.java:697)
+	at org.h2.engine.Database.openDatabase(Database.java:276)
+	at org.h2.engine.Database.<init>(Database.java:270)
+	at org.h2.engine.Engine.openSession(Engine.java:64)
+	at org.h2.engine.Engine.openSession(Engine.java:176)
+	at org.h2.engine.Engine.createSessionAndValidate(Engine.java:154)
+	at org.h2.engine.Engine.createSession(Engine.java:137)
+	at org.h2.engine.Engine.createSession(Engine.java:27)
+	at org.h2.engine.SessionRemote.connectEmbeddedOrServer(SessionRemote.java:354)
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:116)
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:100)
+	at org.h2.Driver.connect(Driver.java:69)
+	at java.sql.DriverManager.getConnection(DriverManager.java:664)
+	at java.sql.DriverManager.getConnection(DriverManager.java:247)
+	at com.companyname.db.DatabaseCommands.getConnection(DatabaseCommands.java:27)
+	at com.companyname.db.DatabaseCommands.uniqueUsername(DatabaseCommands.java:76)
+	at com.companyname.server.AddClient.checkInput(AddClient.java:87)
+	at com.companyname.server.AddClient.doPost(AddClient.java:35)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:755)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:848)
+	at org.eclipse.jetty.servlet.ServletHolder.handle(ServletHolder.java:684)
+	at org.eclipse.jetty.servlet.ServletHandler.doHandle(ServletHandler.java:503)
+	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:137)
+	at org.eclipse.jetty.security.SecurityHandler.handle(SecurityHandler.java:557)
+	at org.eclipse.jetty.server.session.SessionHandler.doHandle(SessionHandler.java:231)
+	at org.eclipse.jetty.server.handler.ContextHandler.doHandle(ContextHandler.java:1086)
+	at org.eclipse.jetty.servlet.ServletHandler.doScope(ServletHandler.java:429)
+	at org.eclipse.jetty.server.session.SessionHandler.doScope(SessionHandler.java:193)
+	at org.eclipse.jetty.server.handler.ContextHandler.doScope(ContextHandler.java:1020)
+	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:135)
+	at org.eclipse.jetty.server.handler.ContextHandlerCollection.handle(ContextHandlerCollection.java:255)
+	at org.eclipse.jetty.server.handler.HandlerCollection.handle(HandlerCollection.java:154)
+	at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:116)
+	at org.eclipse.jetty.server.Server.handle(Server.java:370)
+	at org.eclipse.jetty.server.AbstractHttpConnection.handleRequest(AbstractHttpConnection.java:494)
+	at org.eclipse.jetty.server.AbstractHttpConnection.content(AbstractHttpConnection.java:982)
+	at org.eclipse.jetty.server.AbstractHttpConnection$RequestHandler.content(AbstractHttpConnection.java:1043)
+	at org.eclipse.jetty.http.HttpParser.parseNext(HttpParser.java:865)
+	at org.eclipse.jetty.http.HttpParser.parseAvailable(HttpParser.java:240)
+	at org.eclipse.jetty.server.AsyncHttpConnection.handle(AsyncHttpConnection.java:82)
+	at org.eclipse.jetty.io.nio.SelectChannelEndPoint.handle(SelectChannelEndPoint.java:696)
+	at org.eclipse.jetty.io.nio.SelectChannelEndPoint$1.run(SelectChannelEndPoint.java:53)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:608)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool$3.run(QueuedThreadPool.java:543)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: org.h2.jdbc.JdbcSQLException: Внутренняя ошибка: "java.lang.IllegalStateException: The file is locked: nio:S:/Users/Userprofi/test.mv.db [1.4.195/7]"
+General error: "java.lang.IllegalStateException: The file is locked: nio:S:/Users/Userprofi/test.mv.db [1.4.195/7]" [50000-195]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:345)
+	... 54 more
+Caused by: java.lang.IllegalStateException: The file is locked: nio:S:/Users/Userprofi/test.mv.db [1.4.195/7]
+	at org.h2.mvstore.DataUtils.newIllegalStateException(DataUtils.java:765)
+	at org.h2.mvstore.FileStore.open(FileStore.java:173)
+	at org.h2.mvstore.MVStore.<init>(MVStore.java:347)
+	... 49 more
+2017-06-12 19:26:48 database: flush
+org.h2.message.DbException: Внутренняя ошибка: "java.lang.IllegalStateException: The file is locked: nio:S:/Users/Userprofi/test.mv.db [1.4.195/7]"
+General error: "java.lang.IllegalStateException: The file is locked: nio:S:/Users/Userprofi/test.mv.db [1.4.195/7]" [50000-195]
+	at org.h2.message.DbException.get(DbException.java:168)
+	at org.h2.message.DbException.convert(DbException.java:295)
+	at org.h2.mvstore.db.MVTableEngine$1.uncaughtException(MVTableEngine.java:95)
+	at org.h2.mvstore.MVStore.panic(MVStore.java:378)
+	at org.h2.mvstore.MVStore.<init>(MVStore.java:361)
+	at org.h2.mvstore.MVStore$Builder.open(MVStore.java:2930)
+	at org.h2.mvstore.db.MVTableEngine$Store.open(MVTableEngine.java:155)
+	at org.h2.mvstore.db.MVTableEngine.init(MVTableEngine.java:100)
+	at org.h2.engine.Database.getPageStore(Database.java:2476)
+	at org.h2.engine.Database.open(Database.java:697)
+	at org.h2.engine.Database.openDatabase(Database.java:276)
+	at org.h2.engine.Database.<init>(Database.java:270)
+	at org.h2.engine.Engine.openSession(Engine.java:64)
+	at org.h2.engine.Engine.openSession(Engine.java:176)
+	at org.h2.engine.Engine.createSessionAndValidate(Engine.java:154)
+	at org.h2.engine.Engine.createSession(Engine.java:137)
+	at org.h2.engine.Engine.createSession(Engine.java:27)
+	at org.h2.engine.SessionRemote.connectEmbeddedOrServer(SessionRemote.java:354)
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:116)
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:100)
+	at org.h2.Driver.connect(Driver.java:69)
+	at java.sql.DriverManager.getConnection(DriverManager.java:664)
+	at java.sql.DriverManager.getConnection(DriverManager.java:247)
+	at com.companyname.db.DatabaseCommands.getConnection(DatabaseCommands.java:27)
+	at com.companyname.db.DatabaseCommands.uniqueUsername(DatabaseCommands.java:76)
+	at com.companyname.server.AddClient.checkInput(AddClient.java:87)
+	at com.companyname.server.AddClient.doPost(AddClient.java:35)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:755)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:848)
+	at org.eclipse.jetty.servlet.ServletHolder.handle(ServletHolder.java:684)
+	at org.eclipse.jetty.servlet.ServletHandler.doHandle(ServletHandler.java:503)
+	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:137)
+	at org.eclipse.jetty.security.SecurityHandler.handle(SecurityHandler.java:557)
+	at org.eclipse.jetty.server.session.SessionHandler.doHandle(SessionHandler.java:231)
+	at org.eclipse.jetty.server.handler.ContextHandler.doHandle(ContextHandler.java:1086)
+	at org.eclipse.jetty.servlet.ServletHandler.doScope(ServletHandler.java:429)
+	at org.eclipse.jetty.server.session.SessionHandler.doScope(SessionHandler.java:193)
+	at org.eclipse.jetty.server.handler.ContextHandler.doScope(ContextHandler.java:1020)
+	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:135)
+	at org.eclipse.jetty.server.handler.ContextHandlerCollection.handle(ContextHandlerCollection.java:255)
+	at org.eclipse.jetty.server.handler.HandlerCollection.handle(HandlerCollection.java:154)
+	at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:116)
+	at org.eclipse.jetty.server.Server.handle(Server.java:370)
+	at org.eclipse.jetty.server.AbstractHttpConnection.handleRequest(AbstractHttpConnection.java:494)
+	at org.eclipse.jetty.server.AbstractHttpConnection.content(AbstractHttpConnection.java:982)
+	at org.eclipse.jetty.server.AbstractHttpConnection$RequestHandler.content(AbstractHttpConnection.java:1043)
+	at org.eclipse.jetty.http.HttpParser.parseNext(HttpParser.java:865)
+	at org.eclipse.jetty.http.HttpParser.parseAvailable(HttpParser.java:240)
+	at org.eclipse.jetty.server.AsyncHttpConnection.handle(AsyncHttpConnection.java:82)
+	at org.eclipse.jetty.io.nio.SelectChannelEndPoint.handle(SelectChannelEndPoint.java:696)
+	at org.eclipse.jetty.io.nio.SelectChannelEndPoint$1.run(SelectChannelEndPoint.java:53)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:608)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool$3.run(QueuedThreadPool.java:543)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: org.h2.jdbc.JdbcSQLException: Внутренняя ошибка: "java.lang.IllegalStateException: The file is locked: nio:S:/Users/Userprofi/test.mv.db [1.4.195/7]"
+General error: "java.lang.IllegalStateException: The file is locked: nio:S:/Users/Userprofi/test.mv.db [1.4.195/7]" [50000-195]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:345)
+	... 54 more
+Caused by: java.lang.IllegalStateException: The file is locked: nio:S:/Users/Userprofi/test.mv.db [1.4.195/7]
+	at org.h2.mvstore.DataUtils.newIllegalStateException(DataUtils.java:765)
+	at org.h2.mvstore.FileStore.open(FileStore.java:173)
+	at org.h2.mvstore.MVStore.<init>(MVStore.java:347)
+	... 49 more
+2017-06-12 19:27:05 database: flush
+org.h2.message.DbException: Внутренняя ошибка: "java.lang.IllegalStateException: The file is locked: nio:S:/Users/Userprofi/test.mv.db [1.4.195/7]"
+General error: "java.lang.IllegalStateException: The file is locked: nio:S:/Users/Userprofi/test.mv.db [1.4.195/7]" [50000-195]
+	at org.h2.message.DbException.get(DbException.java:168)
+	at org.h2.message.DbException.convert(DbException.java:295)
+	at org.h2.mvstore.db.MVTableEngine$1.uncaughtException(MVTableEngine.java:95)
+	at org.h2.mvstore.MVStore.panic(MVStore.java:378)
+	at org.h2.mvstore.MVStore.<init>(MVStore.java:361)
+	at org.h2.mvstore.MVStore$Builder.open(MVStore.java:2930)
+	at org.h2.mvstore.db.MVTableEngine$Store.open(MVTableEngine.java:155)
+	at org.h2.mvstore.db.MVTableEngine.init(MVTableEngine.java:100)
+	at org.h2.engine.Database.getPageStore(Database.java:2476)
+	at org.h2.engine.Database.open(Database.java:697)
+	at org.h2.engine.Database.openDatabase(Database.java:276)
+	at org.h2.engine.Database.<init>(Database.java:270)
+	at org.h2.engine.Engine.openSession(Engine.java:64)
+	at org.h2.engine.Engine.openSession(Engine.java:176)
+	at org.h2.engine.Engine.createSessionAndValidate(Engine.java:154)
+	at org.h2.engine.Engine.createSession(Engine.java:137)
+	at org.h2.engine.Engine.createSession(Engine.java:27)
+	at org.h2.engine.SessionRemote.connectEmbeddedOrServer(SessionRemote.java:354)
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:116)
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:100)
+	at org.h2.Driver.connect(Driver.java:69)
+	at java.sql.DriverManager.getConnection(DriverManager.java:664)
+	at java.sql.DriverManager.getConnection(DriverManager.java:247)
+	at com.companyname.db.DatabaseCommands.getConnection(DatabaseCommands.java:27)
+	at com.companyname.db.DatabaseCommands.uniqueUsername(DatabaseCommands.java:76)
+	at com.companyname.server.AddClient.checkInput(AddClient.java:87)
+	at com.companyname.server.AddClient.doPost(AddClient.java:35)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:755)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:848)
+	at org.eclipse.jetty.servlet.ServletHolder.handle(ServletHolder.java:684)
+	at org.eclipse.jetty.servlet.ServletHandler.doHandle(ServletHandler.java:503)
+	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:137)
+	at org.eclipse.jetty.security.SecurityHandler.handle(SecurityHandler.java:557)
+	at org.eclipse.jetty.server.session.SessionHandler.doHandle(SessionHandler.java:231)
+	at org.eclipse.jetty.server.handler.ContextHandler.doHandle(ContextHandler.java:1086)
+	at org.eclipse.jetty.servlet.ServletHandler.doScope(ServletHandler.java:429)
+	at org.eclipse.jetty.server.session.SessionHandler.doScope(SessionHandler.java:193)
+	at org.eclipse.jetty.server.handler.ContextHandler.doScope(ContextHandler.java:1020)
+	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:135)
+	at org.eclipse.jetty.server.handler.ContextHandlerCollection.handle(ContextHandlerCollection.java:255)
+	at org.eclipse.jetty.server.handler.HandlerCollection.handle(HandlerCollection.java:154)
+	at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:116)
+	at org.eclipse.jetty.server.Server.handle(Server.java:370)
+	at org.eclipse.jetty.server.AbstractHttpConnection.handleRequest(AbstractHttpConnection.java:494)
+	at org.eclipse.jetty.server.AbstractHttpConnection.content(AbstractHttpConnection.java:982)
+	at org.eclipse.jetty.server.AbstractHttpConnection$RequestHandler.content(AbstractHttpConnection.java:1043)
+	at org.eclipse.jetty.http.HttpParser.parseNext(HttpParser.java:865)
+	at org.eclipse.jetty.http.HttpParser.parseAvailable(HttpParser.java:240)
+	at org.eclipse.jetty.server.AsyncHttpConnection.handle(AsyncHttpConnection.java:82)
+	at org.eclipse.jetty.io.nio.SelectChannelEndPoint.handle(SelectChannelEndPoint.java:696)
+	at org.eclipse.jetty.io.nio.SelectChannelEndPoint$1.run(SelectChannelEndPoint.java:53)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:608)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool$3.run(QueuedThreadPool.java:543)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: org.h2.jdbc.JdbcSQLException: Внутренняя ошибка: "java.lang.IllegalStateException: The file is locked: nio:S:/Users/Userprofi/test.mv.db [1.4.195/7]"
+General error: "java.lang.IllegalStateException: The file is locked: nio:S:/Users/Userprofi/test.mv.db [1.4.195/7]" [50000-195]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:345)
+	... 54 more
+Caused by: java.lang.IllegalStateException: The file is locked: nio:S:/Users/Userprofi/test.mv.db [1.4.195/7]
+	at org.h2.mvstore.DataUtils.newIllegalStateException(DataUtils.java:765)
+	at org.h2.mvstore.FileStore.open(FileStore.java:173)
+	at org.h2.mvstore.MVStore.<init>(MVStore.java:347)
+	... 49 more
+2017-06-12 19:28:29 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Нет данных
+No data is available [2000-195]
+2017-06-12 19:31:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Нет данных
+No data is available [2000-195]
+2017-06-12 20:14:37 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Таблица "CLIENT" не найдена
+Table "CLIENT" not found; SQL statement:
+INSERT INTO CLIENT (client_first_name, client_last_name, client_date_of_birth, client_username, client_password) VALUES (?, ?, ?, ?, ?) [42102-195]
+2017-06-12 20:15:12 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Метод разрешен только для запросов. Используйте execute или executeUpdate вместо executeQuery
+Method is only allowed for a query. Use execute or executeUpdate instead of executeQuery; SQL statement:
+INSERT INTO CLIENTS (client_first_name, client_last_name, client_date_of_birth, client_username, client_password) VALUES (?, ?, ?, ?, ?) [90002-195]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:345)
+	at org.h2.message.DbException.get(DbException.java:179)
+	at org.h2.message.DbException.get(DbException.java:155)
+	at org.h2.message.DbException.get(DbException.java:144)
+	at org.h2.command.Prepared.query(Prepared.java:212)
+	at org.h2.command.CommandContainer.query(CommandContainer.java:113)
+	at org.h2.command.Command.executeQuery(Command.java:201)
+	at org.h2.jdbc.JdbcPreparedStatement.executeQuery(JdbcPreparedStatement.java:111)
+	at com.companyname.db.DatabaseCommands.addClient(DatabaseCommands.java:114)
+	at com.companyname.server.AddClient.doPost(AddClient.java:42)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:755)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:848)
+	at org.eclipse.jetty.servlet.ServletHolder.handle(ServletHolder.java:684)
+	at org.eclipse.jetty.servlet.ServletHandler.doHandle(ServletHandler.java:503)
+	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:137)
+	at org.eclipse.jetty.security.SecurityHandler.handle(SecurityHandler.java:557)
+	at org.eclipse.jetty.server.session.SessionHandler.doHandle(SessionHandler.java:231)
+	at org.eclipse.jetty.server.handler.ContextHandler.doHandle(ContextHandler.java:1086)
+	at org.eclipse.jetty.servlet.ServletHandler.doScope(ServletHandler.java:429)
+	at org.eclipse.jetty.server.session.SessionHandler.doScope(SessionHandler.java:193)
+	at org.eclipse.jetty.server.handler.ContextHandler.doScope(ContextHandler.java:1020)
+	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:135)
+	at org.eclipse.jetty.server.handler.ContextHandlerCollection.handle(ContextHandlerCollection.java:255)
+	at org.eclipse.jetty.server.handler.HandlerCollection.handle(HandlerCollection.java:154)
+	at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:116)
+	at org.eclipse.jetty.server.Server.handle(Server.java:370)
+	at org.eclipse.jetty.server.AbstractHttpConnection.handleRequest(AbstractHttpConnection.java:494)
+	at org.eclipse.jetty.server.AbstractHttpConnection.content(AbstractHttpConnection.java:982)
+	at org.eclipse.jetty.server.AbstractHttpConnection$RequestHandler.content(AbstractHttpConnection.java:1043)
+	at org.eclipse.jetty.http.HttpParser.parseNext(HttpParser.java:865)
+	at org.eclipse.jetty.http.HttpParser.parseAvailable(HttpParser.java:240)
+	at org.eclipse.jetty.server.AsyncHttpConnection.handle(AsyncHttpConnection.java:82)
+	at org.eclipse.jetty.io.nio.SelectChannelEndPoint.handle(SelectChannelEndPoint.java:696)
+	at org.eclipse.jetty.io.nio.SelectChannelEndPoint$1.run(SelectChannelEndPoint.java:53)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:608)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool$3.run(QueuedThreadPool.java:543)
+	at java.lang.Thread.run(Thread.java:745)
+2017-06-12 20:15:45 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Недостаточно прав на объект "PUBLIC.CLIENTS"
+Not enough rights for object "PUBLIC.CLIENTS"; SQL statement:
+INSERT INTO CLIENTS (client_first_name, client_last_name, client_date_of_birth, client_username, client_password) VALUES (?, ?, ?, ?, ?) [90096-195]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:345)
+	at org.h2.message.DbException.get(DbException.java:179)
+	at org.h2.message.DbException.get(DbException.java:155)
+	at org.h2.engine.User.checkRight(User.java:101)
+	at org.h2.command.dml.Insert.insertRows(Insert.java:123)
+	at org.h2.command.dml.Insert.update(Insert.java:114)
+	at org.h2.command.CommandContainer.update(CommandContainer.java:101)
+	at org.h2.command.Command.executeUpdate(Command.java:260)
+	at org.h2.jdbc.JdbcPreparedStatement.executeUpdateInternal(JdbcPreparedStatement.java:164)
+	at org.h2.jdbc.JdbcPreparedStatement.executeUpdate(JdbcPreparedStatement.java:150)
+	at com.companyname.db.DatabaseCommands.addClient(DatabaseCommands.java:114)
+	at com.companyname.server.AddClient.doPost(AddClient.java:42)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:755)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:848)
+	at org.eclipse.jetty.servlet.ServletHolder.handle(ServletHolder.java:684)
+	at org.eclipse.jetty.servlet.ServletHandler.doHandle(ServletHandler.java:503)
+	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:137)
+	at org.eclipse.jetty.security.SecurityHandler.handle(SecurityHandler.java:557)
+	at org.eclipse.jetty.server.session.SessionHandler.doHandle(SessionHandler.java:231)
+	at org.eclipse.jetty.server.handler.ContextHandler.doHandle(ContextHandler.java:1086)
+	at org.eclipse.jetty.servlet.ServletHandler.doScope(ServletHandler.java:429)
+	at org.eclipse.jetty.server.session.SessionHandler.doScope(SessionHandler.java:193)
+	at org.eclipse.jetty.server.handler.ContextHandler.doScope(ContextHandler.java:1020)
+	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:135)
+	at org.eclipse.jetty.server.handler.ContextHandlerCollection.handle(ContextHandlerCollection.java:255)
+	at org.eclipse.jetty.server.handler.HandlerCollection.handle(HandlerCollection.java:154)
+	at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:116)
+	at org.eclipse.jetty.server.Server.handle(Server.java:370)
+	at org.eclipse.jetty.server.AbstractHttpConnection.handleRequest(AbstractHttpConnection.java:494)
+	at org.eclipse.jetty.server.AbstractHttpConnection.content(AbstractHttpConnection.java:982)
+	at org.eclipse.jetty.server.AbstractHttpConnection$RequestHandler.content(AbstractHttpConnection.java:1043)
+	at org.eclipse.jetty.http.HttpParser.parseNext(HttpParser.java:865)
+	at org.eclipse.jetty.http.HttpParser.parseAvailable(HttpParser.java:240)
+	at org.eclipse.jetty.server.AsyncHttpConnection.handle(AsyncHttpConnection.java:82)
+	at org.eclipse.jetty.io.nio.SelectChannelEndPoint.handle(SelectChannelEndPoint.java:696)
+	at org.eclipse.jetty.io.nio.SelectChannelEndPoint$1.run(SelectChannelEndPoint.java:53)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:608)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool$3.run(QueuedThreadPool.java:543)
+	at java.lang.Thread.run(Thread.java:745)
+2017-06-12 20:16:21 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Синтаксическая ошибка в выражении SQL "REVOTE[*] INSERT FROM USER"; ожидалось "ROLLBACK, REVOKE, RUNSCRIPT, RELEASE, REPLACE, {"
+Syntax error in SQL statement "REVOTE[*] INSERT FROM USER"; expected "ROLLBACK, REVOKE, RUNSCRIPT, RELEASE, REPLACE, {"; SQL statement:
+REVOTE INSERT FROM USER [42001-195]
+2017-06-12 20:20:17 jdbc[6]: null
+org.h2.message.DbException: Незакрытое приложением соединение уничтожено сборщиком мусора
+The connection was not closed by the application and is garbage collected [90018-195]
+	at org.h2.message.DbException.get(DbException.java:179)
+	at org.h2.message.DbException.get(DbException.java:155)
+	at org.h2.message.DbException.get(DbException.java:144)
+	at org.h2.jdbc.JdbcConnection.closeOld(JdbcConnection.java:185)
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:127)
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:100)
+	at org.h2.Driver.connect(Driver.java:69)
+	at java.sql.DriverManager.getConnection(DriverManager.java:664)
+	at java.sql.DriverManager.getConnection(DriverManager.java:247)
+	at com.companyname.db.DatabaseCommands.getConnection(DatabaseCommands.java:32)
+	at com.companyname.db.DatabaseCommands.getClients(DatabaseCommands.java:50)
+	at com.companyname.server.ClientOverview.doGet(ClientOverview.java:26)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:735)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:848)
+	at org.eclipse.jetty.servlet.ServletHolder.handle(ServletHolder.java:684)
+	at org.eclipse.jetty.servlet.ServletHandler.doHandle(ServletHandler.java:503)
+	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:137)
+	at org.eclipse.jetty.security.SecurityHandler.handle(SecurityHandler.java:557)
+	at org.eclipse.jetty.server.session.SessionHandler.doHandle(SessionHandler.java:231)
+	at org.eclipse.jetty.server.handler.ContextHandler.doHandle(ContextHandler.java:1086)
+	at org.eclipse.jetty.servlet.ServletHandler.doScope(ServletHandler.java:429)
+	at org.eclipse.jetty.server.session.SessionHandler.doScope(SessionHandler.java:193)
+	at org.eclipse.jetty.server.handler.ContextHandler.doScope(ContextHandler.java:1020)
+	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:135)
+	at org.eclipse.jetty.server.handler.ContextHandlerCollection.handle(ContextHandlerCollection.java:255)
+	at org.eclipse.jetty.server.handler.HandlerCollection.handle(HandlerCollection.java:154)
+	at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:116)
+	at org.eclipse.jetty.server.Server.handle(Server.java:370)
+	at org.eclipse.jetty.server.AbstractHttpConnection.handleRequest(AbstractHttpConnection.java:494)
+	at org.eclipse.jetty.server.AbstractHttpConnection.headerComplete(AbstractHttpConnection.java:971)
+	at org.eclipse.jetty.server.AbstractHttpConnection$RequestHandler.headerComplete(AbstractHttpConnection.java:1033)
+	at org.eclipse.jetty.http.HttpParser.parseNext(HttpParser.java:644)
+	at org.eclipse.jetty.http.HttpParser.parseAvailable(HttpParser.java:235)
+	at org.eclipse.jetty.server.AsyncHttpConnection.handle(AsyncHttpConnection.java:82)
+	at org.eclipse.jetty.io.nio.SelectChannelEndPoint.handle(SelectChannelEndPoint.java:696)
+	at org.eclipse.jetty.io.nio.SelectChannelEndPoint$1.run(SelectChannelEndPoint.java:53)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:608)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool$3.run(QueuedThreadPool.java:543)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: org.h2.jdbc.JdbcSQLException: Незакрытое приложением соединение уничтожено сборщиком мусора
+The connection was not closed by the application and is garbage collected [90018-195]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:345)
+	... 39 more
+2017-06-12 20:20:17 jdbc[6]: null
+org.h2.message.DbException: Незакрытое приложением соединение уничтожено сборщиком мусора
+The connection was not closed by the application and is garbage collected [90018-195]
+	at org.h2.message.DbException.get(DbException.java:179)
+	at org.h2.message.DbException.get(DbException.java:155)
+	at org.h2.message.DbException.get(DbException.java:144)
+	at org.h2.jdbc.JdbcConnection.closeOld(JdbcConnection.java:185)
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:127)
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:100)
+	at org.h2.Driver.connect(Driver.java:69)
+	at java.sql.DriverManager.getConnection(DriverManager.java:664)
+	at java.sql.DriverManager.getConnection(DriverManager.java:247)
+	at com.companyname.db.DatabaseCommands.getConnection(DatabaseCommands.java:32)
+	at com.companyname.db.DatabaseCommands.getClients(DatabaseCommands.java:50)
+	at com.companyname.server.ClientOverview.doGet(ClientOverview.java:26)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:735)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:848)
+	at org.eclipse.jetty.servlet.ServletHolder.handle(ServletHolder.java:684)
+	at org.eclipse.jetty.servlet.ServletHandler.doHandle(ServletHandler.java:503)
+	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:137)
+	at org.eclipse.jetty.security.SecurityHandler.handle(SecurityHandler.java:557)
+	at org.eclipse.jetty.server.session.SessionHandler.doHandle(SessionHandler.java:231)
+	at org.eclipse.jetty.server.handler.ContextHandler.doHandle(ContextHandler.java:1086)
+	at org.eclipse.jetty.servlet.ServletHandler.doScope(ServletHandler.java:429)
+	at org.eclipse.jetty.server.session.SessionHandler.doScope(SessionHandler.java:193)
+	at org.eclipse.jetty.server.handler.ContextHandler.doScope(ContextHandler.java:1020)
+	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:135)
+	at org.eclipse.jetty.server.handler.ContextHandlerCollection.handle(ContextHandlerCollection.java:255)
+	at org.eclipse.jetty.server.handler.HandlerCollection.handle(HandlerCollection.java:154)
+	at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:116)
+	at org.eclipse.jetty.server.Server.handle(Server.java:370)
+	at org.eclipse.jetty.server.AbstractHttpConnection.handleRequest(AbstractHttpConnection.java:494)
+	at org.eclipse.jetty.server.AbstractHttpConnection.headerComplete(AbstractHttpConnection.java:971)
+	at org.eclipse.jetty.server.AbstractHttpConnection$RequestHandler.headerComplete(AbstractHttpConnection.java:1033)
+	at org.eclipse.jetty.http.HttpParser.parseNext(HttpParser.java:644)
+	at org.eclipse.jetty.http.HttpParser.parseAvailable(HttpParser.java:235)
+	at org.eclipse.jetty.server.AsyncHttpConnection.handle(AsyncHttpConnection.java:82)
+	at org.eclipse.jetty.io.nio.SelectChannelEndPoint.handle(SelectChannelEndPoint.java:696)
+	at org.eclipse.jetty.io.nio.SelectChannelEndPoint$1.run(SelectChannelEndPoint.java:53)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:608)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool$3.run(QueuedThreadPool.java:543)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: org.h2.jdbc.JdbcSQLException: Незакрытое приложением соединение уничтожено сборщиком мусора
+The connection was not closed by the application and is garbage collected [90018-195]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:345)
+	... 39 more
+2017-06-12 20:20:17 jdbc[6]: null
+org.h2.message.DbException: Незакрытое приложением соединение уничтожено сборщиком мусора
+The connection was not closed by the application and is garbage collected [90018-195]
+	at org.h2.message.DbException.get(DbException.java:179)
+	at org.h2.message.DbException.get(DbException.java:155)
+	at org.h2.message.DbException.get(DbException.java:144)
+	at org.h2.jdbc.JdbcConnection.closeOld(JdbcConnection.java:185)
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:127)
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:100)
+	at org.h2.Driver.connect(Driver.java:69)
+	at java.sql.DriverManager.getConnection(DriverManager.java:664)
+	at java.sql.DriverManager.getConnection(DriverManager.java:247)
+	at com.companyname.db.DatabaseCommands.getConnection(DatabaseCommands.java:32)
+	at com.companyname.db.DatabaseCommands.getClients(DatabaseCommands.java:50)
+	at com.companyname.server.ClientOverview.doGet(ClientOverview.java:26)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:735)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:848)
+	at org.eclipse.jetty.servlet.ServletHolder.handle(ServletHolder.java:684)
+	at org.eclipse.jetty.servlet.ServletHandler.doHandle(ServletHandler.java:503)
+	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:137)
+	at org.eclipse.jetty.security.SecurityHandler.handle(SecurityHandler.java:557)
+	at org.eclipse.jetty.server.session.SessionHandler.doHandle(SessionHandler.java:231)
+	at org.eclipse.jetty.server.handler.ContextHandler.doHandle(ContextHandler.java:1086)
+	at org.eclipse.jetty.servlet.ServletHandler.doScope(ServletHandler.java:429)
+	at org.eclipse.jetty.server.session.SessionHandler.doScope(SessionHandler.java:193)
+	at org.eclipse.jetty.server.handler.ContextHandler.doScope(ContextHandler.java:1020)
+	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:135)
+	at org.eclipse.jetty.server.handler.ContextHandlerCollection.handle(ContextHandlerCollection.java:255)
+	at org.eclipse.jetty.server.handler.HandlerCollection.handle(HandlerCollection.java:154)
+	at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:116)
+	at org.eclipse.jetty.server.Server.handle(Server.java:370)
+	at org.eclipse.jetty.server.AbstractHttpConnection.handleRequest(AbstractHttpConnection.java:494)
+	at org.eclipse.jetty.server.AbstractHttpConnection.headerComplete(AbstractHttpConnection.java:971)
+	at org.eclipse.jetty.server.AbstractHttpConnection$RequestHandler.headerComplete(AbstractHttpConnection.java:1033)
+	at org.eclipse.jetty.http.HttpParser.parseNext(HttpParser.java:644)
+	at org.eclipse.jetty.http.HttpParser.parseAvailable(HttpParser.java:235)
+	at org.eclipse.jetty.server.AsyncHttpConnection.handle(AsyncHttpConnection.java:82)
+	at org.eclipse.jetty.io.nio.SelectChannelEndPoint.handle(SelectChannelEndPoint.java:696)
+	at org.eclipse.jetty.io.nio.SelectChannelEndPoint$1.run(SelectChannelEndPoint.java:53)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:608)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool$3.run(QueuedThreadPool.java:543)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: org.h2.jdbc.JdbcSQLException: Незакрытое приложением соединение уничтожено сборщиком мусора
+The connection was not closed by the application and is garbage collected [90018-195]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:345)
+	... 39 more
+2017-06-13 18:41:35 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Таблица "CLIENT_FIRST_NAME" не найдена
+Table "CLIENT_FIRST_NAME" not found; SQL statement:
+UPDATE client_first_name = ?, client_last_name = ?, client_date_of_birth = ?, client_username = ?, client_password = ? WHERE client_id = ? [42102-195]
+2017-06-13 18:52:33 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Таблица "CLIENT_FIRST_NAME" не найдена
+Table "CLIENT_FIRST_NAME" not found; SQL statement:
+UPDATE client_first_name = ?, client_last_name = ?, client_date_of_birth = ?, client_username = ?, client_password = ? WHERE client_id = ? [42102-195]
+2017-06-13 18:54:33 jdbc[4]: null
+org.h2.message.DbException: Незакрытое приложением соединение уничтожено сборщиком мусора
+The connection was not closed by the application and is garbage collected [90018-195]
+	at org.h2.message.DbException.get(DbException.java:179)
+	at org.h2.message.DbException.get(DbException.java:155)
+	at org.h2.message.DbException.get(DbException.java:144)
+	at org.h2.jdbc.JdbcConnection.closeOld(JdbcConnection.java:185)
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:127)
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:100)
+	at org.h2.Driver.connect(Driver.java:69)
+	at java.sql.DriverManager.getConnection(DriverManager.java:664)
+	at java.sql.DriverManager.getConnection(DriverManager.java:247)
+	at com.companyname.db.DatabaseCommands.getConnection(DatabaseCommands.java:32)
+	at com.companyname.db.DatabaseCommands.getClientByID(DatabaseCommands.java:153)
+	at com.companyname.server.EditClient.doPost(EditClient.java:42)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:755)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:848)
+	at org.eclipse.jetty.servlet.ServletHolder.handle(ServletHolder.java:684)
+	at org.eclipse.jetty.servlet.ServletHandler.doHandle(ServletHandler.java:503)
+	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:137)
+	at org.eclipse.jetty.security.SecurityHandler.handle(SecurityHandler.java:557)
+	at org.eclipse.jetty.server.session.SessionHandler.doHandle(SessionHandler.java:231)
+	at org.eclipse.jetty.server.handler.ContextHandler.doHandle(ContextHandler.java:1086)
+	at org.eclipse.jetty.servlet.ServletHandler.doScope(ServletHandler.java:429)
+	at org.eclipse.jetty.server.session.SessionHandler.doScope(SessionHandler.java:193)
+	at org.eclipse.jetty.server.handler.ContextHandler.doScope(ContextHandler.java:1020)
+	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:135)
+	at org.eclipse.jetty.server.handler.ContextHandlerCollection.handle(ContextHandlerCollection.java:255)
+	at org.eclipse.jetty.server.handler.HandlerCollection.handle(HandlerCollection.java:154)
+	at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:116)
+	at org.eclipse.jetty.server.Server.handle(Server.java:370)
+	at org.eclipse.jetty.server.AbstractHttpConnection.handleRequest(AbstractHttpConnection.java:494)
+	at org.eclipse.jetty.server.AbstractHttpConnection.content(AbstractHttpConnection.java:982)
+	at org.eclipse.jetty.server.AbstractHttpConnection$RequestHandler.content(AbstractHttpConnection.java:1043)
+	at org.eclipse.jetty.http.HttpParser.parseNext(HttpParser.java:865)
+	at org.eclipse.jetty.http.HttpParser.parseAvailable(HttpParser.java:240)
+	at org.eclipse.jetty.server.AsyncHttpConnection.handle(AsyncHttpConnection.java:82)
+	at org.eclipse.jetty.io.nio.SelectChannelEndPoint.handle(SelectChannelEndPoint.java:696)
+	at org.eclipse.jetty.io.nio.SelectChannelEndPoint$1.run(SelectChannelEndPoint.java:53)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:608)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool$3.run(QueuedThreadPool.java:543)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: org.h2.jdbc.JdbcSQLException: Незакрытое приложением соединение уничтожено сборщиком мусора
+The connection was not closed by the application and is garbage collected [90018-195]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:345)
+	... 39 more
+2017-06-13 18:54:33 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Таблица "CLIENT_FIRST_NAME" не найдена
+Table "CLIENT_FIRST_NAME" not found; SQL statement:
+UPDATE client_first_name = ?, client_last_name = ?, client_date_of_birth = ?, client_username = ?, client_password = ? WHERE client_id = ? [42102-195]
+2017-06-13 19:23:02 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Параметр "#6" не установлен
+Parameter "#6" is not set; SQL statement:
+UPDATE CLIENTS SET client_first_name = ?, client_last_name = ?, client_date_of_birth = ?, client_username = ?, client_password = ? WHERE client_id = ? [90012-195]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:345)
+	at org.h2.message.DbException.get(DbException.java:179)
+	at org.h2.message.DbException.get(DbException.java:155)
+	at org.h2.expression.Parameter.checkSet(Parameter.java:81)
+	at org.h2.command.Prepared.checkParameters(Prepared.java:164)
+	at org.h2.command.CommandContainer.update(CommandContainer.java:100)
+	at org.h2.command.Command.executeUpdate(Command.java:260)
+	at org.h2.jdbc.JdbcPreparedStatement.executeUpdateInternal(JdbcPreparedStatement.java:164)
+	at org.h2.jdbc.JdbcPreparedStatement.executeUpdate(JdbcPreparedStatement.java:150)
+	at com.companyname.db.DatabaseCommands.editClientByID(DatabaseCommands.java:144)
+	at com.companyname.server.EditClient.doPost(EditClient.java:73)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:755)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:848)
+	at org.eclipse.jetty.servlet.ServletHolder.handle(ServletHolder.java:684)
+	at org.eclipse.jetty.servlet.ServletHandler.doHandle(ServletHandler.java:503)
+	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:137)
+	at org.eclipse.jetty.security.SecurityHandler.handle(SecurityHandler.java:557)
+	at org.eclipse.jetty.server.session.SessionHandler.doHandle(SessionHandler.java:231)
+	at org.eclipse.jetty.server.handler.ContextHandler.doHandle(ContextHandler.java:1086)
+	at org.eclipse.jetty.servlet.ServletHandler.doScope(ServletHandler.java:429)
+	at org.eclipse.jetty.server.session.SessionHandler.doScope(SessionHandler.java:193)
+	at org.eclipse.jetty.server.handler.ContextHandler.doScope(ContextHandler.java:1020)
+	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:135)
+	at org.eclipse.jetty.server.handler.ContextHandlerCollection.handle(ContextHandlerCollection.java:255)
+	at org.eclipse.jetty.server.handler.HandlerCollection.handle(HandlerCollection.java:154)
+	at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:116)
+	at org.eclipse.jetty.server.Server.handle(Server.java:370)
+	at org.eclipse.jetty.server.AbstractHttpConnection.handleRequest(AbstractHttpConnection.java:494)
+	at org.eclipse.jetty.server.AbstractHttpConnection.content(AbstractHttpConnection.java:982)
+	at org.eclipse.jetty.server.AbstractHttpConnection$RequestHandler.content(AbstractHttpConnection.java:1043)
+	at org.eclipse.jetty.http.HttpParser.parseNext(HttpParser.java:865)
+	at org.eclipse.jetty.http.HttpParser.parseAvailable(HttpParser.java:240)
+	at org.eclipse.jetty.server.AsyncHttpConnection.handle(AsyncHttpConnection.java:82)
+	at org.eclipse.jetty.io.nio.SelectChannelEndPoint.handle(SelectChannelEndPoint.java:696)
+	at org.eclipse.jetty.io.nio.SelectChannelEndPoint$1.run(SelectChannelEndPoint.java:53)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:608)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool$3.run(QueuedThreadPool.java:543)
+	at java.lang.Thread.run(Thread.java:745)
+2017-06-15 19:12:12 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Функция "ACCOUNTFIELDCHARS" должна возвращать набор записей
+Function "ACCOUNTFIELDCHARS" must return a result set; SQL statement:
+SELECT * FROM accountFieldChars() [90000-195]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:345)
+	at org.h2.message.DbException.get(DbException.java:179)
+	at org.h2.message.DbException.get(DbException.java:155)
+	at org.h2.table.FunctionTable.<init>(FunctionTable.java:55)
+	at org.h2.command.Parser.readTableFilter(Parser.java:1252)
+	at org.h2.command.Parser.parseSelectSimpleFromPart(Parser.java:1940)
+	at org.h2.command.Parser.parseSelectSimple(Parser.java:2089)
+	at org.h2.command.Parser.parseSelectSub(Parser.java:1934)
+	at org.h2.command.Parser.parseSelectUnion(Parser.java:1749)
+	at org.h2.command.Parser.parseSelect(Parser.java:1737)
+	at org.h2.command.Parser.parsePrepared(Parser.java:448)
+	at org.h2.command.Parser.parse(Parser.java:320)
+	at org.h2.command.Parser.parse(Parser.java:292)
+	at org.h2.command.Parser.prepareCommand(Parser.java:257)
+	at org.h2.engine.Session.prepareLocal(Session.java:573)
+	at org.h2.engine.Session.prepareCommand(Session.java:514)
+	at org.h2.jdbc.JdbcConnection.prepareCommand(JdbcConnection.java:1204)
+	at org.h2.jdbc.JdbcStatement.executeInternal(JdbcStatement.java:177)
+	at org.h2.jdbc.JdbcStatement.execute(JdbcStatement.java:165)
+	at org.h2.server.web.WebApp.getResult(WebApp.java:1380)
+	at org.h2.server.web.WebApp.query(WebApp.java:1053)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:1015)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:1002)
+	at org.h2.server.web.WebThread.process(WebThread.java:164)
+	at org.h2.server.web.WebThread.run(WebThread.java:89)
+	at java.lang.Thread.run(Unknown Source)
+2017-06-15 19:12:26 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Синтаксическая ошибка в выражении SQL "CREATE ALIAS TEST AS [*]"; ожидалось "NOT, EXISTS, INTERSECTS"
+Syntax error in SQL statement "CREATE ALIAS TEST AS [*]"; expected "NOT, EXISTS, INTERSECTS"; SQL statement:
+CREATE ALIAS test AS [42001-195]
+2017-06-15 19:12:38 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Синтаксическая ошибка в выражении SQL "org\h2\dynamic\TEST.java:7: error: ';' expected
+String test()
+             ^
+1 error
+"
+Syntax error in SQL statement "org\h2\dynamic\TEST.java:7: error: ';' expected
+String test()
+             ^
+1 error
+"; SQL statement:
+CREATE ALIAS test AS
+$$
+String test()
+$$ [42000-195]
+2017-06-15 19:12:58 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Синтаксическая ошибка в выражении SQL "org\h2\dynamic\TEST.java:9: error: cannot find symbol
+    return accountFieldChars();
+           ^
+  symbol:   method accountFieldChars()
+  location: class TEST
+1 error
+"
+Syntax error in SQL statement "org\h2\dynamic\TEST.java:9: error: cannot find symbol
+    return accountFieldChars();
+           ^
+  symbol:   method accountFieldChars()
+  location: class TEST
+1 error
+"; SQL statement:
+CREATE ALIAS test AS
+$$
+String test()
+{
+    return accountFieldChars();
+}
+$$ [42000-195]
+2017-06-15 19:13:11 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Синтаксическая ошибка в выражении SQL "org\h2\dynamic\TEST.java:3: error: '.' expected
+import accountFieldChars;
+                        ^
+org\h2\dynamic\TEST.java:3: error: ';' expected
+import accountFieldChars;
+                         ^
+2 errors
+"
+Syntax error in SQL statement "org\h2\dynamic\TEST.java:3: error: '.' expected
+import accountFieldChars;
+                        ^
+org\h2\dynamic\TEST.java:3: error: ';' expected
+import accountFieldChars;
+                         ^
+2 errors
+"; SQL statement:
+CREATE ALIAS test AS
+$$
+import accountFieldChars;
+@CODE
+String test()
+{
+    return accountFieldChars();
+}
+$$ [42000-195]
+2017-06-15 19:13:35 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Синтаксическая ошибка в выражении SQL "org\h2\dynamic\TEST.java:7: error: cannot find symbol
+    return AccountFieldChars.accountFieldChars();
+           ^
+  symbol:   variable AccountFieldChars
+  location: class TEST
+1 error
+"
+Syntax error in SQL statement "org\h2\dynamic\TEST.java:7: error: cannot find symbol
+    return AccountFieldChars.accountFieldChars();
+           ^
+  symbol:   variable AccountFieldChars
+  location: class TEST
+1 error
+"; SQL statement:
+CREATE ALIAS test AS
+$$
+@CODE
+String test()
+{
+    return AccountFieldChars.accountFieldChars();
+}
+$$ [42000-195]
+2017-06-15 19:14:05 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Синтаксическая ошибка в выражении SQL "org\h2\dynamic\TEST.java:7: error: cannot find symbol
+    return accountFieldChars.accountFieldChars();
+           ^
+  symbol:   variable accountFieldChars
+  location: class TEST
+1 error
+"
+Syntax error in SQL statement "org\h2\dynamic\TEST.java:7: error: cannot find symbol
+    return accountFieldChars.accountFieldChars();
+           ^
+  symbol:   variable accountFieldChars
+  location: class TEST
+1 error
+"; SQL statement:
+CREATE ALIAS test AS
+$$
+@CODE
+String test()
+{
+    return accountFieldChars.accountFieldChars();
+}
+$$ [42000-195]
+2017-06-15 19:14:24 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Синтаксическая ошибка в выражении SQL "org\h2\dynamic\TEST.java:7: error: cannot find symbol
+    return ACCOUNTFIELDCHARS.accountFieldChars();
+           ^
+  symbol:   variable ACCOUNTFIELDCHARS
+  location: class TEST
+1 error
+"
+Syntax error in SQL statement "org\h2\dynamic\TEST.java:7: error: cannot find symbol
+    return ACCOUNTFIELDCHARS.accountFieldChars();
+           ^
+  symbol:   variable ACCOUNTFIELDCHARS
+  location: class TEST
+1 error
+"; SQL statement:
+CREATE ALIAS test AS
+$$
+@CODE
+String test()
+{
+    return ACCOUNTFIELDCHARS.accountFieldChars();
+}
+$$ [42000-195]
+2017-06-15 19:16:10 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Синтаксическая ошибка в выражении SQL "DELETE *[*] FROM INFORMATION_SCHEMA.FUNCTION_ALIASES"; ожидалось "identifier"
+Syntax error in SQL statement "DELETE *[*] FROM INFORMATION_SCHEMA.FUNCTION_ALIASES"; expected "identifier"; SQL statement:
+DELETE * FROM INFORMATION_SCHEMA.FUNCTION_ALIASES [42001-195]
+2017-06-15 19:16:44 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Данная функция не поддерживается: "META"
+Feature not supported: "META"; SQL statement:
+DELETE INFORMATION_SCHEMA.FUNCTION_ALIASES [50100-195]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:345)
+	at org.h2.message.DbException.get(DbException.java:179)
+	at org.h2.message.DbException.get(DbException.java:155)
+	at org.h2.message.DbException.getUnsupportedException(DbException.java:216)
+	at org.h2.table.MetaTable.removeRow(MetaTable.java:1884)
+	at org.h2.command.dml.Delete.update(Delete.java:95)
+	at org.h2.command.CommandContainer.update(CommandContainer.java:101)
+	at org.h2.command.Command.executeUpdate(Command.java:260)
+	at org.h2.jdbc.JdbcStatement.executeInternal(JdbcStatement.java:193)
+	at org.h2.jdbc.JdbcStatement.execute(JdbcStatement.java:165)
+	at org.h2.server.web.WebApp.getResult(WebApp.java:1380)
+	at org.h2.server.web.WebApp.query(WebApp.java:1053)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:1015)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:1002)
+	at org.h2.server.web.WebThread.process(WebThread.java:164)
+	at org.h2.server.web.WebThread.run(WebThread.java:89)
+	at java.lang.Thread.run(Unknown Source)
+2017-06-15 19:17:39 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Псевдоним функции "CORRECT_TEST_FIELD" не найден
+Function alias "CORRECT_TEST_FIELD" not found; SQL statement:
+DROP ALIAS CORRECT_TEST_FIELD [90077-195]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:345)
+	at org.h2.message.DbException.get(DbException.java:179)
+	at org.h2.message.DbException.get(DbException.java:155)
+	at org.h2.command.ddl.DropFunctionAlias.update(DropFunctionAlias.java:37)
+	at org.h2.command.CommandContainer.update(CommandContainer.java:101)
+	at org.h2.command.Command.executeUpdate(Command.java:260)
+	at org.h2.jdbc.JdbcStatement.executeInternal(JdbcStatement.java:193)
+	at org.h2.jdbc.JdbcStatement.execute(JdbcStatement.java:165)
+	at org.h2.server.web.WebApp.getResult(WebApp.java:1380)
+	at org.h2.server.web.WebApp.query(WebApp.java:1053)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:1015)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:1002)
+	at org.h2.server.web.WebThread.process(WebThread.java:164)
+	at org.h2.server.web.WebThread.run(WebThread.java:89)
+	at java.lang.Thread.run(Unknown Source)
+2017-06-15 19:22:22 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Синтаксическая ошибка в выражении SQL "CREATE ALIAS AS CORRECT_USERNAME[*]
+  
+import java.util.regex.Pattern;
+import java.util.regex.Matcher;
+@CODE
+boolean correctUsername(String input)
+public void setUsername(String input)
+{
+	if (input == null)
+	{
+		return false;
+	}
+	final String ONLY_SPECIAL_CHARS = ""^[\\!\\@\\#\\$\\%\\^\\&\\*\\\\\\/\\(\\)\\[\\]\\.\\_\\-\\s]+$"";
+	final String CORRECT_ACCOUNT_FIELD = ""^[a-zA-Z0-9\\!\\@\\#\\$\\%\\^\\&\\*\\\\\\/\\(\\)\\[\\]\\.\\_\\-\\s]+$"";
+	Pattern onlyWhitelistChars = Pattern.compile(CORRECT_ACCOUNT_FIELD);
+	Pattern onlySpecials = Pattern.compile(ONLY_SPECIAL_CHARS);
+	Matcher m = onlyWhitelistChars.matcher(input);
+	Matcher m1 = onlySpecials.matcher(input);
+	return m.matches() && !m1.matches();
+}
+   "; ожидалось "., DETERMINISTIC, NOBUFFER, AS, FOR"
+Syntax error in SQL statement "CREATE ALIAS AS CORRECT_USERNAME[*]
+  
+import java.util.regex.Pattern;
+import java.util.regex.Matcher;
+@CODE
+boolean correctUsername(String input)
+public void setUsername(String input)
+{
+	if (input == null)
+	{
+		return false;
+	}
+	final String ONLY_SPECIAL_CHARS = ""^[\\!\\@\\#\\$\\%\\^\\&\\*\\\\\\/\\(\\)\\[\\]\\.\\_\\-\\s]+$"";
+	final String CORRECT_ACCOUNT_FIELD = ""^[a-zA-Z0-9\\!\\@\\#\\$\\%\\^\\&\\*\\\\\\/\\(\\)\\[\\]\\.\\_\\-\\s]+$"";
+	Pattern onlyWhitelistChars = Pattern.compile(CORRECT_ACCOUNT_FIELD);
+	Pattern onlySpecials = Pattern.compile(ONLY_SPECIAL_CHARS);
+	Matcher m = onlyWhitelistChars.matcher(input);
+	Matcher m1 = onlySpecials.matcher(input);
+	return m.matches() && !m1.matches();
+}
+   "; expected "., DETERMINISTIC, NOBUFFER, AS, FOR"; SQL statement:
+CREATE ALIAS AS correct_username
+$$
+import java.util.regex.Pattern;
+import java.util.regex.Matcher;
+@CODE
+boolean correctUsername(String input)
+public void setUsername(String input)
+{
+	if (input == null)
+	{
+		return false;
+	}
+	final String ONLY_SPECIAL_CHARS = "^[\\!\\@\\#\\$\\%\\^\\&\\*\\\\\\/\\(\\)\\[\\]\\.\\_\\-\\s]+$";
+	final String CORRECT_ACCOUNT_FIELD = "^[a-zA-Z0-9\\!\\@\\#\\$\\%\\^\\&\\*\\\\\\/\\(\\)\\[\\]\\.\\_\\-\\s]+$";
+	Pattern onlyWhitelistChars = Pattern.compile(CORRECT_ACCOUNT_FIELD);
+	Pattern onlySpecials = Pattern.compile(ONLY_SPECIAL_CHARS);
+	Matcher m = onlyWhitelistChars.matcher(input);
+	Matcher m1 = onlySpecials.matcher(input);
+	return m.matches() && !m1.matches();
+}
+$$ [42001-195]
+2017-06-15 19:22:49 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Синтаксическая ошибка в выражении SQL "CREATE ALIAS AS CORRECT_USERNAME[*]
+  
+import java.util.regex.Pattern;
+import java.util.regex.Matcher;
+@CODE
+boolean correctUsername(String input)
+public void setUsername(String input)
+{
+	if (input == null)
+	{
+		return false;
+	}
+	final String ONLY_SPECIAL_CHARS = '^[\\!\\@\\#\\$\\%\\^\\&\\*\\\\\\/\\(\\)\\[\\]\\.\\_\\-\\s]+$';
+	final String CORRECT_ACCOUNT_FIELD = '^[a-zA-Z0-9\\!\\@\\#\\$\\%\\^\\&\\*\\\\\\/\\(\\)\\[\\]\\.\\_\\-\\s]+$';
+	Pattern onlyWhitelistChars = Pattern.compile(CORRECT_ACCOUNT_FIELD);
+	Pattern onlySpecials = Pattern.compile(ONLY_SPECIAL_CHARS);
+	Matcher m = onlyWhitelistChars.matcher(input);
+	Matcher m1 = onlySpecials.matcher(input);
+	return m.matches() && !m1.matches();
+}
+   "; ожидалось "., DETERMINISTIC, NOBUFFER, AS, FOR"
+Syntax error in SQL statement "CREATE ALIAS AS CORRECT_USERNAME[*]
+  
+import java.util.regex.Pattern;
+import java.util.regex.Matcher;
+@CODE
+boolean correctUsername(String input)
+public void setUsername(String input)
+{
+	if (input == null)
+	{
+		return false;
+	}
+	final String ONLY_SPECIAL_CHARS = '^[\\!\\@\\#\\$\\%\\^\\&\\*\\\\\\/\\(\\)\\[\\]\\.\\_\\-\\s]+$';
+	final String CORRECT_ACCOUNT_FIELD = '^[a-zA-Z0-9\\!\\@\\#\\$\\%\\^\\&\\*\\\\\\/\\(\\)\\[\\]\\.\\_\\-\\s]+$';
+	Pattern onlyWhitelistChars = Pattern.compile(CORRECT_ACCOUNT_FIELD);
+	Pattern onlySpecials = Pattern.compile(ONLY_SPECIAL_CHARS);
+	Matcher m = onlyWhitelistChars.matcher(input);
+	Matcher m1 = onlySpecials.matcher(input);
+	return m.matches() && !m1.matches();
+}
+   "; expected "., DETERMINISTIC, NOBUFFER, AS, FOR"; SQL statement:
+CREATE ALIAS AS correct_username
+$$
+import java.util.regex.Pattern;
+import java.util.regex.Matcher;
+@CODE
+boolean correctUsername(String input)
+public void setUsername(String input)
+{
+	if (input == null)
+	{
+		return false;
+	}
+	final String ONLY_SPECIAL_CHARS = '^[\\!\\@\\#\\$\\%\\^\\&\\*\\\\\\/\\(\\)\\[\\]\\.\\_\\-\\s]+$';
+	final String CORRECT_ACCOUNT_FIELD = '^[a-zA-Z0-9\\!\\@\\#\\$\\%\\^\\&\\*\\\\\\/\\(\\)\\[\\]\\.\\_\\-\\s]+$';
+	Pattern onlyWhitelistChars = Pattern.compile(CORRECT_ACCOUNT_FIELD);
+	Pattern onlySpecials = Pattern.compile(ONLY_SPECIAL_CHARS);
+	Matcher m = onlyWhitelistChars.matcher(input);
+	Matcher m1 = onlySpecials.matcher(input);
+	return m.matches() && !m1.matches();
+}
+$$ [42001-195]
+2017-06-15 19:23:08 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Синтаксическая ошибка в выражении SQL "CREATE ALIAS AS CORRECT_USERNAME[*]
+  
+import java.util.regex.Pattern;
+import java.util.regex.Matcher;
+@CODE
+boolean correctUsername(String input)
+{
+	if (input == null)
+	{
+		return false;
+	}
+	final String ONLY_SPECIAL_CHARS = '^[\\!\\@\\#\\$\\%\\^\\&\\*\\\\\\/\\(\\)\\[\\]\\.\\_\\-\\s]+$';
+	final String CORRECT_ACCOUNT_FIELD = '^[a-zA-Z0-9\\!\\@\\#\\$\\%\\^\\&\\*\\\\\\/\\(\\)\\[\\]\\.\\_\\-\\s]+$';
+	Pattern onlyWhitelistChars = Pattern.compile(CORRECT_ACCOUNT_FIELD);
+	Pattern onlySpecials = Pattern.compile(ONLY_SPECIAL_CHARS);
+	Matcher m = onlyWhitelistChars.matcher(input);
+	Matcher m1 = onlySpecials.matcher(input);
+	return m.matches() && !m1.matches();
+}
+   "; ожидалось "., DETERMINISTIC, NOBUFFER, AS, FOR"
+Syntax error in SQL statement "CREATE ALIAS AS CORRECT_USERNAME[*]
+  
+import java.util.regex.Pattern;
+import java.util.regex.Matcher;
+@CODE
+boolean correctUsername(String input)
+{
+	if (input == null)
+	{
+		return false;
+	}
+	final String ONLY_SPECIAL_CHARS = '^[\\!\\@\\#\\$\\%\\^\\&\\*\\\\\\/\\(\\)\\[\\]\\.\\_\\-\\s]+$';
+	final String CORRECT_ACCOUNT_FIELD = '^[a-zA-Z0-9\\!\\@\\#\\$\\%\\^\\&\\*\\\\\\/\\(\\)\\[\\]\\.\\_\\-\\s]+$';
+	Pattern onlyWhitelistChars = Pattern.compile(CORRECT_ACCOUNT_FIELD);
+	Pattern onlySpecials = Pattern.compile(ONLY_SPECIAL_CHARS);
+	Matcher m = onlyWhitelistChars.matcher(input);
+	Matcher m1 = onlySpecials.matcher(input);
+	return m.matches() && !m1.matches();
+}
+   "; expected "., DETERMINISTIC, NOBUFFER, AS, FOR"; SQL statement:
+CREATE ALIAS AS correct_username
+$$
+import java.util.regex.Pattern;
+import java.util.regex.Matcher;
+@CODE
+boolean correctUsername(String input)
+{
+	if (input == null)
+	{
+		return false;
+	}
+	final String ONLY_SPECIAL_CHARS = '^[\\!\\@\\#\\$\\%\\^\\&\\*\\\\\\/\\(\\)\\[\\]\\.\\_\\-\\s]+$';
+	final String CORRECT_ACCOUNT_FIELD = '^[a-zA-Z0-9\\!\\@\\#\\$\\%\\^\\&\\*\\\\\\/\\(\\)\\[\\]\\.\\_\\-\\s]+$';
+	Pattern onlyWhitelistChars = Pattern.compile(CORRECT_ACCOUNT_FIELD);
+	Pattern onlySpecials = Pattern.compile(ONLY_SPECIAL_CHARS);
+	Matcher m = onlyWhitelistChars.matcher(input);
+	Matcher m1 = onlySpecials.matcher(input);
+	return m.matches() && !m1.matches();
+}
+$$ [42001-195]
+2017-06-15 19:23:21 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Синтаксическая ошибка в выражении SQL "org\h2\dynamic\CORRECT_USERNAME.java:13: error: unclosed character literal
+	final String ONLY_SPECIAL_CHARS = '^[\\!\\@\\#\\$\\%\\^\\&\\*\\\\\\/\\(\\)\\[\\]\\.\\_\\-\\s]+$';
+	                                  ^
+org\h2\dynamic\CORRECT_USERNAME.java:13: error: illegal start of expression
+	final String ONLY_SPECIAL_CHARS = '^[\\!\\@\\#\\$\\%\\^\\&\\*\\\\\\/\\(\\)\\[\\]\\.\\_\\-\\s]+$';
+	                                    ^
+org\h2\dynamic\CORRECT_USERNAME.java:13: error: illegal character: '\'
+	final String ONLY_SPECIAL_CHARS = '^[\\!\\@\\#\\$\\%\\^\\&\\*\\\\\\/\\(\\)\\[\\]\\.\\_\\-\\s]+$';
+	                                     ^
+org\h2\dynamic\CORRECT_USERNAME.java:13: error: illegal character: '\'
+	final String ONLY_SPECIAL_CHARS = '^[\\!\\@\\#\\$\\%\\^\\&\\*\\\\\\/\\(\\)\\[\\]\\.\\_\\-\\s]+$';
+	                                      ^
+org\h2\dynamic\CORRECT_USERNAME.java:13: error: ';' expected
+	final String ONLY_SPECIAL_CHARS = '^[\\!\\@\\#\\$\\%\\^\\&\\*\\\\\\/\\(\\)\\[\\]\\.\\_\\-\\s]+$';
+	                                       ^
+org\h2\dynamic\CORRECT_USERNAME.java:13: error: illegal character: '\'
+	final String ONLY_SPECIAL_CHARS = '^[\\!\\@\\#\\$\\%\\^\\&\\*\\\\\\/\\(\\)\\[\\]\\.\\_\\-\\s]+$';
+	                                        ^
+org\h2\dynamic\CORRECT_USERNAME.java:13: error: illegal character: '\'
+	final String ONLY_SPECIAL_CHARS = '^[\\!\\@\\#\\$\\%\\^\\&\\*\\\\\\/\\(\\)\\[\\]\\.\\_\\-\\s]+$';
+	                                         ^
+org\h2\dynamic\CORRECT_USERNAME.java:13: error: illegal character: '\'
+	final String ONLY_SPECIAL_CHARS = '^[\\!\\@\\#\\$\\%\\^\\&\\*\\\\\\/\\(\\)\\[\\]\\.\\_\\-\\s]+$';
+	                                           ^
+org\h2\dynamic\CORRECT_USERNAME.java:13: error: illegal character: '\'
+	final String ONLY_SPECIAL_CHARS = '^[\\!\\@\\#\\$\\%\\^\\&\\*\\\\\\/\\(\\)\\[\\]\\.\\_\\-\\s]+$';
+	                                            ^
+org\h2\dynamic\CORRECT_USERNAME.java:13: error: illegal character: '#'
+	final String ONLY_SPECIAL_CHARS = '^[\\!\\@\\#\\$\\%\\^\\&\\*\\\\\\/\\(\\)\\[\\]\\.\\_\\-\\s]+$';
+	                                             ^
+org\h2\dynamic\CORRECT_USERNAME.java:13: error: illegal character: '\'
+	final String ONLY_SPECIAL_CHARS = '^[\\!\\@\\#\\$\\%\\^\\&\\*\\\\\\/\\(\\)\\[\\]\\.\\_\\-\\s]+$';
+	                                              ^
+org\h2\dynamic\CORRECT_USERNAME.java:13: error: illegal character: '\'
+	final String ONLY_SPECIAL_CHARS = '^[\\!\\@\\#\\$\\%\\^\\&\\*\\\\\\/\\(\\)\\[\\]\\.\\_\\-\\s]+$';
+	                                               ^
+org\h2\dynamic\CORRECT_USERNAME.java:13: error: illegal character: '\'
+	final String ONLY_SPECIAL_CHARS = '^[\\!\\@\\#\\$\\%\\^\\&\\*\\\\\\/\\(\\)\\[\\]\\.\\_\\-\\s]+$';
+	                                                 ^
+org\h2\dynamic\CORRECT_USERNAME.java:13: error: illegal character: '\'
+	final String ONLY_SPECIAL_CHARS = '^[\\!\\@\\#\\$\\%\\^\\&\\*\\\\\\/\\(\\)\\[\\]\\.\\_\\-\\s]+$';
+	                                                  ^
+org\h2\dynamic\CORRECT_USERNAME.java:13: error: illegal start of type
+	final String ONLY_SPECIAL_CHARS = '^[\\!\\@\\#\\$\\%\\^\\&\\*\\\\\\/\\(\\)\\[\\]\\.\\_\\-\\s]+$';
+	                                                   ^
+org\h2\dynamic\CORRECT_USERNAME.java:13: error: illegal character: '\'
+	final String ONLY_SPECIAL_CHARS = '^[\\!\\@\\#\\$\\%\\^\\&\\*\\\\\\/\\(\\)\\[\\]\\.\\_\\-\\s]+$';
+	                                                    ^
+org\h2\dynamic\CORRECT_USERNAME.java:13: error: illegal character: '\'
+	final String ONLY_SPECIAL_CHARS = '^[\\!\\@\\#\\$\\%\\^\\&\\*\\\\\\/\\(\\)\\[\\]\\.\\_\\-\\s]+$';
+	                                                     ^
+org\h2\dynamic\CORRECT_USERNAME.java:13: error: illegal character: '\'
+	final String ONLY_SPECIAL_CHARS = '^[\\!\\@\\#\\$\\%\\^\\&\\*\\\\\\/\\(\\)\\[\\]\\.\\_\\-\\s]+$';
+	                                                       ^
+org\h2\dynamic\CORRECT_USERNAME.java:13: error: not a statement
+	final String ONLY_SPECIAL_CHARS = '^[\\!\\@\\#\\$\\%\\^\\&\\*\\\\\\/\\(\\)\\[\\]\\.\\_\\-\\s]+$';
+	                                                      ^
+org\h2\dynamic\CORRECT_USERNAME.java:13: error: illegal character: '\'
+	final String ONLY_SPECIAL_CHARS = '^[\\!\\@\\#\\$\\%\\^\\&\\*\\\\\\/\\(\\)\\[\\]\\.\\_\\-\\s]+$';
+	                                                        ^
+org\h2\dynamic\CORRECT_USERNAME.java:13: error: illegal character: '\'
+	final String ONLY_SPECIAL_CHARS = '^[\\!\\@\\#\\$\\%\\^\\&\\*\\\\\\/\\(\\)\\[\\]\\.\\_\\-\\s]+$';
+	                                                          ^
+org\h2\dynamic\CORRECT_USERNAME.java:13: error: not a statement
+	final String ONLY_SPECIAL_CHARS = '^[\\!\\@\\#\\$\\%\\^\\&\\*\\\\\\/\\(\\)\\[\\]\\.\\_\\-\\s]+$';
+	                                                         ^
+org\h2\dynamic\CORRECT_USERNAME.java:13: error: illegal character: '\'
+	final String ONLY_SPECIAL_CHARS = '^[\\!\\@\\#\\$\\%\\^\\&\\*\\\\\\/\\(\\)\\[\\]\\.\\_\\-\\s]+$';
+	                                                           ^
+org\h2\dynamic\CORRECT_USERNAME.java:13: error: illegal character: '\'
+	final String ONLY_SPECIAL_CHARS = '^[\\!\\@\\#\\$\\%\\^\\&\\*\\\\\\/\\(\\)\\[\\]\\.\\_\\-\\s]+$';
+	                                                             ^
+org\h2\dynamic\CORRECT_USERNAME.java:13: error: not a statement
+	final String ONLY_SPECIAL_CHARS = '^[\\!\\@\\#\\$\\%\\^\\&\\*\\\\\\/\\(\\)\\[\\]\\.\\_\\-\\s]+$';
+	                                                            ^
+org\h2\dynamic\CORRECT_USERNAME.java:13: error: illegal character: '\'
+	final String ONLY_SPECIAL_CHARS = '^[\\!\\@\\#\\$\\%\\^\\&\\*\\\\\\/\\(\\)\\[\\]\\.\\_\\-\\s]+$';
+	                                                              ^
+org\h2\dynamic\CORRECT_USERNAME.java:13: error: illegal character: '\'
+	final String ONLY_SPECIAL_CHARS = '^[\\!\\@\\#\\$\\%\\^\\&\\*\\\\\\/\\(\\)\\[\\]\\.\\_\\-\\s]+$';
+	                                                               ^
+org\h2\dynamic\CORRECT_USERNAME.java:13: error: illegal character: '\'
+	final String ONLY_SPECIAL_CHARS = '^[\\!\\@\\#\\$\\%\\^\\&\\*\\\\\\/\\(\\)\\[\\]\\.\\_\\-\\s]+$';
+	                                                                ^
+org\h2\dynamic\CORRECT_USERNAME.java:13: error: illegal character: '\'
+	final String ONLY_SPECIAL_CHARS = '^[\\!\\@\\#\\$\\%\\^\\&\\*\\\\\\/\\(\\)\\[\\]\\.\\_\\-\\s]+$';
+	                                                                 ^
+org\h2\dynamic\CORRECT_USERNAME.java:13: error: illegal character: '\'
+	final String ONLY_SPECIAL_CHARS = '^[\\!\\@\\#\\$\\%\\^\\&\\*\\\\\\/\\(\\)\\[\\]\\.\\_\\-\\s]+$';
+	                                                                  ^
+org\h2\dynamic\CORRECT_USERNAME.java:13: error: illegal character: '\'
+	final String ONLY_SPECIAL_CHARS = '^[\\!\\@\\#\\$\\%\\^\\&\\*\\\\\\/\\(\\)\\[\\]\\.\\_\\-\\s]+$';
+	                                                                    ^
+org\h2\dynamic\CORRECT_USERNAME.java:13: error: not a statement
+	final String ONLY_SPECIAL_CHARS = '^[\\!\\@\\#\\$\\%\\^\\&\\*\\\\\\/\\(\\)\\[\\]\\.\\_\\-\\s]+$';
+	                                                                   ^
+org\h2\dynamic\CORRECT_USERNAME.java:13: error: illegal character: '\'
+	final String ONLY_SPECIAL_CHARS = '^[\\!\\@\\#\\$\\%\\^\\&\\*\\\\\\/\\(\\)\\[\\]\\.\\_\\-\\s]+$';
+	                                                                     ^
+org\h2\dynamic\CORRECT_USERNAME.java:13: error: ';' expected
+	final String ONLY_SPECIAL_CHARS = '^[\\!\\@\\#\\$\\%\\^\\&\\*\\\\\\/\\(\\)\\[\\]\\.\\_\\-\\s]+$';
+	                                                                      ^
+org\h2\dynamic\CORRECT_USERNAME.java:13: error: illegal character: '\'
+	final String ONLY_SPECIAL_CHARS = '^[\\!\\@\\#\\$\\%\\^\\&\\*\\\\\\/\\(\\)\\[\\]\\.\\_\\-\\s]+$';
+	                                                                       ^
+org\h2\dynamic\CORRECT_USERNAME.java:13: error: illegal character: '\'
+	final String ONLY_SPECIAL_CHARS = '^[\\!\\@\\#\\$\\%\\^\\&\\*\\\\\\/\\(\\)\\[\\]\\.\\_\\-\\s]+$';
+	                                                                        ^
+org\h2\dynamic\CORRECT_USERNAME.java:13: error: illegal start of expression
+	final String ONLY_SPECIAL_CHARS = '^[\\!\\@\\#\\$\\%\\^\\&\\*\\\\\\/\\(\\)\\[\\]\\.\\_\\-\\s]+$';
+	                                                                         ^
+org\h2\dynamic\CORRECT_USERNAME.java:13: error: illegal character: '\'
+	final String ONLY_SPECIAL_CHARS = '^[\\!\\@\\#\\$\\%\\^\\&\\*\\\\\\/\\(\\)\\[\\]\\.\\_\\-\\s]+$';
+	                                                                          ^
+org\h2\dynamic\CORRECT_USERNAME.java:13: error: illegal character: '\'
+	final String ONLY_SPECIAL_CHARS = '^[\\!\\@\\#\\$\\%\\^\\&\\*\\\\\\/\\(\\)\\[\\]\\.\\_\\-\\s]+$';
+	                                                                           ^
+org\h2\dynamic\CORRECT_USERNAME.java:13: error: ';' expected
+	final String ONLY_SPECIAL_CHARS = '^[\\!\\@\\#\\$\\%\\^\\&\\*\\\\\\/\\(\\)\\[\\]\\.\\_\\-\\s]+$';
+	                                                                            ^
+org\h2\dynamic\CORRECT_USERNAME.java:13: error: illegal character: '\'
+	final String ONLY_SPECIAL_CHARS = '^[\\!\\@\\#\\$\\%\\^\\&\\*\\\\\\/\\(\\)\\[\\]\\.\\_\\-\\s]+$';
+	                                                                             ^
+org\h2\dynamic\CORRECT_USERNAME.java:13: error: illegal character: '\'
+	final String ONLY_SPECIAL_CHARS = '^[\\!\\@\\#\\$\\%\\^\\&\\*\\\\\\/\\(\\)\\[\\]\\.\\_\\-\\s]+$';
+	                                                                              ^
+org\h2\dynamic\CORRECT_USERNAME.java:13: error: illegal start of expression
+	final String ONLY_SPECIAL_CHARS = '^[\\!\\@\\#\\$\\%\\^\\&\\*\\\\\\/\\(\\)\\[\\]\\.\\_\\-\\s]+$';
+	                                                                               ^
+org\h2\dynamic\CORRECT_USERNAME.java:13: error: illegal character: '\'
+	final String ONLY_SPECIAL_CHARS = '^[\\!\\@\\#\\$\\%\\^\\&\\*\\\\\\/\\(\\)\\[\\]\\.\\_\\-\\s]+$';
+	                                                                                ^
+org\h2\dynamic\CORRECT_USERNAME.java:13: error: illegal character: '\'
+	final String ONLY_SPECIAL_CHARS = '^[\\!\\@\\#\\$\\%\\^\\&\\*\\\\\\/\\(\\)\\[\\]\\.\\_\\-\\s]+$';
+	                                                                                 ^
+org\h2\dynamic\CORRECT_USERNAME.java:13: error: ';' expected
+	final String ONLY_SPECIAL_CHARS = '^[\\!\\@\\#\\$\\%\\^\\&\\*\\\\\\/\\(\\)\\[\\]\\.\\_\\-\\s]+$';
+	                                                                                  ^
+org\h2\dynamic\CORRECT_USERNAME.java:13: error: illegal character: '\'
+	final String ONLY_SPECIAL_CHARS = '^[\\!\\@\\#\\$\\%\\^\\&\\*\\\\\\/\\(\\)\\[\\]\\.\\_\\-\\s]+$';
+	                                                                                   ^
+org\h2\dynamic\CORRECT_USERNAME.java:13: error: illegal character: '\'
+	final String ONLY_SPECIAL_CHARS = '^[\\!\\@\\#\\$\\%\\^\\&\\*\\\\\\/\\(\\)\\[\\]\\.\\_\\-\\s]+$';
+	                                                                                    ^
+org\h2\dynamic\CORRECT_USERNAME.java:13: error: illegal character: '\'
+	final String ONLY_SPECIAL_CHARS = '^[\\!\\@\\#\\$\\%\\^\\&\\*\\\\\\/\\(\\)\\[\\]\\.\\_\\-\\s]+$';
+	                                                                                      ^
+org\h2\dynamic\CORRECT_USERNAME.java:13: warning: '_' used as an identifier
+	final String ONLY_SPECIAL_CHARS = '^[\\!\\@\\#\\$\\%\\^\\&\\*\\\\\\/\\(\\)\\[\\]\\.\\_\\-\\s]+$';
+	                                                                                     ^
+  (use of '_' as an identifier might not be supported in releases after Java SE 8)
+org\h2\dynamic\CORRECT_USERNAME.java:13: error: not a statement
+	final String ONLY_SPECIAL_CHARS = '^[\\!\\@\\#\\$\\%\\^\\&\\*\\\\\\/\\(\\)\\[\\]\\.\\_\\-\\s]+$';
+	                                                                                     ^
+org\h2\dynamic\CORRECT_USERNAME.java:13: error: illegal character: '\'
+	final String ONLY_SPECIAL_CHARS = '^[\\!\\@\\#\\$\\%\\^\\&\\*\\\\\\/\\(\\)\\[\\]\\.\\_\\-\\s]+$';
+	                                                                                       ^
+org\h2\dynamic\CORRECT_USERNAME.java:13: error: illegal character: '\'
+	final String ONLY_SPECIAL_CHARS = '^[\\!\\@\\#\\$\\%\\^\\&\\*\\\\\\/\\(\\)\\[\\]\\.\\_\\-\\s]+$';
+	                                                                                         ^
+org\h2\dynamic\CORRECT_USERNAME.java:13: error: illegal character: '\'
+	final String ONLY_SPECIAL_CHARS = '^[\\!\\@\\#\\$\\%\\^\\&\\*\\\\\\/\\(\\)\\[\\]\\.\\_\\-\\s]+$';
+	                                                                                          ^
+org\h2\dynamic\CORRECT_USERNAME.java:13: error: not a statement
+	final String ONLY_SPECIAL_CHARS = '^[\\!\\@\\#\\$\\%\\^\\&\\*\\\\\\/\\(\\)\\[\\]\\.\\_\\-\\s]+$';
+	                                                                                           ^
+org\h2\dynamic\CORRECT_USERNAME.java:13: error: ';' expected
+	final String ONLY_SPECIAL_CHARS = '^[\\!\\@\\#\\$\\%\\^\\&\\*\\\\\\/\\(\\)\\[\\]\\.\\_\\-\\s]+$';
+	                                                                                            ^
+org\h2\dynamic\CORRECT_USERNAME.java:13: error: unclosed character literal
+	final String ONLY_SPECIAL_CHARS = '^[\\!\\@\\#\\$\\%\\^\\&\\*\\\\\\/\\(\\)\\[\\]\\.\\_\\-\\s]+$';
+	                                                                                               ^
+org\h2\dynamic\CORRECT_USERNAME.java:13: error: not a statement
+	final String ONLY_SPECIAL_CHARS = '^[\\!\\@\\#\\$\\%\\^\\&\\*\\\\\\/\\(\\)\\[\\]\\.\\_\\-\\s]+$';
+	                                                                                              ^
+org\h2\dynamic\CORRECT_USERNAME.java:14: error: unclosed character literal
+	final String CORRECT_ACCOUNT_FIELD = '^[a-zA-Z0-9\\!\\@\\#\\$\\%\\^\\&\\*\\\\\\/\\(\\)\\[\\]\\.\\_\\-\\s]+$';
+	                                     ^
+org\h2\dynamic\CORRECT_USERNAME.java:14: error: illegal start of expression
+	final String CORRECT_ACCOUNT_FIELD = '^[a-zA-Z0-9\\!\\@\\#\\$\\%\\^\\&\\*\\\\\\/\\(\\)\\[\\]\\.\\_\\-\\s]+$';
+	                                       ^
+org\h2\dynamic\CORRECT_USERNAME.java:14: error: ';' expected
+	final String CORRECT_ACCOUNT_FIELD = '^[a-zA-Z0-9\\!\\@\\#\\$\\%\\^\\&\\*\\\\\\/\\(\\)\\[\\]\\.\\_\\-\\s]+$';
+	                                         ^
+org\h2\dynamic\CORRECT_USERNAME.java:14: error: illegal character: '\'
+	final String CORRECT_ACCOUNT_FIELD = '^[a-zA-Z0-9\\!\\@\\#\\$\\%\\^\\&\\*\\\\\\/\\(\\)\\[\\]\\.\\_\\-\\s]+$';
+	                                                 ^
+org\h2\dynamic\CORRECT_USERNAME.java:14: error: not a statement
+	final String CORRECT_ACCOUNT_FIELD = '^[a-zA-Z0-9\\!\\@\\#\\$\\%\\^\\&\\*\\\\\\/\\(\\)\\[\\]\\.\\_\\-\\s]+$';
+	                                               ^
+org\h2\dynamic\CORRECT_USERNAME.java:14: error: illegal character: '\'
+	final String CORRECT_ACCOUNT_FIELD = '^[a-zA-Z0-9\\!\\@\\#\\$\\%\\^\\&\\*\\\\\\/\\(\\)\\[\\]\\.\\_\\-\\s]+$';
+	                                                  ^
+org\h2\dynamic\CORRECT_USERNAME.java:14: error: illegal character: '\'
+	final String CORRECT_ACCOUNT_FIELD = '^[a-zA-Z0-9\\!\\@\\#\\$\\%\\^\\&\\*\\\\\\/\\(\\)\\[\\]\\.\\_\\-\\s]+$';
+	                                                    ^
+org\h2\dynamic\CORRECT_USERNAME.java:14: error: illegal character: '\'
+	final String CORRECT_ACCOUNT_FIELD = '^[a-zA-Z0-9\\!\\@\\#\\$\\%\\^\\&\\*\\\\\\/\\(\\)\\[\\]\\.\\_\\-\\s]+$';
+	                                                     ^
+org\h2\dynamic\CORRECT_USERNAME.java:14: error: illegal character: '\'
+	final String CORRECT_ACCOUNT_FIELD = '^[a-zA-Z0-9\\!\\@\\#\\$\\%\\^\\&\\*\\\\\\/\\(\\)\\[\\]\\.\\_\\-\\s]+$';
+	                                                       ^
+org\h2\dynamic\CORRECT_USERNAME.java:14: error: illegal character: '\'
+	final String CORRECT_ACCOUNT_FIELD = '^[a-zA-Z0-9\\!\\@\\#\\$\\%\\^\\&\\*\\\\\\/\\(\\)\\[\\]\\.\\_\\-\\s]+$';
+	                                                        ^
+org\h2\dynamic\CORRECT_USERNAME.java:14: error: illegal character: '#'
+	final String CORRECT_ACCOUNT_FIELD = '^[a-zA-Z0-9\\!\\@\\#\\$\\%\\^\\&\\*\\\\\\/\\(\\)\\[\\]\\.\\_\\-\\s]+$';
+	                                                         ^
+org\h2\dynamic\CORRECT_USERNAME.java:14: error: illegal character: '\'
+	final String CORRECT_ACCOUNT_FIELD = '^[a-zA-Z0-9\\!\\@\\#\\$\\%\\^\\&\\*\\\\\\/\\(\\)\\[\\]\\.\\_\\-\\s]+$';
+	                                                          ^
+org\h2\dynamic\CORRECT_USERNAME.java:14: error: illegal character: '\'
+	final String CORRECT_ACCOUNT_FIELD = '^[a-zA-Z0-9\\!\\@\\#\\$\\%\\^\\&\\*\\\\\\/\\(\\)\\[\\]\\.\\_\\-\\s]+$';
+	                                                           ^
+org\h2\dynamic\CORRECT_USERNAME.java:14: error: illegal character: '\'
+	final String CORRECT_ACCOUNT_FIELD = '^[a-zA-Z0-9\\!\\@\\#\\$\\%\\^\\&\\*\\\\\\/\\(\\)\\[\\]\\.\\_\\-\\s]+$';
+	                                                             ^
+org\h2\dynamic\CORRECT_USERNAME.java:14: error: illegal character: '\'
+	final String CORRECT_ACCOUNT_FIELD = '^[a-zA-Z0-9\\!\\@\\#\\$\\%\\^\\&\\*\\\\\\/\\(\\)\\[\\]\\.\\_\\-\\s]+$';
+	                                                              ^
+org\h2\dynamic\CORRECT_USERNAME.java:14: error: illegal start of type
+	final String CORRECT_ACCOUNT_FIELD = '^[a-zA-Z0-9\\!\\@\\#\\$\\%\\^\\&\\*\\\\\\/\\(\\)\\[\\]\\.\\_\\-\\s]+$';
+	                                                               ^
+org\h2\dynamic\CORRECT_USERNAME.java:14: error: illegal character: '\'
+	final String CORRECT_ACCOUNT_FIELD = '^[a-zA-Z0-9\\!\\@\\#\\$\\%\\^\\&\\*\\\\\\/\\(\\)\\[\\]\\.\\_\\-\\s]+$';
+	                                                                ^
+org\h2\dynamic\CORRECT_USERNAME.java:14: error: illegal character: '\'
+	final String CORRECT_ACCOUNT_FIELD = '^[a-zA-Z0-9\\!\\@\\#\\$\\%\\^\\&\\*\\\\\\/\\(\\)\\[\\]\\.\\_\\-\\s]+$';
+	                                                                 ^
+org\h2\dynamic\CORRECT_USERNAME.java:14: error: illegal character: '\'
+	final String CORRECT_ACCOUNT_FIELD = '^[a-zA-Z0-9\\!\\@\\#\\$\\%\\^\\&\\*\\\\\\/\\(\\)\\[\\]\\.\\_\\-\\s]+$';
+	                                                                   ^
+org\h2\dynamic\CORRECT_USERNAME.java:14: error: not a statement
+	final String CORRECT_ACCOUNT_FIELD = '^[a-zA-Z0-9\\!\\@\\#\\$\\%\\^\\&\\*\\\\\\/\\(\\)\\[\\]\\.\\_\\-\\s]+$';
+	                                                                  ^
+org\h2\dynamic\CORRECT_USERNAME.java:14: error: illegal character: '\'
+	final String CORRECT_ACCOUNT_FIELD = '^[a-zA-Z0-9\\!\\@\\#\\$\\%\\^\\&\\*\\\\\\/\\(\\)\\[\\]\\.\\_\\-\\s]+$';
+	                                                                    ^
+org\h2\dynamic\CORRECT_USERNAME.java:14: error: illegal character: '\'
+	final String CORRECT_ACCOUNT_FIELD = '^[a-zA-Z0-9\\!\\@\\#\\$\\%\\^\\&\\*\\\\\\/\\(\\)\\[\\]\\.\\_\\-\\s]+$';
+	                                                                      ^
+org\h2\dynamic\CORRECT_USERNAME.java:14: error: not a statement
+	final String CORRECT_ACCOUNT_FIELD = '^[a-zA-Z0-9\\!\\@\\#\\$\\%\\^\\&\\*\\\\\\/\\(\\)\\[\\]\\.\\_\\-\\s]+$';
+	                                                                     ^
+org\h2\dynamic\CORRECT_USERNAME.java:14: error: illegal character: '\'
+	final String CORRECT_ACCOUNT_FIELD = '^[a-zA-Z0-9\\!\\@\\#\\$\\%\\^\\&\\*\\\\\\/\\(\\)\\[\\]\\.\\_\\-\\s]+$';
+	                                                                       ^
+org\h2\dynamic\CORRECT_USERNAME.java:14: error: illegal character: '\'
+	final String CORRECT_ACCOUNT_FIELD = '^[a-zA-Z0-9\\!\\@\\#\\$\\%\\^\\&\\*\\\\\\/\\(\\)\\[\\]\\.\\_\\-\\s]+$';
+	                                                                         ^
+org\h2\dynamic\CORRECT_USERNAME.java:14: error: not a statement
+	final String CORRECT_ACCOUNT_FIELD = '^[a-zA-Z0-9\\!\\@\\#\\$\\%\\^\\&\\*\\\\\\/\\(\\)\\[\\]\\.\\_\\-\\s]+$';
+	                                                                        ^
+org\h2\dynamic\CORRECT_USERNAME.java:14: error: illegal character: '\'
+	final String CORRECT_ACCOUNT_FIELD = '^[a-zA-Z0-9\\!\\@\\#\\$\\%\\^\\&\\*\\\\\\/\\(\\)\\[\\]\\.\\_\\-\\s]+$';
+	                                                                          ^
+org\h2\dynamic\CORRECT_USERNAME.java:14: error: illegal character: '\'
+	final String CORRECT_ACCOUNT_FIELD = '^[a-zA-Z0-9\\!\\@\\#\\$\\%\\^\\&\\*\\\\\\/\\(\\)\\[\\]\\.\\_\\-\\s]+$';
+	                                                                           ^
+org\h2\dynamic\CORRECT_USERNAME.java:14: error: illegal character: '\'
+	final String CORRECT_ACCOUNT_FIELD = '^[a-zA-Z0-9\\!\\@\\#\\$\\%\\^\\&\\*\\\\\\/\\(\\)\\[\\]\\.\\_\\-\\s]+$';
+	                                                                            ^
+org\h2\dynamic\CORRECT_USERNAME.java:14: error: illegal character: '\'
+	final String CORRECT_ACCOUNT_FIELD = '^[a-zA-Z0-9\\!\\@\\#\\$\\%\\^\\&\\*\\\\\\/\\(\\)\\[\\]\\.\\_\\-\\s]+$';
+	                                                                             ^
+org\h2\dynamic\CORRECT_USERNAME.java:14: error: illegal character: '\'
+	final String CORRECT_ACCOUNT_FIELD = '^[a-zA-Z0-9\\!\\@\\#\\$\\%\\^\\&\\*\\\\\\/\\(\\)\\[\\]\\.\\_\\-\\s]+$';
+	                                                                              ^
+org\h2\dynamic\CORRECT_USERNAME.java:14: error: illegal character: '\'
+	final String CORRECT_ACCOUNT_FIELD = '^[a-zA-Z0-9\\!\\@\\#\\$\\%\\^\\&\\*\\\\\\/\\(\\)\\[\\]\\.\\_\\-\\s]+$';
+	                                                                                ^
+org\h2\dynamic\CORRECT_USERNAME.java:14: error: not a statement
+	final String CORRECT_ACCOUNT_FIELD = '^[a-zA-Z0-9\\!\\@\\#\\$\\%\\^\\&\\*\\\\\\/\\(\\)\\[\\]\\.\\_\\-\\s]+$';
+	                                                                               ^
+org\h2\dynamic\CORRECT_USERNAME.java:14: error: illegal character: '\'
+	final String CORRECT_ACCOUNT_FIELD = '^[a-zA-Z0-9\\!\\@\\#\\$\\%\\^\\&\\*\\\\\\/\\(\\)\\[\\]\\.\\_\\-\\s]+$';
+	                                                                                 ^
+org\h2\dynamic\CORRECT_USERNAME.java:14: error: ';' expected
+	final String CORRECT_ACCOUNT_FIELD = '^[a-zA-Z0-9\\!\\@\\#\\$\\%\\^\\&\\*\\\\\\/\\(\\)\\[\\]\\.\\_\\-\\s]+$';
+	                                                                                  ^
+org\h2\dynamic\CORRECT_USERNAME.java:14: error: illegal character: '\'
+	final String CORRECT_ACCOUNT_FIELD = '^[a-zA-Z0-9\\!\\@\\#\\$\\%\\^\\&\\*\\\\\\/\\(\\)\\[\\]\\.\\_\\-\\s]+$';
+	                                                                                   ^
+org\h2\dynamic\CORRECT_USERNAME.java:14: error: illegal character: '\'
+	final String CORRECT_ACCOUNT_FIELD = '^[a-zA-Z0-9\\!\\@\\#\\$\\%\\^\\&\\*\\\\\\/\\(\\)\\[\\]\\.\\_\\-\\s]+$';
+	                                                                                    ^
+org\h2\dynamic\CORRECT_USERNAME.java:14: error: illegal start of expression
+	final String CORRECT_ACCOUNT_FIELD = '^[a-zA-Z0-9\\!\\@\\#\\$\\%\\^\\&\\*\\\\\\/\\(\\)\\[\\]\\.\\_\\-\\s]+$';
+	                                                                                     ^
+org\h2\dynamic\CORRECT_USERNAME.java:14: error: illegal character: '\'
+	final String CORRECT_ACCOUNT_FIELD = '^[a-zA-Z0-9\\!\\@\\#\\$\\%\\^\\&\\*\\\\\\/\\(\\)\\[\\]\\.\\_\\-\\s]+$';
+	                                                                                      ^
+org\h2\dynamic\CORRECT_USERNAME.java:14: error: illegal character: '\'
+	final String CORRECT_ACCOUNT_FIELD = '^[a-zA-Z0-9\\!\\@\\#\\$\\%\\^\\&\\*\\\\\\/\\(\\)\\[\\]\\.\\_\\-\\s]+$';
+	                                                                                       ^
+org\h2\dynamic\CORRECT_USERNAME.java:14: error: ';' expected
+	final String CORRECT_ACCOUNT_FIELD = '^[a-zA-Z0-9\\!\\@\\#\\$\\%\\^\\&\\*\\\\\\/\\(\\)\\[\\]\\.\\_\\-\\s]+$';
+	                                                                                        ^
+org\h2\dynamic\CORRECT_USERNAME.java:14: error: illegal character: '\'
+	final String CORRECT_ACCOUNT_FIELD = '^[a-zA-Z0-9\\!\\@\\#\\$\\%\\^\\&\\*\\\\\\/\\(\\)\\[\\]\\.\\_\\-\\s]+$';
+	                                                                                         ^
+org\h2\dynamic\CORRECT_USERNAME.java:14: error: illegal character: '\'
+	final String CORRECT_ACCOUNT_FIELD = '^[a-zA-Z0-9\\!\\@\\#\\$\\%\\^\\&\\*\\\\\\/\\(\\)\\[\\]\\.\\_\\-\\s]+$';
+	                                                                                          ^
+org\h2\dynamic\CORRECT_USERNAME.java:14: warning: '_' used as an identifier
+	final String CORRECT_ACCOUNT_FIELD = '^[a-zA-Z0-9\\!\\@\\#\\$\\%\\^\\&\\*\\\\\\/\\(\\)\\[\\]\\.\\_\\-\\s]+$';
+	                                                                                                 ^
+  (use of '_' as an identifier might not be supported in releases after Java SE 8)
+100 errors
+2 warnings
+"
+Syntax error in SQL statement "org\h2\dynamic\CORRECT_USERNAME.java:13: error: unclosed character literal
+	final String ONLY_SPECIAL_CHARS = '^[\\!\\@\\#\\$\\%\\^\\&\\*\\\\\\/\\(\\)\\[\\]\\.\\_\\-\\s]+$';
+	                                  ^
+org\h2\dynamic\CORRECT_USERNAME.java:13: error: illegal start of expression
+	final String ONLY_SPECIAL_CHARS = '^[\\!\\@\\#\\$\\%\\^\\&\\*\\\\\\/\\(\\)\\[\\]\\.\\_\\-\\s]+$';
+	                                    ^
+org\h2\dynamic\CORRECT_USERNAME.java:13: error: illegal character: '\'
+	final String ONLY_SPECIAL_CHARS = '^[\\!\\@\\#\\$\\%\\^\\&\\*\\\\\\/\\(\\)\\[\\]\\.\\_\\-\\s]+$';
+	                                     ^
+org\h2\dynamic\CORRECT_USERNAME.java:13: error: illegal character: '\'
+	final String ONLY_SPECIAL_CHARS = '^[\\!\\@\\#\\$\\%\\^\\&\\*\\\\\\/\\(\\)\\[\\]\\.\\_\\-\\s]+$';
+	                                      ^
+org\h2\dynamic\CORRECT_USERNAME.java:13: error: ';' expected
+	final String ONLY_SPECIAL_CHARS = '^[\\!\\@\\#\\$\\%\\^\\&\\*\\\\\\/\\(\\)\\[\\]\\.\\_\\-\\s]+$';
+	                                       ^
+org\h2\dynamic\CORRECT_USERNAME.java:13: error: illegal character: '\'
+	final String ONLY_SPECIAL_CHARS = '^[\\!\\@\\#\\$\\%\\^\\&\\*\\\\\\/\\(\\)\\[\\]\\.\\_\\-\\s]+$';
+	                                        ^
+org\h2\dynamic\CORRECT_USERNAME.java:13: error: illegal character: '\'
+	final String ONLY_SPECIAL_CHARS = '^[\\!\\@\\#\\$\\%\\^\\&\\*\\\\\\/\\(\\)\\[\\]\\.\\_\\-\\s]+$';
+	                                         ^
+org\h2\dynamic\CORRECT_USERNAME.java:13: error: illegal character: '\'
+	final String ONLY_SPECIAL_CHARS = '^[\\!\\@\\#\\$\\%\\^\\&\\*\\\\\\/\\(\\)\\[\\]\\.\\_\\-\\s]+$';
+	                                           ^
+org\h2\dynamic\CORRECT_USERNAME.java:13: error: illegal character: '\'
+	final String ONLY_SPECIAL_CHARS = '^[\\!\\@\\#\\$\\%\\^\\&\\*\\\\\\/\\(\\)\\[\\]\\.\\_\\-\\s]+$';
+	                                            ^
+org\h2\dynamic\CORRECT_USERNAME.java:13: error: illegal character: '#'
+	final String ONLY_SPECIAL_CHARS = '^[\\!\\@\\#\\$\\%\\^\\&\\*\\\\\\/\\(\\)\\[\\]\\.\\_\\-\\s]+$';
+	                                             ^
+org\h2\dynamic\CORRECT_USERNAME.java:13: error: illegal character: '\'
+	final String ONLY_SPECIAL_CHARS = '^[\\!\\@\\#\\$\\%\\^\\&\\*\\\\\\/\\(\\)\\[\\]\\.\\_\\-\\s]+$';
+	                                              ^
+org\h2\dynamic\CORRECT_USERNAME.java:13: error: illegal character: '\'
+	final String ONLY_SPECIAL_CHARS = '^[\\!\\@\\#\\$\\%\\^\\&\\*\\\\\\/\\(\\)\\[\\]\\.\\_\\-\\s]+$';
+	                                               ^
+org\h2\dynamic\CORRECT_USERNAME.java:13: error: illegal character: '\'
+	final String ONLY_SPECIAL_CHARS = '^[\\!\\@\\#\\$\\%\\^\\&\\*\\\\\\/\\(\\)\\[\\]\\.\\_\\-\\s]+$';
+	                                                 ^
+org\h2\dynamic\CORRECT_USERNAME.java:13: error: illegal character: '\'
+	final String ONLY_SPECIAL_CHARS = '^[\\!\\@\\#\\$\\%\\^\\&\\*\\\\\\/\\(\\)\\[\\]\\.\\_\\-\\s]+$';
+	                                                  ^
+org\h2\dynamic\CORRECT_USERNAME.java:13: error: illegal start of type
+	final String ONLY_SPECIAL_CHARS = '^[\\!\\@\\#\\$\\%\\^\\&\\*\\\\\\/\\(\\)\\[\\]\\.\\_\\-\\s]+$';
+	                                                   ^
+org\h2\dynamic\CORRECT_USERNAME.java:13: error: illegal character: '\'
+	final String ONLY_SPECIAL_CHARS = '^[\\!\\@\\#\\$\\%\\^\\&\\*\\\\\\/\\(\\)\\[\\]\\.\\_\\-\\s]+$';
+	                                                    ^
+org\h2\dynamic\CORRECT_USERNAME.java:13: error: illegal character: '\'
+	final String ONLY_SPECIAL_CHARS = '^[\\!\\@\\#\\$\\%\\^\\&\\*\\\\\\/\\(\\)\\[\\]\\.\\_\\-\\s]+$';
+	                                                     ^
+org\h2\dynamic\CORRECT_USERNAME.java:13: error: illegal character: '\'
+	final String ONLY_SPECIAL_CHARS = '^[\\!\\@\\#\\$\\%\\^\\&\\*\\\\\\/\\(\\)\\[\\]\\.\\_\\-\\s]+$';
+	                                                       ^
+org\h2\dynamic\CORRECT_USERNAME.java:13: error: not a statement
+	final String ONLY_SPECIAL_CHARS = '^[\\!\\@\\#\\$\\%\\^\\&\\*\\\\\\/\\(\\)\\[\\]\\.\\_\\-\\s]+$';
+	                                                      ^
+org\h2\dynamic\CORRECT_USERNAME.java:13: error: illegal character: '\'
+	final String ONLY_SPECIAL_CHARS = '^[\\!\\@\\#\\$\\%\\^\\&\\*\\\\\\/\\(\\)\\[\\]\\.\\_\\-\\s]+$';
+	                                                        ^
+org\h2\dynamic\CORRECT_USERNAME.java:13: error: illegal character: '\'
+	final String ONLY_SPECIAL_CHARS = '^[\\!\\@\\#\\$\\%\\^\\&\\*\\\\\\/\\(\\)\\[\\]\\.\\_\\-\\s]+$';
+	                                                          ^
+org\h2\dynamic\CORRECT_USERNAME.java:13: error: not a statement
+	final String ONLY_SPECIAL_CHARS = '^[\\!\\@\\#\\$\\%\\^\\&\\*\\\\\\/\\(\\)\\[\\]\\.\\_\\-\\s]+$';
+	                                                         ^
+org\h2\dynamic\CORRECT_USERNAME.java:13: error: illegal character: '\'
+	final String ONLY_SPECIAL_CHARS = '^[\\!\\@\\#\\$\\%\\^\\&\\*\\\\\\/\\(\\)\\[\\]\\.\\_\\-\\s]+$';
+	                                                           ^
+org\h2\dynamic\CORRECT_USERNAME.java:13: error: illegal character: '\'
+	final String ONLY_SPECIAL_CHARS = '^[\\!\\@\\#\\$\\%\\^\\&\\*\\\\\\/\\(\\)\\[\\]\\.\\_\\-\\s]+$';
+	                                                             ^
+org\h2\dynamic\CORRECT_USERNAME.java:13: error: not a statement
+	final String ONLY_SPECIAL_CHARS = '^[\\!\\@\\#\\$\\%\\^\\&\\*\\\\\\/\\(\\)\\[\\]\\.\\_\\-\\s]+$';
+	                                                            ^
+org\h2\dynamic\CORRECT_USERNAME.java:13: error: illegal character: '\'
+	final String ONLY_SPECIAL_CHARS = '^[\\!\\@\\#\\$\\%\\^\\&\\*\\\\\\/\\(\\)\\[\\]\\.\\_\\-\\s]+$';
+	                                                              ^
+org\h2\dynamic\CORRECT_USERNAME.java:13: error: illegal character: '\'
+	final String ONLY_SPECIAL_CHARS = '^[\\!\\@\\#\\$\\%\\^\\&\\*\\\\\\/\\(\\)\\[\\]\\.\\_\\-\\s]+$';
+	                                                               ^
+org\h2\dynamic\CORRECT_USERNAME.java:13: error: illegal character: '\'
+	final String ONLY_SPECIAL_CHARS = '^[\\!\\@\\#\\$\\%\\^\\&\\*\\\\\\/\\(\\)\\[\\]\\.\\_\\-\\s]+$';
+	                                                                ^
+org\h2\dynamic\CORRECT_USERNAME.java:13: error: illegal character: '\'
+	final String ONLY_SPECIAL_CHARS = '^[\\!\\@\\#\\$\\%\\^\\&\\*\\\\\\/\\(\\)\\[\\]\\.\\_\\-\\s]+$';
+	                                                                 ^
+org\h2\dynamic\CORRECT_USERNAME.java:13: error: illegal character: '\'
+	final String ONLY_SPECIAL_CHARS = '^[\\!\\@\\#\\$\\%\\^\\&\\*\\\\\\/\\(\\)\\[\\]\\.\\_\\-\\s]+$';
+	                                                                  ^
+org\h2\dynamic\CORRECT_USERNAME.java:13: error: illegal character: '\'
+	final String ONLY_SPECIAL_CHARS = '^[\\!\\@\\#\\$\\%\\^\\&\\*\\\\\\/\\(\\)\\[\\]\\.\\_\\-\\s]+$';
+	                                                                    ^
+org\h2\dynamic\CORRECT_USERNAME.java:13: error: not a statement
+	final String ONLY_SPECIAL_CHARS = '^[\\!\\@\\#\\$\\%\\^\\&\\*\\\\\\/\\(\\)\\[\\]\\.\\_\\-\\s]+$';
+	                                                                   ^
+org\h2\dynamic\CORRECT_USERNAME.java:13: error: illegal character: '\'
+	final String ONLY_SPECIAL_CHARS = '^[\\!\\@\\#\\$\\%\\^\\&\\*\\\\\\/\\(\\)\\[\\]\\.\\_\\-\\s]+$';
+	                                                                     ^
+org\h2\dynamic\CORRECT_USERNAME.java:13: error: ';' expected
+	final String ONLY_SPECIAL_CHARS = '^[\\!\\@\\#\\$\\%\\^\\&\\*\\\\\\/\\(\\)\\[\\]\\.\\_\\-\\s]+$';
+	                                                                      ^
+org\h2\dynamic\CORRECT_USERNAME.java:13: error: illegal character: '\'
+	final String ONLY_SPECIAL_CHARS = '^[\\!\\@\\#\\$\\%\\^\\&\\*\\\\\\/\\(\\)\\[\\]\\.\\_\\-\\s]+$';
+	                                                                       ^
+org\h2\dynamic\CORRECT_USERNAME.java:13: error: illegal character: '\'
+	final String ONLY_SPECIAL_CHARS = '^[\\!\\@\\#\\$\\%\\^\\&\\*\\\\\\/\\(\\)\\[\\]\\.\\_\\-\\s]+$';
+	                                                                        ^
+org\h2\dynamic\CORRECT_USERNAME.java:13: error: illegal start of expression
+	final String ONLY_SPECIAL_CHARS = '^[\\!\\@\\#\\$\\%\\^\\&\\*\\\\\\/\\(\\)\\[\\]\\.\\_\\-\\s]+$';
+	                                                                         ^
+org\h2\dynamic\CORRECT_USERNAME.java:13: error: illegal character: '\'
+	final String ONLY_SPECIAL_CHARS = '^[\\!\\@\\#\\$\\%\\^\\&\\*\\\\\\/\\(\\)\\[\\]\\.\\_\\-\\s]+$';
+	                                                                          ^
+org\h2\dynamic\CORRECT_USERNAME.java:13: error: illegal character: '\'
+	final String ONLY_SPECIAL_CHARS = '^[\\!\\@\\#\\$\\%\\^\\&\\*\\\\\\/\\(\\)\\[\\]\\.\\_\\-\\s]+$';
+	                                                                           ^
+org\h2\dynamic\CORRECT_USERNAME.java:13: error: ';' expected
+	final String ONLY_SPECIAL_CHARS = '^[\\!\\@\\#\\$\\%\\^\\&\\*\\\\\\/\\(\\)\\[\\]\\.\\_\\-\\s]+$';
+	                                                                            ^
+org\h2\dynamic\CORRECT_USERNAME.java:13: error: illegal character: '\'
+	final String ONLY_SPECIAL_CHARS = '^[\\!\\@\\#\\$\\%\\^\\&\\*\\\\\\/\\(\\)\\[\\]\\.\\_\\-\\s]+$';
+	                                                                             ^
+org\h2\dynamic\CORRECT_USERNAME.java:13: error: illegal character: '\'
+	final String ONLY_SPECIAL_CHARS = '^[\\!\\@\\#\\$\\%\\^\\&\\*\\\\\\/\\(\\)\\[\\]\\.\\_\\-\\s]+$';
+	                                                                              ^
+org\h2\dynamic\CORRECT_USERNAME.java:13: error: illegal start of expression
+	final String ONLY_SPECIAL_CHARS = '^[\\!\\@\\#\\$\\%\\^\\&\\*\\\\\\/\\(\\)\\[\\]\\.\\_\\-\\s]+$';
+	                                                                               ^
+org\h2\dynamic\CORRECT_USERNAME.java:13: error: illegal character: '\'
+	final String ONLY_SPECIAL_CHARS = '^[\\!\\@\\#\\$\\%\\^\\&\\*\\\\\\/\\(\\)\\[\\]\\.\\_\\-\\s]+$';
+	                                                                                ^
+org\h2\dynamic\CORRECT_USERNAME.java:13: error: illegal character: '\'
+	final String ONLY_SPECIAL_CHARS = '^[\\!\\@\\#\\$\\%\\^\\&\\*\\\\\\/\\(\\)\\[\\]\\.\\_\\-\\s]+$';
+	                                                                                 ^
+org\h2\dynamic\CORRECT_USERNAME.java:13: error: ';' expected
+	final String ONLY_SPECIAL_CHARS = '^[\\!\\@\\#\\$\\%\\^\\&\\*\\\\\\/\\(\\)\\[\\]\\.\\_\\-\\s]+$';
+	                                                                                  ^
+org\h2\dynamic\CORRECT_USERNAME.java:13: error: illegal character: '\'
+	final String ONLY_SPECIAL_CHARS = '^[\\!\\@\\#\\$\\%\\^\\&\\*\\\\\\/\\(\\)\\[\\]\\.\\_\\-\\s]+$';
+	                                                                                   ^
+org\h2\dynamic\CORRECT_USERNAME.java:13: error: illegal character: '\'
+	final String ONLY_SPECIAL_CHARS = '^[\\!\\@\\#\\$\\%\\^\\&\\*\\\\\\/\\(\\)\\[\\]\\.\\_\\-\\s]+$';
+	                                                                                    ^
+org\h2\dynamic\CORRECT_USERNAME.java:13: error: illegal character: '\'
+	final String ONLY_SPECIAL_CHARS = '^[\\!\\@\\#\\$\\%\\^\\&\\*\\\\\\/\\(\\)\\[\\]\\.\\_\\-\\s]+$';
+	                                                                                      ^
+org\h2\dynamic\CORRECT_USERNAME.java:13: warning: '_' used as an identifier
+	final String ONLY_SPECIAL_CHARS = '^[\\!\\@\\#\\$\\%\\^\\&\\*\\\\\\/\\(\\)\\[\\]\\.\\_\\-\\s]+$';
+	                                                                                     ^
+  (use of '_' as an identifier might not be supported in releases after Java SE 8)
+org\h2\dynamic\CORRECT_USERNAME.java:13: error: not a statement
+	final String ONLY_SPECIAL_CHARS = '^[\\!\\@\\#\\$\\%\\^\\&\\*\\\\\\/\\(\\)\\[\\]\\.\\_\\-\\s]+$';
+	                                                                                     ^
+org\h2\dynamic\CORRECT_USERNAME.java:13: error: illegal character: '\'
+	final String ONLY_SPECIAL_CHARS = '^[\\!\\@\\#\\$\\%\\^\\&\\*\\\\\\/\\(\\)\\[\\]\\.\\_\\-\\s]+$';
+	                                                                                       ^
+org\h2\dynamic\CORRECT_USERNAME.java:13: error: illegal character: '\'
+	final String ONLY_SPECIAL_CHARS = '^[\\!\\@\\#\\$\\%\\^\\&\\*\\\\\\/\\(\\)\\[\\]\\.\\_\\-\\s]+$';
+	                                                                                         ^
+org\h2\dynamic\CORRECT_USERNAME.java:13: error: illegal character: '\'
+	final String ONLY_SPECIAL_CHARS = '^[\\!\\@\\#\\$\\%\\^\\&\\*\\\\\\/\\(\\)\\[\\]\\.\\_\\-\\s]+$';
+	                                                                                          ^
+org\h2\dynamic\CORRECT_USERNAME.java:13: error: not a statement
+	final String ONLY_SPECIAL_CHARS = '^[\\!\\@\\#\\$\\%\\^\\&\\*\\\\\\/\\(\\)\\[\\]\\.\\_\\-\\s]+$';
+	                                                                                           ^
+org\h2\dynamic\CORRECT_USERNAME.java:13: error: ';' expected
+	final String ONLY_SPECIAL_CHARS = '^[\\!\\@\\#\\$\\%\\^\\&\\*\\\\\\/\\(\\)\\[\\]\\.\\_\\-\\s]+$';
+	                                                                                            ^
+org\h2\dynamic\CORRECT_USERNAME.java:13: error: unclosed character literal
+	final String ONLY_SPECIAL_CHARS = '^[\\!\\@\\#\\$\\%\\^\\&\\*\\\\\\/\\(\\)\\[\\]\\.\\_\\-\\s]+$';
+	                                                                                               ^
+org\h2\dynamic\CORRECT_USERNAME.java:13: error: not a statement
+	final String ONLY_SPECIAL_CHARS = '^[\\!\\@\\#\\$\\%\\^\\&\\*\\\\\\/\\(\\)\\[\\]\\.\\_\\-\\s]+$';
+	                                                                                              ^
+org\h2\dynamic\CORRECT_USERNAME.java:14: error: unclosed character literal
+	final String CORRECT_ACCOUNT_FIELD = '^[a-zA-Z0-9\\!\\@\\#\\$\\%\\^\\&\\*\\\\\\/\\(\\)\\[\\]\\.\\_\\-\\s]+$';
+	                                     ^
+org\h2\dynamic\CORRECT_USERNAME.java:14: error: illegal start of expression
+	final String CORRECT_ACCOUNT_FIELD = '^[a-zA-Z0-9\\!\\@\\#\\$\\%\\^\\&\\*\\\\\\/\\(\\)\\[\\]\\.\\_\\-\\s]+$';
+	                                       ^
+org\h2\dynamic\CORRECT_USERNAME.java:14: error: ';' expected
+	final String CORRECT_ACCOUNT_FIELD = '^[a-zA-Z0-9\\!\\@\\#\\$\\%\\^\\&\\*\\\\\\/\\(\\)\\[\\]\\.\\_\\-\\s]+$';
+	                                         ^
+org\h2\dynamic\CORRECT_USERNAME.java:14: error: illegal character: '\'
+	final String CORRECT_ACCOUNT_FIELD = '^[a-zA-Z0-9\\!\\@\\#\\$\\%\\^\\&\\*\\\\\\/\\(\\)\\[\\]\\.\\_\\-\\s]+$';
+	                                                 ^
+org\h2\dynamic\CORRECT_USERNAME.java:14: error: not a statement
+	final String CORRECT_ACCOUNT_FIELD = '^[a-zA-Z0-9\\!\\@\\#\\$\\%\\^\\&\\*\\\\\\/\\(\\)\\[\\]\\.\\_\\-\\s]+$';
+	                                               ^
+org\h2\dynamic\CORRECT_USERNAME.java:14: error: illegal character: '\'
+	final String CORRECT_ACCOUNT_FIELD = '^[a-zA-Z0-9\\!\\@\\#\\$\\%\\^\\&\\*\\\\\\/\\(\\)\\[\\]\\.\\_\\-\\s]+$';
+	                                                  ^
+org\h2\dynamic\CORRECT_USERNAME.java:14: error: illegal character: '\'
+	final String CORRECT_ACCOUNT_FIELD = '^[a-zA-Z0-9\\!\\@\\#\\$\\%\\^\\&\\*\\\\\\/\\(\\)\\[\\]\\.\\_\\-\\s]+$';
+	                                                    ^
+org\h2\dynamic\CORRECT_USERNAME.java:14: error: illegal character: '\'
+	final String CORRECT_ACCOUNT_FIELD = '^[a-zA-Z0-9\\!\\@\\#\\$\\%\\^\\&\\*\\\\\\/\\(\\)\\[\\]\\.\\_\\-\\s]+$';
+	                                                     ^
+org\h2\dynamic\CORRECT_USERNAME.java:14: error: illegal character: '\'
+	final String CORRECT_ACCOUNT_FIELD = '^[a-zA-Z0-9\\!\\@\\#\\$\\%\\^\\&\\*\\\\\\/\\(\\)\\[\\]\\.\\_\\-\\s]+$';
+	                                                       ^
+org\h2\dynamic\CORRECT_USERNAME.java:14: error: illegal character: '\'
+	final String CORRECT_ACCOUNT_FIELD = '^[a-zA-Z0-9\\!\\@\\#\\$\\%\\^\\&\\*\\\\\\/\\(\\)\\[\\]\\.\\_\\-\\s]+$';
+	                                                        ^
+org\h2\dynamic\CORRECT_USERNAME.java:14: error: illegal character: '#'
+	final String CORRECT_ACCOUNT_FIELD = '^[a-zA-Z0-9\\!\\@\\#\\$\\%\\^\\&\\*\\\\\\/\\(\\)\\[\\]\\.\\_\\-\\s]+$';
+	                                                         ^
+org\h2\dynamic\CORRECT_USERNAME.java:14: error: illegal character: '\'
+	final String CORRECT_ACCOUNT_FIELD = '^[a-zA-Z0-9\\!\\@\\#\\$\\%\\^\\&\\*\\\\\\/\\(\\)\\[\\]\\.\\_\\-\\s]+$';
+	                                                          ^
+org\h2\dynamic\CORRECT_USERNAME.java:14: error: illegal character: '\'
+	final String CORRECT_ACCOUNT_FIELD = '^[a-zA-Z0-9\\!\\@\\#\\$\\%\\^\\&\\*\\\\\\/\\(\\)\\[\\]\\.\\_\\-\\s]+$';
+	                                                           ^
+org\h2\dynamic\CORRECT_USERNAME.java:14: error: illegal character: '\'
+	final String CORRECT_ACCOUNT_FIELD = '^[a-zA-Z0-9\\!\\@\\#\\$\\%\\^\\&\\*\\\\\\/\\(\\)\\[\\]\\.\\_\\-\\s]+$';
+	                                                             ^
+org\h2\dynamic\CORRECT_USERNAME.java:14: error: illegal character: '\'
+	final String CORRECT_ACCOUNT_FIELD = '^[a-zA-Z0-9\\!\\@\\#\\$\\%\\^\\&\\*\\\\\\/\\(\\)\\[\\]\\.\\_\\-\\s]+$';
+	                                                              ^
+org\h2\dynamic\CORRECT_USERNAME.java:14: error: illegal start of type
+	final String CORRECT_ACCOUNT_FIELD = '^[a-zA-Z0-9\\!\\@\\#\\$\\%\\^\\&\\*\\\\\\/\\(\\)\\[\\]\\.\\_\\-\\s]+$';
+	                                                               ^
+org\h2\dynamic\CORRECT_USERNAME.java:14: error: illegal character: '\'
+	final String CORRECT_ACCOUNT_FIELD = '^[a-zA-Z0-9\\!\\@\\#\\$\\%\\^\\&\\*\\\\\\/\\(\\)\\[\\]\\.\\_\\-\\s]+$';
+	                                                                ^
+org\h2\dynamic\CORRECT_USERNAME.java:14: error: illegal character: '\'
+	final String CORRECT_ACCOUNT_FIELD = '^[a-zA-Z0-9\\!\\@\\#\\$\\%\\^\\&\\*\\\\\\/\\(\\)\\[\\]\\.\\_\\-\\s]+$';
+	                                                                 ^
+org\h2\dynamic\CORRECT_USERNAME.java:14: error: illegal character: '\'
+	final String CORRECT_ACCOUNT_FIELD = '^[a-zA-Z0-9\\!\\@\\#\\$\\%\\^\\&\\*\\\\\\/\\(\\)\\[\\]\\.\\_\\-\\s]+$';
+	                                                                   ^
+org\h2\dynamic\CORRECT_USERNAME.java:14: error: not a statement
+	final String CORRECT_ACCOUNT_FIELD = '^[a-zA-Z0-9\\!\\@\\#\\$\\%\\^\\&\\*\\\\\\/\\(\\)\\[\\]\\.\\_\\-\\s]+$';
+	                                                                  ^
+org\h2\dynamic\CORRECT_USERNAME.java:14: error: illegal character: '\'
+	final String CORRECT_ACCOUNT_FIELD = '^[a-zA-Z0-9\\!\\@\\#\\$\\%\\^\\&\\*\\\\\\/\\(\\)\\[\\]\\.\\_\\-\\s]+$';
+	                                                                    ^
+org\h2\dynamic\CORRECT_USERNAME.java:14: error: illegal character: '\'
+	final String CORRECT_ACCOUNT_FIELD = '^[a-zA-Z0-9\\!\\@\\#\\$\\%\\^\\&\\*\\\\\\/\\(\\)\\[\\]\\.\\_\\-\\s]+$';
+	                                                                      ^
+org\h2\dynamic\CORRECT_USERNAME.java:14: error: not a statement
+	final String CORRECT_ACCOUNT_FIELD = '^[a-zA-Z0-9\\!\\@\\#\\$\\%\\^\\&\\*\\\\\\/\\(\\)\\[\\]\\.\\_\\-\\s]+$';
+	                                                                     ^
+org\h2\dynamic\CORRECT_USERNAME.java:14: error: illegal character: '\'
+	final String CORRECT_ACCOUNT_FIELD = '^[a-zA-Z0-9\\!\\@\\#\\$\\%\\^\\&\\*\\\\\\/\\(\\)\\[\\]\\.\\_\\-\\s]+$';
+	                                                                       ^
+org\h2\dynamic\CORRECT_USERNAME.java:14: error: illegal character: '\'
+	final String CORRECT_ACCOUNT_FIELD = '^[a-zA-Z0-9\\!\\@\\#\\$\\%\\^\\&\\*\\\\\\/\\(\\)\\[\\]\\.\\_\\-\\s]+$';
+	                                                                         ^
+org\h2\dynamic\CORRECT_USERNAME.java:14: error: not a statement
+	final String CORRECT_ACCOUNT_FIELD = '^[a-zA-Z0-9\\!\\@\\#\\$\\%\\^\\&\\*\\\\\\/\\(\\)\\[\\]\\.\\_\\-\\s]+$';
+	                                                                        ^
+org\h2\dynamic\CORRECT_USERNAME.java:14: error: illegal character: '\'
+	final String CORRECT_ACCOUNT_FIELD = '^[a-zA-Z0-9\\!\\@\\#\\$\\%\\^\\&\\*\\\\\\/\\(\\)\\[\\]\\.\\_\\-\\s]+$';
+	                                                                          ^
+org\h2\dynamic\CORRECT_USERNAME.java:14: error: illegal character: '\'
+	final String CORRECT_ACCOUNT_FIELD = '^[a-zA-Z0-9\\!\\@\\#\\$\\%\\^\\&\\*\\\\\\/\\(\\)\\[\\]\\.\\_\\-\\s]+$';
+	                                                                           ^
+org\h2\dynamic\CORRECT_USERNAME.java:14: error: illegal character: '\'
+	final String CORRECT_ACCOUNT_FIELD = '^[a-zA-Z0-9\\!\\@\\#\\$\\%\\^\\&\\*\\\\\\/\\(\\)\\[\\]\\.\\_\\-\\s]+$';
+	                                                                            ^
+org\h2\dynamic\CORRECT_USERNAME.java:14: error: illegal character: '\'
+	final String CORRECT_ACCOUNT_FIELD = '^[a-zA-Z0-9\\!\\@\\#\\$\\%\\^\\&\\*\\\\\\/\\(\\)\\[\\]\\.\\_\\-\\s]+$';
+	                                                                             ^
+org\h2\dynamic\CORRECT_USERNAME.java:14: error: illegal character: '\'
+	final String CORRECT_ACCOUNT_FIELD = '^[a-zA-Z0-9\\!\\@\\#\\$\\%\\^\\&\\*\\\\\\/\\(\\)\\[\\]\\.\\_\\-\\s]+$';
+	                                                                              ^
+org\h2\dynamic\CORRECT_USERNAME.java:14: error: illegal character: '\'
+	final String CORRECT_ACCOUNT_FIELD = '^[a-zA-Z0-9\\!\\@\\#\\$\\%\\^\\&\\*\\\\\\/\\(\\)\\[\\]\\.\\_\\-\\s]+$';
+	                                                                                ^
+org\h2\dynamic\CORRECT_USERNAME.java:14: error: not a statement
+	final String CORRECT_ACCOUNT_FIELD = '^[a-zA-Z0-9\\!\\@\\#\\$\\%\\^\\&\\*\\\\\\/\\(\\)\\[\\]\\.\\_\\-\\s]+$';
+	                                                                               ^
+org\h2\dynamic\CORRECT_USERNAME.java:14: error: illegal character: '\'
+	final String CORRECT_ACCOUNT_FIELD = '^[a-zA-Z0-9\\!\\@\\#\\$\\%\\^\\&\\*\\\\\\/\\(\\)\\[\\]\\.\\_\\-\\s]+$';
+	                                                                                 ^
+org\h2\dynamic\CORRECT_USERNAME.java:14: error: ';' expected
+	final String CORRECT_ACCOUNT_FIELD = '^[a-zA-Z0-9\\!\\@\\#\\$\\%\\^\\&\\*\\\\\\/\\(\\)\\[\\]\\.\\_\\-\\s]+$';
+	                                                                                  ^
+org\h2\dynamic\CORRECT_USERNAME.java:14: error: illegal character: '\'
+	final String CORRECT_ACCOUNT_FIELD = '^[a-zA-Z0-9\\!\\@\\#\\$\\%\\^\\&\\*\\\\\\/\\(\\)\\[\\]\\.\\_\\-\\s]+$';
+	                                                                                   ^
+org\h2\dynamic\CORRECT_USERNAME.java:14: error: illegal character: '\'
+	final String CORRECT_ACCOUNT_FIELD = '^[a-zA-Z0-9\\!\\@\\#\\$\\%\\^\\&\\*\\\\\\/\\(\\)\\[\\]\\.\\_\\-\\s]+$';
+	                                                                                    ^
+org\h2\dynamic\CORRECT_USERNAME.java:14: error: illegal start of expression
+	final String CORRECT_ACCOUNT_FIELD = '^[a-zA-Z0-9\\!\\@\\#\\$\\%\\^\\&\\*\\\\\\/\\(\\)\\[\\]\\.\\_\\-\\s]+$';
+	                                                                                     ^
+org\h2\dynamic\CORRECT_USERNAME.java:14: error: illegal character: '\'
+	final String CORRECT_ACCOUNT_FIELD = '^[a-zA-Z0-9\\!\\@\\#\\$\\%\\^\\&\\*\\\\\\/\\(\\)\\[\\]\\.\\_\\-\\s]+$';
+	                                                                                      ^
+org\h2\dynamic\CORRECT_USERNAME.java:14: error: illegal character: '\'
+	final String CORRECT_ACCOUNT_FIELD = '^[a-zA-Z0-9\\!\\@\\#\\$\\%\\^\\&\\*\\\\\\/\\(\\)\\[\\]\\.\\_\\-\\s]+$';
+	                                                                                       ^
+org\h2\dynamic\CORRECT_USERNAME.java:14: error: ';' expected
+	final String CORRECT_ACCOUNT_FIELD = '^[a-zA-Z0-9\\!\\@\\#\\$\\%\\^\\&\\*\\\\\\/\\(\\)\\[\\]\\.\\_\\-\\s]+$';
+	                                                                                        ^
+org\h2\dynamic\CORRECT_USERNAME.java:14: error: illegal character: '\'
+	final String CORRECT_ACCOUNT_FIELD = '^[a-zA-Z0-9\\!\\@\\#\\$\\%\\^\\&\\*\\\\\\/\\(\\)\\[\\]\\.\\_\\-\\s]+$';
+	                                                                                         ^
+org\h2\dynamic\CORRECT_USERNAME.java:14: error: illegal character: '\'
+	final String CORRECT_ACCOUNT_FIELD = '^[a-zA-Z0-9\\!\\@\\#\\$\\%\\^\\&\\*\\\\\\/\\(\\)\\[\\]\\.\\_\\-\\s]+$';
+	                                                                                          ^
+org\h2\dynamic\CORRECT_USERNAME.java:14: warning: '_' used as an identifier
+	final String CORRECT_ACCOUNT_FIELD = '^[a-zA-Z0-9\\!\\@\\#\\$\\%\\^\\&\\*\\\\\\/\\(\\)\\[\\]\\.\\_\\-\\s]+$';
+	                                                                                                 ^
+  (use of '_' as an identifier might not be supported in releases after Java SE 8)
+100 errors
+2 warnings
+"; SQL statement:
+CREATE ALIAS correct_username AS
+$$
+import java.util.regex.Pattern;
+import java.util.regex.Matcher;
+@CODE
+boolean correctUsername(String input)
+{
+	if (input == null)
+	{
+		return false;
+	}
+	final String ONLY_SPECIAL_CHARS = '^[\\!\\@\\#\\$\\%\\^\\&\\*\\\\\\/\\(\\)\\[\\]\\.\\_\\-\\s]+$';
+	final String CORRECT_ACCOUNT_FIELD = '^[a-zA-Z0-9\\!\\@\\#\\$\\%\\^\\&\\*\\\\\\/\\(\\)\\[\\]\\.\\_\\-\\s]+$';
+	Pattern onlyWhitelistChars = Pattern.compile(CORRECT_ACCOUNT_FIELD);
+	Pattern onlySpecials = Pattern.compile(ONLY_SPECIAL_CHARS);
+	Matcher m = onlyWhitelistChars.matcher(input);
+	Matcher m1 = onlySpecials.matcher(input);
+	return m.matches() && !m1.matches();
+}
+$$ [42000-195]
+2017-06-15 19:28:35 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Столбец "CLIENT_FIRSTT_NAME" не найден
+Column "CLIENT_FIRSTT_NAME" not found; SQL statement:
+ALTER TABLE CLIENTS ADD CONSTRAINT CHECK_FIRST_NAME CHECK(CORRECT_NAME(CLIENT_FIRSTT_NAME)) [42122-195]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:345)
+	at org.h2.message.DbException.get(DbException.java:179)
+	at org.h2.message.DbException.get(DbException.java:155)
+	at org.h2.expression.ExpressionColumn.optimize(ExpressionColumn.java:147)
+	at org.h2.expression.JavaFunction.optimize(JavaFunction.java:57)
+	at org.h2.command.ddl.AlterTableAddConstraint.tryUpdate(AlterTableAddConstraint.java:191)
+	at org.h2.command.ddl.AlterTableAddConstraint.update(AlterTableAddConstraint.java:77)
+	at org.h2.command.CommandContainer.update(CommandContainer.java:101)
+	at org.h2.command.Command.executeUpdate(Command.java:260)
+	at org.h2.jdbc.JdbcStatement.executeInternal(JdbcStatement.java:193)
+	at org.h2.jdbc.JdbcStatement.execute(JdbcStatement.java:165)
+	at org.h2.server.web.WebApp.getResult(WebApp.java:1380)
+	at org.h2.server.web.WebApp.query(WebApp.java:1053)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:1015)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:1002)
+	at org.h2.server.web.WebThread.process(WebThread.java:164)
+	at org.h2.server.web.WebThread.run(WebThread.java:89)
+	at java.lang.Thread.run(Unknown Source)
+2017-06-15 19:37:04 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Невозможно удалить "PUBLIC.CORRECT_NAME", пока существует зависимый объект "PUBLIC.CLIENTS"
+Cannot drop "PUBLIC.CORRECT_NAME" because "PUBLIC.CLIENTS" depends on it; SQL statement:
+DROP ALIAS CORRECT_NAME [90107-195]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:345)
+	at org.h2.message.DbException.get(DbException.java:179)
+	at org.h2.engine.Database.removeSchemaObject(Database.java:1862)
+	at org.h2.command.ddl.DropFunctionAlias.update(DropFunctionAlias.java:40)
+	at org.h2.command.CommandContainer.update(CommandContainer.java:101)
+	at org.h2.command.Command.executeUpdate(Command.java:260)
+	at org.h2.jdbc.JdbcStatement.executeInternal(JdbcStatement.java:193)
+	at org.h2.jdbc.JdbcStatement.execute(JdbcStatement.java:165)
+	at org.h2.server.web.WebApp.getResult(WebApp.java:1380)
+	at org.h2.server.web.WebApp.query(WebApp.java:1053)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:1015)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:1002)
+	at org.h2.server.web.WebThread.process(WebThread.java:164)
+	at org.h2.server.web.WebThread.run(WebThread.java:89)
+	at java.lang.Thread.run(Unknown Source)
+2017-06-15 19:37:04 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Псевдоним функции "CORRECT_NAME" уже существует
+Function alias "CORRECT_NAME" already exists; SQL statement:
+CREATE ALIAS CORRECT_NAME AS
+$$
+import java.util.regex.Pattern;
+import java.util.regex.Matcher;
+@CODE
+boolean correctName(String input)
+{
+    if (input == null)
+    {
+        return true;
+    }
+    final String ONLY_SPECIAL_CHARS = "^[\\!\\@\\#\\$\\%\\^\\&\\*\\\\\\/\\(\\)\\[\\]\\.\\_\\-\\s]+$";
+    Pattern onlySpecials = Pattern.compile(ONLY_SPECIAL_CHARS);
+    Matcher m1 = onlySpecials.matcher(input);
+    return input.length() > 0 && !m1.matches();
+} 
+$$ [90076-195]
+2017-06-15 19:39:50 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Ограничение "CHECK_CLIENT_FIRST_NAME" уже существует
+Constraint "CHECK_CLIENT_FIRST_NAME" already exists; SQL statement:
+ALTER TABLE CLIENTS ADD CONSTRAINT CHECK_CLIENT_FIRST_NAME CHECK ((CLIENT_LAST_NAME IS NULL) OR PUBLIC.CORRECT_NAME(CLIENT_LAST_NAME)) [90045-195]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:345)
+	at org.h2.message.DbException.get(DbException.java:179)
+	at org.h2.message.DbException.get(DbException.java:155)
+	at org.h2.command.ddl.AlterTableAddConstraint.tryUpdate(AlterTableAddConstraint.java:109)
+	at org.h2.command.ddl.AlterTableAddConstraint.update(AlterTableAddConstraint.java:77)
+	at org.h2.command.CommandContainer.update(CommandContainer.java:101)
+	at org.h2.command.Command.executeUpdate(Command.java:260)
+	at org.h2.jdbc.JdbcStatement.executeInternal(JdbcStatement.java:193)
+	at org.h2.jdbc.JdbcStatement.execute(JdbcStatement.java:165)
+	at org.h2.server.web.WebApp.getResult(WebApp.java:1380)
+	at org.h2.server.web.WebApp.query(WebApp.java:1053)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:1015)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:1002)
+	at org.h2.server.web.WebThread.process(WebThread.java:164)
+	at org.h2.server.web.WebThread.run(WebThread.java:89)
+	at java.lang.Thread.run(Unknown Source)
+2017-06-15 19:49:21 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Функция "CURRECT_DATE" не найдена
+Function "CURRECT_DATE" not found; SQL statement:
+ALTER TABLE CLIENTS ADD CONSTRAINT CHECK_CLIENT_DATE_OF_BIRTH CHECK(CLIENT_DATE_OF_BIRTH <= CURRECT_DATE()) [90022-195]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:345)
+	at org.h2.message.DbException.get(DbException.java:179)
+	at org.h2.message.DbException.get(DbException.java:155)
+	at org.h2.command.Parser.readJavaFunction(Parser.java:2481)
+	at org.h2.command.Parser.readFunction(Parser.java:2533)
+	at org.h2.command.Parser.readTerm(Parser.java:2870)
+	at org.h2.command.Parser.readFactor(Parser.java:2384)
+	at org.h2.command.Parser.readSum(Parser.java:2371)
+	at org.h2.command.Parser.readConcat(Parser.java:2341)
+	at org.h2.command.Parser.readCondition(Parser.java:2295)
+	at org.h2.command.Parser.readAnd(Parser.java:2144)
+	at org.h2.command.Parser.readExpression(Parser.java:2136)
+	at org.h2.command.Parser.readTerm(Parser.java:2962)
+	at org.h2.command.Parser.readFactor(Parser.java:2384)
+	at org.h2.command.Parser.readSum(Parser.java:2371)
+	at org.h2.command.Parser.readConcat(Parser.java:2341)
+	at org.h2.command.Parser.readCondition(Parser.java:2172)
+	at org.h2.command.Parser.readAnd(Parser.java:2144)
+	at org.h2.command.Parser.readExpression(Parser.java:2136)
+	at org.h2.command.Parser.parseAlterTableAddConstraintIf(Parser.java:5957)
+	at org.h2.command.Parser.parseAlterTable(Parser.java:5564)
+	at org.h2.command.Parser.parseAlter(Parser.java:4961)
+	at org.h2.command.Parser.parsePrepared(Parser.java:347)
+	at org.h2.command.Parser.parse(Parser.java:320)
+	at org.h2.command.Parser.parse(Parser.java:292)
+	at org.h2.command.Parser.prepareCommand(Parser.java:257)
+	at org.h2.engine.Session.prepareLocal(Session.java:573)
+	at org.h2.engine.Session.prepareCommand(Session.java:514)
+	at org.h2.jdbc.JdbcConnection.prepareCommand(JdbcConnection.java:1204)
+	at org.h2.jdbc.JdbcStatement.executeInternal(JdbcStatement.java:177)
+	at org.h2.jdbc.JdbcStatement.execute(JdbcStatement.java:165)
+	at org.h2.server.web.WebApp.getResult(WebApp.java:1380)
+	at org.h2.server.web.WebApp.query(WebApp.java:1053)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:1015)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:1002)
+	at org.h2.server.web.WebThread.process(WebThread.java:164)
+	at org.h2.server.web.WebThread.run(WebThread.java:89)
+	at java.lang.Thread.run(Unknown Source)
+2017-06-15 19:49:48 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Столбец "2017-06-16" не найден
+Column "2017-06-16" not found; SQL statement:
+SELECT ("2017-06-16" < CURRENT_DATE()) [42122-195]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:345)
+	at org.h2.message.DbException.get(DbException.java:179)
+	at org.h2.message.DbException.get(DbException.java:155)
+	at org.h2.expression.ExpressionColumn.optimize(ExpressionColumn.java:147)
+	at org.h2.expression.Comparison.optimize(Comparison.java:178)
+	at org.h2.command.dml.Select.prepare(Select.java:839)
+	at org.h2.command.Parser.prepareCommand(Parser.java:262)
+	at org.h2.engine.Session.prepareLocal(Session.java:573)
+	at org.h2.engine.Session.prepareCommand(Session.java:514)
+	at org.h2.jdbc.JdbcConnection.prepareCommand(JdbcConnection.java:1204)
+	at org.h2.jdbc.JdbcStatement.executeInternal(JdbcStatement.java:177)
+	at org.h2.jdbc.JdbcStatement.execute(JdbcStatement.java:165)
+	at org.h2.server.web.WebApp.getResult(WebApp.java:1380)
+	at org.h2.server.web.WebApp.query(WebApp.java:1053)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:1015)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:1002)
+	at org.h2.server.web.WebThread.process(WebThread.java:164)
+	at org.h2.server.web.WebThread.run(WebThread.java:89)
+	at java.lang.Thread.run(Unknown Source)
+2017-06-15 19:50:22 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Синтаксическая ошибка в выражении SQL "INSERT INTO CLIENTS VALUES (CLIENT_FIRST_NAME, CLIENT_DATE_OF_BIRTH, CLIENT_USERNAME, CLIENT_PASSWORD) VALUES[*] ('a', '', 'a', 'a')"
+Syntax error in SQL statement "INSERT INTO CLIENTS VALUES (CLIENT_FIRST_NAME, CLIENT_DATE_OF_BIRTH, CLIENT_USERNAME, CLIENT_PASSWORD) VALUES[*] ('a', '', 'a', 'a')"; SQL statement:
+INSERT INTO CLIENTS VALUES (CLIENT_FIRST_NAME, CLIENT_DATE_OF_BIRTH, CLIENT_USERNAME, CLIENT_PASSWORD) VALUES ('a', '', 'a', 'a') [42000-195]
+2017-06-15 19:50:37 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Синтаксическая ошибка в выражении SQL "INSERT INTO CLIENTS VALUES (CLIENT_FIRST_NAME, CLIENT_DATE_OF_BIRTH, CLIENT_USERNAME, CLIENT_PASSWORD) VALUES[*] ('a', '2029-06-16', 'a', 'a')"
+Syntax error in SQL statement "INSERT INTO CLIENTS VALUES (CLIENT_FIRST_NAME, CLIENT_DATE_OF_BIRTH, CLIENT_USERNAME, CLIENT_PASSWORD) VALUES[*] ('a', '2029-06-16', 'a', 'a')"; SQL statement:
+INSERT INTO CLIENTS VALUES (CLIENT_FIRST_NAME, CLIENT_DATE_OF_BIRTH, CLIENT_USERNAME, CLIENT_PASSWORD) VALUES ('a', '2029-06-16', 'a', 'a') [42000-195]
+2017-06-15 19:50:43 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Синтаксическая ошибка в выражении SQL "INSERT INTO CLIENTS VALUES (CLIENT_FIRST_NAME, CLIENT_DATE_OF_BIRTH, CLIENT_USERNAME, CLIENT_PASSWORD) VALUES[*] ('a', '2017-06-16', 'a', 'a')"
+Syntax error in SQL statement "INSERT INTO CLIENTS VALUES (CLIENT_FIRST_NAME, CLIENT_DATE_OF_BIRTH, CLIENT_USERNAME, CLIENT_PASSWORD) VALUES[*] ('a', '2017-06-16', 'a', 'a')"; SQL statement:
+INSERT INTO CLIENTS VALUES (CLIENT_FIRST_NAME, CLIENT_DATE_OF_BIRTH, CLIENT_USERNAME, CLIENT_PASSWORD) VALUES ('a', '2017-06-16', 'a', 'a') [42000-195]
+2017-06-15 19:50:46 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Синтаксическая ошибка в выражении SQL "INSERT INTO CLIENTS VALUES (CLIENT_FIRST_NAME, CLIENT_DATE_OF_BIRTH, CLIENT_USERNAME, CLIENT_PASSWORD) VALUES[*] ('a', '2017-06-15', 'a', 'a')"
+Syntax error in SQL statement "INSERT INTO CLIENTS VALUES (CLIENT_FIRST_NAME, CLIENT_DATE_OF_BIRTH, CLIENT_USERNAME, CLIENT_PASSWORD) VALUES[*] ('a', '2017-06-15', 'a', 'a')"; SQL statement:
+INSERT INTO CLIENTS VALUES (CLIENT_FIRST_NAME, CLIENT_DATE_OF_BIRTH, CLIENT_USERNAME, CLIENT_PASSWORD) VALUES ('a', '2017-06-15', 'a', 'a') [42000-195]
+2017-06-15 19:50:48 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Синтаксическая ошибка в выражении SQL "INSERT INTO CLIENTS VALUES (CLIENT_FIRST_NAME, CLIENT_DATE_OF_BIRTH, CLIENT_USERNAME, CLIENT_PASSWORD) VALUES[*] ('a', '2017-06-14', 'a', 'a')"
+Syntax error in SQL statement "INSERT INTO CLIENTS VALUES (CLIENT_FIRST_NAME, CLIENT_DATE_OF_BIRTH, CLIENT_USERNAME, CLIENT_PASSWORD) VALUES[*] ('a', '2017-06-14', 'a', 'a')"; SQL statement:
+INSERT INTO CLIENTS VALUES (CLIENT_FIRST_NAME, CLIENT_DATE_OF_BIRTH, CLIENT_USERNAME, CLIENT_PASSWORD) VALUES ('a', '2017-06-14', 'a', 'a') [42000-195]
+2017-06-15 19:52:03 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Синтаксическая ошибка в выражении SQL "INSERT INTO CLIENTS VALUES (CLIENT_FIRST_NAME, CLIENT_DATE_OF_BIRTH, CLIENT_USERNAME, CLIENT_PASSWORD) VALUES[*] ('a', TO_DATE('16.06.2017', 'dd.MM.yyyy'), 'a', 'a')"
+Syntax error in SQL statement "INSERT INTO CLIENTS VALUES (CLIENT_FIRST_NAME, CLIENT_DATE_OF_BIRTH, CLIENT_USERNAME, CLIENT_PASSWORD) VALUES[*] ('a', TO_DATE('16.06.2017', 'dd.MM.yyyy'), 'a', 'a')"; SQL statement:
+INSERT INTO CLIENTS VALUES (CLIENT_FIRST_NAME, CLIENT_DATE_OF_BIRTH, CLIENT_USERNAME, CLIENT_PASSWORD) VALUES ('a', TO_DATE('16.06.2017', 'dd.MM.yyyy'), 'a', 'a') [42000-195]
